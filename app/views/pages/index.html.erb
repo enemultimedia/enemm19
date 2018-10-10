@@ -111,12 +111,7 @@
   <h3>Faz parte do evento</h3>
   <div class="mailing">
     <p>Call for talks</p>
-    <form action="" method="" target="_blank" class="call-for-talks" novalidate>
-      <input type="text" value="" name="session_type" class="input" placeholder="Tipo de sessão (palestra, workshop, ...)" required>
-      <input type="text" value="" name="speaker" class="input" placeholder="Orador(es)" required>
-      <input type="text" value="" name="subject" class="input" placeholder="Tema" required>
-      <input type="submit" value="Submeter" name="subscribe" class="button">
-    </form>
+    <%= render partial: 'talk_suggestion_form', locals: {talk_suggestion: @talk_suggestion} %>
   </div>
 </div>
 <div class="item hidden-mc hidden-sc"></div>
