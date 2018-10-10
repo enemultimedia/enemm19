@@ -117,6 +117,12 @@
   justify-content: space-around;
 }
 
+.call-for-talks {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .email, .button {
   font-family: Neue Montreal;
   color: var(--color-gold);
@@ -129,6 +135,18 @@
 .email {
   flex-grow: 3;
   opacity: 0.8;
+}
+
+.input {
+  width: 60%;
+  flex-grow: 3;
+  opacity: 0.8;
+  font-family: Neue Montreal;
+  color: var(--color-gold);
+  background: none;
+  border-style: none;
+  border: 1px solid var(--color-gold);
+  padding: 10px;
 }
 
 .button {
