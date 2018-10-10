@@ -35,10 +35,24 @@
         <h1>ENEMM'19</h1>
       </div>
     </div>
-    <div class="item logo center">
+    <div class="item logo info center hidden-bc">
+      <img src="assets/img/logo-small.svg">
+      <div class="top">
+        <h1>Encontro Nacional<br/>Estudantes Multimédia</h1>
+      </div>
+      <div class="bottom">
+        <div class="location">
+          <h2>coimbra</h2>
+        </div>
+        <div class="date">
+          <h2>março/abril<br/>2019</h2>
+        </div>
+      </div>
+    </div>
+    <div class="item logo center hidden-mc hidden-sc">
       <img src="assets/img/logo.svg">
     </div>
-    <div class="item info">
+    <div class="item info hidden-mc hidden-sc">
       <div class="top">
         <h1>Encontro Nacional<br/>Estudantes Multimédia</h1>
       </div>
@@ -55,32 +69,34 @@
       <div class="square"></div>
       <div class="square"></div>
       <div class="square"></div>
+      <div class="square line-sc"></div>
       <div class="square"></div>
       <div class="square"></div>
       <div class="square"></div>
-      <div class="square"></div>
-      <div class="square"></div>
-      <div class="square"></div>
-      <div class="square"></div>
-      <div class="square"></div>
-      <div class="square"></div>
-      <div class="square"></div>
-      <div class="square"></div>
-      <div class="square"></div>
-      <div class="square"></div>
-      <div class="square"></div>
-      <div class="square"></div>
-      <div class="square"></div>
-      <div class="square"></div>
-      <div class="square"></div>
-      <div class="square"></div>
-      <div class="square"></div>
-      <div class="square"></div>
-      <div class="square"></div>
-      <div class="square"></div>
-      <div class="square line"></div>
+      <div class="square hidden-sc"></div>
+      <div class="square hidden-sc"></div>
+      <div class="square hidden-sc"></div>
+      <div class="square hidden-sc"></div>
+      <div class="square hidden-sc"></div>
+      <div class="square hidden-sc"></div>
+      <div class="square hidden-sc"></div>
+      <div class="square hidden-sc"></div>
+      <div class="square hidden-sc"></div>
+      <div class="square hidden-sc"></div>
+      <div class="square hidden-sc"></div>
+      <div class="square hidden-sc"></div>
+      <div class="square hidden-sc"></div>
+      <div class="square hidden-sc"></div>
+      <div class="square line hidden-sc"></div>
     </div>
-    <div class="item hidden-sm"></div>
+    <div class="item description">
+        <h3>Placeholder text</h3>
+        <p>O ENED - Encontro Nacional de Estudantes de Design - é um encontro que
+          recebe desde a primeira edição centenas de estudantes, entusiastas e profissionais
+          de referência das diferentes disciplinas da área do Design.
+        </p>
+    </div>
+    <div class="item hidden-mc hidden-sc"></div>
     <div class="item contact">
       <h3>Fica a par das novidades</h3>
       <div class="social">
@@ -99,13 +115,50 @@
       </div>
       <div class="mailing">
         <p>Na nossa mailing list</p>
-        <form action="https://enemm.us19.list-manage.com/subscribe/post?u=b6de72300788c2d567a4b1122&amp;id=92d7cd65ef" method="post" target="_blank" class="mailchimp" novalidate>
+        <form action="https://enemm.us19.list-manage.com/subscribe/post-json?u=b6de72300788c2d567a4b1122&amp;id=92d7cd65ef&amp;c=?" method="get" target="_blank" class="mailchimp" id="mailchimp_form" novalidate>
           <input type="email" value="" name="EMAIL" class="email" placeholder="Insere o teu e-mail" required>
           <input type="submit" value="Subscrever" name="subscribe" class="button">
         </form>
       </div>
     </div>
-    <div class="item hidden-md hidden-sm"></div>
+    <div class="item secondmatrix hidden-mc hidden-sc">
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square rectangle"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+      <div class="square"></div>
+    </div>
+    <div class="item callfortalk">
+      <h3>Faz parte do evento</h3>
+      <div class="mailing">
+        <p>Call for talks</p>
+        <form action="https://enemm.us19.list-manage.com/subscribe/post?u=b6de72300788c2d567a4b1122&amp;id=92d7cd65ef" method="post" target="_blank" class="mailchimp" novalidate>
+          <input type="email" value="" name="EMAIL" class="email" placeholder="Insere o teu e-mail" required>
+          <input type="submit" value="Submeter" name="subscribe" class="button">
+        </form>
+      </div>
+    </div>
+    <div class="item hidden-mc hidden-sc"></div>
+    <div class="item hidden-mc hidden-sc"></div>
+    <div class="item hidden-mc hidden-sc"></div>
+    <div class="item sponsor">
+      <h3>Patrocina-nos</h3>
+        <div class="subscribe-botton">
+            <p><input type="submit" value="Mais informação" name="subscribe" class="button"></p>
+        </div>
+      <div class="mailing">
+        <h3>Contacto</h3>
+        <p>geral@enemm.pt</p>
+      </div>
+    </div>
     <div class="item footer">
       <small>Made with ♥ by <a href="https://nei.dei.uc.pt" target="_blank">NEI/AAC</a></small>
     </div>
@@ -119,5 +172,7 @@
 
     gtag('config', 'UA-125862664-1');
   </script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="assets/js/form_submit.js"></script>
 </body>
 </html>
