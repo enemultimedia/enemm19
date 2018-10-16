@@ -52,6 +52,14 @@
   padding: 30px;
 }
 
+.info {
+  grid-template-columns: 1fr;
+}
+
+.description {
+  display: block;
+}
+
 .bottom {
   display: flex;
   flex-direction: row;
@@ -125,16 +133,26 @@
 
 .email, .button {
   font-family: Neue Montreal;
-  color: var(--color-gold);
-  background: none;
   border-style: none;
   border: 2px solid var(--color-gold);
   padding: 10px;
   font-size: smaller;
 }
 
+.button {
+  color: var(--color-gold);
+  background: var(--color-black);
+}
+
+.button:hover {
+  color: var(--color-black);
+  background: var(--color-gold);
+}
+
 .email {
   flex-grow: 3;
+  color: var(--color-gold);
+  background: var(--color-black);
   opacity: 0.8;
 }
 
@@ -149,6 +167,18 @@
   border: 2px solid var(--color-gold);
   padding: 10px;
   font-size: smaller;
+}
+
+#talk_suggestion_subject_or_speaker {
+  border-bottom: none;
+}
+
+#new_talk_suggestion input[type=submit] {
+    border-top: none;
+}
+
+#mailchimp_form input[type=submit] {
+    border-left: none;
 }
 
 .button {
@@ -188,11 +218,15 @@
   .mailchimp {
     flex-wrap: wrap;
   }
+
+  #mailchimp_form input[type=submit] {
+    border-left: solid 1px var(--color-gold);
+}
 }
 
 @media (max-width: 700px) {
   .container {
-    grid-template-rows: 80px repeat(7, 1fr) 80px;
+    grid-template-rows: 80px repeat(6, 1fr) 80px;
     grid-template-columns: 1fr;
   }
 
