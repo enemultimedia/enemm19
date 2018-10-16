@@ -17,16 +17,16 @@ h1, h2, h3 {
   margin: 0;
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder {
     color: var(--color-gold);
-    opacity: 1; /* Firefox */
+    opacity: 1;
 }
 
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
+:-ms-input-placeholder {
     color: var(--color-gold);
 }
 
-::-ms-input-placeholder { /* Microsoft Edge */
+::-ms-input-placeholder {
     color: var(--color-gold);
 }
 

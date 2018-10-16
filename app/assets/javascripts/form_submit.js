@@ -7,7 +7,7 @@ $(document).ready(function () {
 })
 
 function register($form) {
-  $('input[type=submit]', $form).val('Sending...');
+  $('input[type=submit]', $form).val('A registar...');
   $.ajax({
     type: $form.attr('method'),
     url: $form.attr('action'),
@@ -15,7 +15,7 @@ function register($form) {
     cache: false,
     dataType: 'json',
     contentType: 'application/json; charset=utf-8',
-    error: function (err) { alert('Could not connect to the registration server. Please try again later.') },
+    error: function (err) { alert('Erro a ligar ao servidor.') },
     success: function (data) {
       $('input[type=submit]', $form).val('Subscrever')
       if (data.result === 'success') {

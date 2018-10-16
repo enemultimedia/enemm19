@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="robots" content="noydir, noodp">
+    <meta name="description" content="Encontro Nacional de Estudantes de Multimédia 2019 - Coimbra">
+    <meta name="keywords" content="enemm, encontro, nacional, estudantes, multimédia, 2019, coimbra">
+    <meta name="author" content="ENEMM'19">
+
+    <meta name="twitter:card" content="ENEMM'19" />
+    <meta name="twitter:site" content="https://enemm.pt" />
+    <meta name="twitter:creator" content="@neiaac" />
+    <meta property="og:image" content="<%= image_path('logo.svg') %>" />
+    <meta property="og:title" content="ENEMM'19" />
+    <meta property="og:url" content="https://enemm.pt" />
+    <meta property="og:type" content="website" />
+    <link rel="canonical" href="https://www.enemm.pt">
+    <link rel="icon" type="image/x-icon" href="<%= image_path('logo.ico') %>">
+
+    <title>ENEMM'19</title>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125862664-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-125862664-1');
+    </script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
