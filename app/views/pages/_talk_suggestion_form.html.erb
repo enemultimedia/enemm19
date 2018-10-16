@@ -1,13 +1,5 @@
-<!--form action="" method="" target="_blank" class="call-for-talks" novalidate>
-  <input type="text" value="" name="session_type" class="input" placeholder="Tipo de sessão (palestra, workshop, ...)" required>
-  <input type="text" value="" name="speaker" class="input" placeholder="Orador(es)" required>
-  <input type="text" value="" name="subject" class="input" placeholder="Tema" required>
-  <input type="submit" value="Submeter" name="subscribe" class="button">
-</form-->
-
 <%= form_for @talk_suggestion, html: {class: 'call-for-talks', novalidate: true}, remote: true do |f| %>
-  <%= f.text_field :session_type, {class: 'input', placeholder: 'Tipo de sessão (palestra, workshop, ...)'} %>
-  <%= f.text_field :speakers, {class: 'input', placeholder: 'Orador(es)'} %>
-  <%= f.text_field :subject, {class: 'input', placeholder: 'Tema'} %>
+  <%= f.text_field :subject_or_speaker, {class: 'input', placeholder: 'Tema e/ou Orador'} %>
+  <%= f.text_area :tell_us_more, {class: 'input', placeholder: 'Conta-nos mais...'} %>
   <%= f.submit "Submeter", {class: 'button'} %>
 <% end %>

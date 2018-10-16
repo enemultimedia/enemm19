@@ -14,6 +14,6 @@ class TalkSuggestionsController < ApplicationController
   private
 
   def talk_suggestion_params
-    params.require(:talk_suggestion).permit(:session_type, :speakers, :subject)
+    params.require(:talk_suggestion).permit(:subject_or_speaker, :tell_us_more)
   end
 end

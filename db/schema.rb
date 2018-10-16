@@ -10,17 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_10_194631) do
+ActiveRecord::Schema.define(version: 2018_10_16_210659) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "talk_suggestions", force: :cascade do |t|
-    t.string "session_type"
-    t.string "speakers"
-    t.string "subject"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "subject_or_speaker"
+    t.text "tell_us_more"
   end
 
 end

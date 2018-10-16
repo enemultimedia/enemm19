@@ -1,5 +1,4 @@
 class TalkSuggestion < ApplicationRecord
-  validates :session_type, presence: true
-  validates :speakers, presence: true
-  validates :subject, presence: true
+  validates :subject_or_speaker, presence: true
+  validates :tell_us_more, presence: true
 end
