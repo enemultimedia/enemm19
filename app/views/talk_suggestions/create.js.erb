@@ -1,3 +1,4 @@
-$("#new_talk_suggestion").replaceWith(
-  $('<p>Sugestão registada com sucesso</p>')
-);
+setTimeout(function(){
+  $('input[type=submit]', '#new_talk_suggestion').val('Submeter');
+  $("#new_talk_suggestion")[0].reset();
+}, 500);
