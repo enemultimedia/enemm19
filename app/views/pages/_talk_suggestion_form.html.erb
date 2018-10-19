@@ -1,5 +1,5 @@
 <%= form_for @talk_suggestion, html: {class: 'call-for-talks', novalidate: true}, remote: true do |f| %>
   <%= f.text_field :subject_or_speaker, {class: 'input', placeholder: 'Tema e/ou Orador'} %>
-  <%= f.text_area :tell_us_more, {class: 'input', placeholder: 'Conta-nos mais...'} %>
+  <%= f.text_area :tell_us_more, {class: 'input', placeholder: 'Porque achas o tema ou orador interessante para o ENEMM?'} %>
   <%= f.submit "Submeter", {class: 'button'} %>
 <% end %>
