@@ -114,7 +114,11 @@
     <h3>Queres patrocinar o evento?</h3>
     <p>Carrega no botão e sabe mais!</p>
     <div class="subscribe-botton">
-      <p><input type="submit" value="Mais informação" name="subscribe" class="button"></p>
+      <p>
+        <%= link_to 'Documento de Apresentação.pdf' do%>
+          <input type="submit" value="Mais informação" name="subscribe" class="button">
+        <% end %>
+      </p>
     </div>
     <div class="mailing">
       <h3>Contacto</h3>
