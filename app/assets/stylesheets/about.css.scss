@@ -108,9 +108,10 @@ html {
 
 .map {
   grid-area: map;
-  min-height: 300px;
-  background-image: image-url('map_about.png');
-  background-size: cover;
+}
+
+#map {
+  height: 300px;
 }
 
 .partners {

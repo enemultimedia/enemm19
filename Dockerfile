@@ -9,7 +9,7 @@ RUN useradd --create-home --home-dir $HOME user && \
   chown -R user:user $GEM_HOME
 
 RUN apt-get update -qq && \
-  apt-get install -y build-essential libpq-dev
+  apt-get install -y build-essential libpq-dev vim
 
 RUN curl -sL https://deb.nodesource.com/setup_9.x | bash -
 RUN apt-get update -qq && \

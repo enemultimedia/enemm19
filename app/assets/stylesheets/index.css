@@ -121,6 +121,10 @@
   flex-direction: column;
 }
 
+.call-for-talks input[type=text] {
+  margin-top: 5px;
+}
+
 .call-for-talks .button {
   align-self: flex-start;
 }
