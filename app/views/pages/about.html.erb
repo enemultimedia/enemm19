@@ -101,10 +101,12 @@
     <h1>Coimbra</h1>
     <p>Coimbra receberá a 4ª edição do ENEMM. Marcada pela irreverência estudantil, a cidade foi obtendo espaços únicos com capacidade de acolher e transmitir aos seus estudantes e visitantes conhecimentos sem fronteiras. Esta edição do encontro terá lugar no Conservatório de Música de Coimbra.</p>
   </div>
+  <%#=
   <div class="item hidden2"></div>
   <div class="item map">
     <div id="map"></div>
   </div>
+  %>
   <%#=
   <div class="item partners">
     <h1>Parceiros</h1>
@@ -138,7 +140,7 @@
     <small>Made with ♥ by <a href="https://nei.dei.uc.pt" target="_blank">NEI/AAC</a></small>
   </div>
 </div>
-
+<%#=
 <script>
   function initMap() {
     var myLatLng = {lat: 40.1929618, lng: -8.4083511};
@@ -157,7 +159,8 @@
     });
   }
 </script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.maps_key %>&callback=initMap">
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.maps_key %->&callback=initMap">
 </script>
+%>
 
 <%= javascript_include_tag 'pages', 'data-turbolinks-track': 'reload' %>
