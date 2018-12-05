@@ -116,6 +116,15 @@
   font-size: smaller;
 }
 
+.call-for-talks {
+  display: flex;
+  flex-direction: column;
+}
+
+.call-for-talks .button {
+  align-self: flex-start;
+}
+
 .button {
   flex-grow: 2;
   color: var(--color-gold);

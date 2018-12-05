@@ -9,7 +9,7 @@
   </div>
   <div class="item navbar right">
     <div class="bs">
-      <%= link_to 'Sobre', pages_about_path %>
+      <%= link_to 'Sobre', about_path %>
       <%= link_to 'Bilheteira', 'https://ti.to/encontro-nacional-de-estudantes-de-multimedia/2019' %>
     </div>
     <div class="ss">
@@ -20,7 +20,7 @@
           </div>
         </div>
         <div class="menu_links">
-          <%= link_to pages_about_path do %>
+          <%= link_to about_path do %>
             <h1>Sobre</h1>
           <% end %>
           <%= link_to 'https://ti.to/encontro-nacional-de-estudantes-de-multimedia/2019' do %>
@@ -53,31 +53,23 @@
   <div class="item about">
     <div class="about_section">
       <h2>História</h2>
-      <p>O ENED - Encontro Nacional de Estudantes de Design - é um encontro que
-        recebe desde a primeira edição centenas de estudantes, entusiastas e profissionais de
-        referência das diferentes disciplinas da área do Design.
-      </p>
-      <p>Surgiu em 2012, em Coimbra, tomando lugar nos anos seguintes nas cidades do Porto,
-        Castelo Branco e Aveiro.
-      </p>
-      <p>
-        2012 - Coimbra<br>
-        2013 - Porto<br>
-        2014 - Castelo Branco<br>
-        2015 - Aveiro<br>
-      </p>
+      <p>O ENEMM - Encontro Nacional de Estudantes de Multimédia - é um evento que visa reunir anualmente os entusiastas da área da Multimédia, com principal foco nos estudantes do ensino superior dos cursos relacionados com a área em Portugal.</p>
+      <p>Tendo tido origem em Aveiro e passando depois por Mirandela e pela Guarda, toma lugar em Coimbra na sua 4ª edição. Este evento nasce com o objetivo de fomentar a aprendizagem e troca de ideias entre todos os seus participantes, através da criação do ambiente ideal para a promoção de networking e aquisição de conhecimentos.</p>
+      <p></p>
+      <p>2016 - Aveiro</p>
+      <p>2017 - Mirandela</p>
+      <p>2018 - Guarda</p>
+      <p>2019 - Coimbra</p>
     </div>
     <div class="about_section">
       <h2>Conceito</h2>
-      <p>Sob o mote “Do Ensino à Prática” os oradores serão convidados a fazer uma
-        reflexão sobre o seu percurso e a revisitar os seus trabalhos enquanto estudantes,
-        tornando mais clara a transição do mundo académico para o profissional.
-      </p>
-      <p>Nesse sentido, o ENED 2016 pretende trazer para o seu programa um ambiente de discussão,
-        com sessões interactivas entre estudantes e oradores e actividades de networking que sejam
-        propícias à partilha e confronto de ideias e experiências.
-      </p>
+      <p>Em 2016, o Encontro Nacional de Estudantes de Multimédia nasce como um espaço de debate de ideias, troca de conhecimentos e criação de ligações entre os vários intervenientes da área da Multimédia.</p>
+      <p>Após passagens por Aveiro, Mirandela e Guarda, o ENEMM chega finalmente a Coimbra, cidade dos estudantes, denominador comum para a (quase) totalidade dos Encontros Nacionais do nosso país. Mantendo-se fiel aos seus propósitos iniciais e inerentes aos seus eventos homónimos, o ENEMM regressa para mais uma edição, depois da participação de mais de 400 participantes vindos de 30 diferentes instituições.</p>
+      <p>Uma das questões centrais que norteiam a organização desta edição foca-se na definição de Multimédia e em cada um dos seus elementos singulares. Esta discussão permitiu-nos entender a Multimédia como uma área em permanente mutação e desenvolvimento, graças aos contínuos avanços na capacidade de manipulação destes mesmos elementos que motivaram o aparecimento de inúmeras diferentes aplicações, como marketing digital, holografia, web ou modelação 3D. Esta percepção motivou a escolha do tema do ENEMM’19, “Caminhos”.</p>
+      <p>Um caminho é a metáfora perfeita para o entendimento do conhecimento como um todo. A parte já percorrida representa o saber no momento presente, o resultado de todo o trabalho desenvolvido e das escolhas outrora tomadas num passado incerto, que decerto influenciam os pensadores atuais na descoberta da incógnita futura, a segunda face do conhecimento e a segunda parte dos caminhos. O olhar em frente para este desconhecido motiva o alargar dos horizontes, a ânsia do saber e de viver conscientemente os próximos passos que, mais uma vez, conduzirá a um ciclo de descobertas e decisões que irão guiar os seguintes caminhantes, tal como nós no presente passado.</p>
+      <p>É esta perspectiva que lançamos a todos os intervenientes que irão passar no ENEMM’19. Dos oradores, oriundos de uma multiplicidade de diferentes secções do mundo da Multimédia, esperamos uma visão consciente de como a evolução da Multimédia nos levou ao momento em que nos encontramos. Dos participantes, que representam o futuro próximo, esperamos o antecipar do pensamento sobre quais serão os próximos passos de todos os caminhantes deste mundo. Enquanto organização, oriundos de um mundo naturalmente tecnológico, esperamos ser o sol permanente e insistente que ilumina o trajeto de ambos os anteriores durante os próximos dias 1 a 4 de março de 2019, em Coimbra.</p>
     </div>
+    <%#=
     <div class="about_section">
       <h2>Programa</h2>
       <p>Sob o mote “Do Ensino à Prática” os oradores serão convidados a fazer uma reflexão
@@ -89,6 +81,7 @@
         propícias à partilha e confronto de ideias e experiências.
       </p>
     </div>
+    %>
   </div>
   <div class="item matrix">
     <div class="square line"></div>
@@ -106,20 +99,7 @@
   </div>
   <div class="item local">
     <h1>Coimbra</h1>
-    <p>Em 2016, Coimbra será o palco da 5ª edição do ENED.</p>
-    <p>De 18 a 22 de Março o evento tomará vários dos espaços mais criativos da
-      Alta e Sofia de Coimbra, Património Mundial da Humanidade, permitindo aos participantes
-      interagir com a cidade e absorver a sua cultura.
-    </p>
-    <p>Os participantes terão direito a alojamento e às várias refeições durante o evento.
-      À semelhança das edições anteriores, o alojamento ocorrerá em espaço comum, em pavilhão
-      ou por salas na zona do evento, sendo que poderá também ser facilitado o acesso a hostels
-      ou pousadas para aqueles que assim o desejarem.
-    </p>
-    <p>Durante o dia irão decorrer várias sessões em pararelo, sob vários formatos e
-       em diferentes áreas do Design, sendo que à noite, como não podia faltar em Coimbra,
-       um programa de animação noturna à altura do evento.
-    </p>
+    <p>Coimbra receberá a 4ª edição do ENEMM. Marcada pela irreverência estudantil, a cidade foi obtendo espaços únicos com capacidade de acolher e transmitir aos seus estudantes e visitantes conhecimentos sem fronteiras. Esta edição do encontro terá lugar no Conservatório de Música de Coimbra.</p>
   </div>
   <div class="item hidden2"></div>
   <div class="item map">
