@@ -1,0 +1,224 @@
+html {
+  background-color: var(--color-purple);
+  color: var(--color-purple);
+}
+
+.container {
+  height: 100%;
+  display: grid;
+  grid-template-areas:
+    'header navbar navbar navbar navbar navbar'
+    'title title about about about about'
+    'matrix matrix about about about about'
+    'hidden1 hidden1 about about about about'
+    'img img local local local local'
+    'hidden2 hidden2 local local local local'
+    'hidden2 hidden2 map map map map'
+    'hidden2 hidden2 partners partners partners partners'
+    'footer footer footer footer footer footer';
+  grid-gap: 1px;
+  background-color: var(--color-purple);
+}
+
+.item {
+  background-color: var(--color-light-grey);
+}
+
+.about, .local, .partners {
+  padding: 5em;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  grid-area: title;
+  min-width: 350px;
+  min-height: 200px;
+  padding: 2em 2em 0 0;
+}
+
+.about {
+  grid-area: about;
+}
+
+.about_section {
+  margin-bottom: 5rem;
+}
+
+.about p {
+  padding-top: 1rem;
+}
+
+.matrix {
+  grid-area: matrix;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1px;
+  background-color: var(--color-purple);
+}
+
+.square {
+  background-color: var(--color-light-grey);
+  min-height: 50px;
+}
+
+.line {
+  grid-row: 1 / span 2;
+  grid-column: 1 / span 2;
+  background:
+       linear-gradient(to top right,
+           var(--color-light-grey) 0%,
+           var(--color-light-grey) calc(50% - 0.8px),
+           var(--color-purple) 50%,
+           var(--color-light-grey) calc(50% + 0.8px),
+           var(--color-light-grey) 100%);
+}
+
+.hidden1, .hidden2 {
+  min-height: 200px;
+}
+
+.hidden1 {
+  grid-area: hidden1;
+}
+
+.img {
+  grid-area: img;
+  min-height: 300px;
+  background-image: image-url('coimbra_about.jpeg');
+  background-size: cover;
+}
+
+.local {
+  display: flex;
+  flex-direction: column;
+  grid-area: local;
+
+}
+
+.local p {
+  margin-top: 2em;
+}
+
+.hidden2 {
+  grid-area: hidden2;
+}
+
+.map {
+  grid-area: map;
+  min-height: 300px;
+  background-image: image-url('map_about.png');
+  background-size: cover;
+}
+
+.partners {
+  grid-area: partners;
+}
+
+.img_big, .img_medium, .img_small {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 2em;
+}
+
+.img_big img {
+  width: 100px;
+  height: auto;
+}
+
+.img_medium img {
+  width: 75px;
+  height: auto;
+}
+
+.img_small img {
+  width: 50px;
+  height: auto;
+}
+
+
+a {
+  color: var(--color-purple);
+}
+
+@media (max-width: 950px) {
+  .container {
+    grid-template-areas:
+      'header navbar navbar navbar navbar navbar'
+      'title title about about about about'
+      'hidden1 hidden1 about about about about'
+      'hidden1 hidden1 about about about about'
+      'img img local local local local'
+      'hidden2 hidden2 local local local local'
+      'hidden2 hidden2 map map map map'
+      'hidden2 hidden2 partners partners partners partners'
+      'footer footer footer footer footer footer';
+  }
+
+  .about, .local, .partners {
+    padding: 4em;
+  }
+
+  .title {
+    min-width: 275px;
+  }
+
+  .img_big, .img_medium, .img_small {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .matrix {
+    display: none;
+  }
+}
+
+@media (max-width: 850px) {
+  .about, .local, .partners {
+    padding: 3em;
+  }
+}
+
+
+@media (max-width: 760px) {
+  .container {
+      grid-template-rows: 80px 80px 1fr 1fr 1fr 1fr 1fr 80px;
+      grid-template-areas:
+        'header navbar'
+        'title title'
+        'about about'
+        'img img'
+        'local local'
+        'map map'
+        'partners partners'
+        'footer footer'
+  }
+
+  .about, .local, .partners {
+    padding: 2em;
+  }
+
+  .hidden1, .hidden2 {
+    display: none;
+  }
+
+  .title {
+    justify-content: flex-start;
+    align-items: center;
+    min-width: 0;
+    min-height: 0;
+    padding: 2em;
+  }
+
+  .bs {
+    display: none;
+  }
+
+  .ss {
+    display: block;
+  }
+}

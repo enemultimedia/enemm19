@@ -1,29 +1,70 @@
 <%= stylesheet_link_tag    'pages', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag    'index', media: 'all', 'data-turbolinks-track': 'reload' %>
 
 <div class="container">
-  <div class="item header">
-    <div class="title center">
-      <h1>ENEMM'19</h1>
+  <div class="item header center">
+      <%= link_to root_path do %>
+        <h1>ENEMM'19</h1>
+        <% end %>
+  </div>
+  <div class="item navbar right">
+    <div class="bs">
+      <%= link_to 'Sobre', pages_about_path %>
+      <%= link_to 'Bilheteira', 'https://ti.to/encontro-nacional-de-estudantes-de-multimedia/2019' %>
+    </div>
+    <div class="ss">
+      <div id="mySidenav" class="sidenav">
+        <div class="lazy">
+          <div class="menu_title center">
+              <h1>ENEMM'19</h1>
+          </div>
+        </div>
+        <div class="menu_links">
+          <%= link_to pages_about_path do %>
+            <h1>Sobre</h1>
+          <% end %>
+          <%= link_to 'https://ti.to/encontro-nacional-de-estudantes-de-multimedia/2019' do %>
+            <h1>Bilheteira</h1>
+          <% end %>
+        </div>
+      </div>
+      <div id="myMenuIcon" class="menuIcon" onclick="myFunction(this), openNav(this)">
+        <div id="myMenuIcon1" class="bar1"></div>
+        <div id="myMenuIcon2" class="bar2"></div>
+        <div id="myMenuIcon3" class="bar3"></div>
+      </div>
+      <script>
+        function myFunction(x) {
+          x.classList.toggle("change");
+        }
+        function openNav() {
+          document.getElementById("mySidenav").classList.toggle("sidenavtoogle");
+          document.getElementById("myMenuIcon").classList.toggle("menuIcontooglePosition");
+          document.getElementById("myMenuIcon1").classList.toggle("menuIcontoogle");
+          document.getElementById("myMenuIcon2").classList.toggle("menuIcontoogle");
+          document.getElementById("myMenuIcon3").classList.toggle("menuIcontoogle");
+        }
+      </script>
     </div>
   </div>
-  <div class="item logo info center hidden-bc">
-    <img src="<%= image_path('logo-small.svg') %>">
-    <div class="top">
-      <h1>Encontro Nacional<br/>Estudantes Multimédia</h1>
-    </div>
-    <div class="bottom">
-      <div class="location">
-        <h2>coimbra</h2>
+  <div class="item logo_info center">
+      <img src="<%= image_path('logo.svg') %>">
+      <div class="top">
+        <h1>Encontro Nacional<br/>Estudantes Multimédia</h1>
       </div>
-      <div class="date">
-        <h2>1-4 de Março<br/>2019</h2>
+      <div class="bottom">
+        <div class="location">
+          <h2>coimbra</h2>
+        </div>
+        <div class="date">
+          <h2>1-4 de Março<br/>2019</h2>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="item logo center hidden-mc hidden-sc">
+  <div class="item logo center">
     <img src="<%= image_path('logo.svg') %>">
   </div>
-  <div class="item info hidden-mc hidden-sc">
+  <div class="item info">
     <div class="top">
       <h1>Encontro Nacional<br/>Estudantes Multimédia</h1>
     </div>
@@ -61,20 +102,20 @@
     <div class="square line hidden-sc"></div>
   </div>
   <div class="item description">
-    <h3>Sabes o que é o ENEMM?</h3>
-    <p>O ENEMM - Encontro Nacional de Estudantes de Multimédia - é um evento que visa reunir anualmente os entusiastas da área da Multimédia, com principal foco nos estudantes do ensino superior dos cursos relacionados com Multimédia em Portugal.</p>
+     <h3>Sabes o que é o ENEMM?</h3>
+     <p>O ENEMM - Encontro Nacional de Estudantes de Multimédia - é um evento que visa reunir anualmente os entusiastas da área da Multimédia, com principal foco nos estudantes do ensino superior dos cursos relacionados com Multimédia em Portugal.</p>
   </div>
-  <div class="item hidden-mc hidden-sc"></div>
+  <div class="item hidden1"></div>
   <div class="item contact">
     <h3>Queres ficar a par de todas as novidades?</h3>
     <div class="social">
       <p>Segue-nos nas nossas redes sociais ou insere o teu email e recebe a nossa mailing list!</p>
       <div class="social-logos">
         <a href="https://www.facebook.com/enemm.multimedia" target="_blank">
-          <img src="<%= image_path('facebook.svg') %>">
+          <img src="<%= image_path('facebook.svg') %>" alt="Facebook">
         </a>
         <a href="https://www.instagram.com/enemm.multimedia" target="_blank">
-          <img src="<%= image_path('instagram.svg') %>" alt="">
+          <img src="<%= image_path('instagram.svg') %>" alt="Instagram">
         </a>
       </div>
     </div>
@@ -85,7 +126,14 @@
       </form>
     </div>
   </div>
-  <div class="item secondmatrix hidden-mc hidden-sc">
+  <div class="item callfortalk">
+    <h3>Queres fazer parte do evento?</h3>
+    <div class="mailing">
+      <p>Tens um tema ou um orador que gostavas mesmo de ver no ENEMM? Sugere em baixo!</p>
+      <%= render partial: 'talk_suggestion_form', locals: {talk_suggestion: @talk_suggestion} %>
+    </div>
+  </div>
+  <div class="item secondmatrix">
     <div class="square"></div>
     <div class="square"></div>
     <div class="square"></div>
@@ -100,16 +148,9 @@
     <div class="square"></div>
     <div class="square"></div>
   </div>
-  <div class="item callfortalk">
-    <h3>Queres fazer parte do evento?</h3>
-    <div class="mailing">
-      <p>Tens um tema ou um orador que queres mesmo de ver no ENEMM? Sugere em baixo!</p>
-      <%= render partial: 'talk_suggestion_form', locals: {talk_suggestion: @talk_suggestion} %>
-    </div>
-  </div>
-  <div class="item hidden-mc hidden-sc"></div>
-  <div class="item hidden-mc hidden-sc"></div>
-  <div class="item hidden-mc hidden-sc"></div>
+  <div class="item hidden2"></div>
+  <div class="item hidden3"></div>
+  <div class="item hidden4"></div>
   <div class="item sponsor">
     <h3>Queres patrocinar o evento?</h3>
     <p>Carrega no botão e sabe mais!</p>
@@ -125,8 +166,9 @@
       <p>geral@enemm.pt</p>
     </div>
   </div>
-  <div class="item footer">
+  <div class="item footer right">
     <small>Made with ♥ by <a href="https://nei.dei.uc.pt" target="_blank">NEI/AAC</a></small>
   </div>
 </div>
+
 <%= javascript_include_tag 'pages', 'data-turbolinks-track': 'reload' %>

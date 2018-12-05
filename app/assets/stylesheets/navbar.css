@@ -1,0 +1,119 @@
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    z-index: 1;
+    background-color: var(--color-black);
+}
+
+.ss {
+  display: none;
+}
+
+.menuIcon {
+    display: none;
+    position: absolute;
+    top: 1.2rem;
+    right: 1rem;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 2rem;
+    height: 3px;
+    background-color: var(--color-purple);
+    margin: 8px 0;
+    transition: 0.4s;
+}
+
+.navbar .sidenav a {
+    color: var(--color-white);
+    text-decoration: none;
+    margin: 0;
+}
+
+.navbar .sidenav a:hover {
+    text-decoration: underline;
+}
+
+.navbar .sidenav .active {
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.menu_title {
+  color: var(--color-white);
+  border-bottom: 1px solid var(--color-white);
+  border-right: 1px solid var(--color-white);
+  top: 0;
+  position: absolute;
+  width: 60%;
+  height: 80px;
+  margin: 0;
+  align-self: flex-start;
+}
+
+.menu_links {
+  display: flex;
+  flex-direction: column;
+  justify-content:  space-around;
+  align-items: center;
+  padding: 70px 40px 40px 40px;
+  height: 70%;
+}
+
+.lazy {
+  width: 100%;
+  height: 80px;
+  border-bottom: 1px solid var(--color-white);
+}
+
+.menuIcontooglePosition {
+  position: fixed;
+}
+
+@media (max-width: 760px) {
+    .sidenav {
+        padding: 0rem 0;
+        transition: 0.4s ease; /* 0.5 second transition effect to slide in the sidenav */
+    }
+
+    .sidenavtoogle {
+        width: 100%;
+        top: 0px;
+    }
+
+    .menuIcon {
+        display: inline-block;
+    }
+
+    .menuIcon .menuIcontoogle {
+      background-color: var(--color-white);
+    }
+
+    .change .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-7px, 9px);
+        transform: rotate(-45deg) translate(-7px, 9px);
+    }
+
+    .change .bar2 {
+        opacity: 0;
+    }
+
+    .change .bar3 {
+        -webkit-transform: rotate(45deg) translate(-8px, -9px);
+        transform: rotate(45deg) translate(-7px, -9px);
+    }
+
+    .bs {
+      display: none;
+    }
+
+    .ss {
+      display: block;
+    }
+}

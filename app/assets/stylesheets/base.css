@@ -17,21 +17,17 @@ h1, h2, h3 {
   margin: 0;
 }
 
-::placeholder {
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: var(--color-gold);
-    opacity: 1;
+    opacity: 1; /* Firefox */
 }
 
-:-ms-input-placeholder {
-    color: var(--color-gold);
-}
-
-::-ms-input-placeholder {
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
     color: var(--color-gold);
 }
 
-textarea {
-  resize: none;
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: var(--color-gold);
 }
 
 textarea:focus, input:focus, a:focus {
@@ -42,7 +38,55 @@ input[type=submit]:hover {
   cursor: pointer;
 }
 
+p {
+  margin: 0;
+}
+
 a {
-  text-decoration: underline;
   color: var(--color-gold);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.navbar .active {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.right {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.header {
+  grid-area: header;
+  padding: 0 2em;
+}
+
+.navbar {
+  grid-area: navbar;
+  height: 80px;
+  align-items: center;
+  padding-right: 2em;
+}
+
+.navbar a {
+  margin-right: 1em;
+}
+
+.footer {
+  grid-area: footer;
+  align-items: center;
+  padding: 2em;
 }

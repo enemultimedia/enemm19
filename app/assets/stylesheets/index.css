@@ -2,7 +2,13 @@
   height: 100%;
   display: grid;
   grid-template-rows: 80px 1fr 1fr 1fr 1fr 80px;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    'header navbar navbar navbar navbar navbar'
+    'logo logo info info matrix matrix'
+    'description description hidden1 hidden1 contact contact'
+    'secondmatrix secondmatrix callfortalk callfortalk hidden2 hidden2'
+    'hidden3 hidden3 hidden4 hidden4 sponsor sponsor'
+    'footer footer footer footer footer footer';
   grid-gap: 1px;
   background-color: var(--color-gold);
 }
@@ -11,53 +17,28 @@
   background-color: var(--color-black);
 }
 
-.header, .footer {
-  grid-column: 1 / span 3;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.header {
-  justify-content: flex-start;
-}
-
-.footer {
-  justify-content: flex-end;
-  padding-right: 20px;
-}
-
-.center {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.title {
-  font-weight: bold;
-  height: 100%;
-  padding: 0 20px;
-  border-right: 1px solid var(--color-gold);
-}
-
-.logo img {
-  margin: 20px 0;
-}
-
-.info, .contact, .callfortalk, .sponsor, .description {
+.logo, .info, .logo_info, .description, .contact, .callfortalk, .sponsor {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 30px;
+  padding: 2em;
+}
+
+.logo {
+  grid-area: logo;
 }
 
 .info {
-  grid-template-columns: 1fr;
+  grid-area: info;
 }
 
-.description {
-  display: block;
+.logo_info {
+  grid-area: logo_info;
+  display: none;
+}
+
+.logo_info img {
+  margin-bottom: 2rem;
 }
 
 .bottom {
@@ -73,6 +54,7 @@
 }
 
 .matrix {
+  grid-area: matrix;
   display: grid;
   grid-template-rows: repeat(5, 1fr);
   grid-template-columns: repeat(5, 1fr);
@@ -97,22 +79,23 @@
            var(--color-black) 100%);
 }
 
-.secondmatrix {
-  display: grid;
-  grid-template-rows: repeat(3, 1fr);
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 1px;
-  background-color: var(--color-gold);
+.description {
+  grid-area: description;
 }
 
-.rectangle {
-    grid-column: 1 / span 3;
+.hidden1 {
+  grid-area: hidden1;
+}
+
+.contact {
+  grid-area: contact;
 }
 
 .social-logos, .subscribe-button {
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin: 1em 0;
 }
 
 .social-logos a:nth-child(2) {
@@ -125,12 +108,6 @@
   justify-content: space-around;
 }
 
-.call-for-talks {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
 .email, .button {
   font-family: Neue Montreal;
   border-style: none;
@@ -140,6 +117,7 @@
 }
 
 .button {
+  flex-grow: 2;
   color: var(--color-gold);
   background: var(--color-black);
 }
@@ -181,34 +159,73 @@
     border-left: none;
 }
 
-.button {
-  flex-grow: 2;
+.secondmatrix {
+  grid-area: secondmatrix;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 1px;
+  background-color: var(--color-gold);
 }
 
-.hidden-bc {
-  display: none;
+.rectangle {
+    grid-column: 1 / span 3;
 }
 
-@media (min-width: 701px) and (max-width: 1200px) {
+.callfortalk {
+  grid-area: callfortalk;
+}
+
+.hidden2 {
+  grid-area: hidden2;
+}
+
+.hidden3 {
+  grid-area: hidden3;
+}
+
+.hidden4 {
+  grid-area: hidden4;
+}
+
+.sponsor {
+  grid-area: sponsor;
+}
+
+.subscribe-botton {
+  margin: 1em 0;
+}
+
+h3 {
+  margin-bottom: 1em;
+}
+
+/* NAVBAR MENU ICON */
+.bar1, .bar2, .bar3 {
+    background-color: var(--color-gold);
+}
+
+@media (max-width: 1000px) {
   .container {
-    grid-template-rows: 80px 2fr 1fr 1fr 80px;
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 80px 1fr 1fr 1fr 80px;
+    grid-template-areas:
+      'header navbar navbar navbar navbar navbar'
+      'logo_info logo_info logo_info matrix matrix matrix'
+      'description description description contact contact contact'
+      'callfortalk callfortalk callfortalk sponsor sponsor sponsor'
+      'footer footer footer footer footer footer';
   }
 
-  .header, .footer {
-    grid-column: 1 / span 2;
+  .logo_info {
+    display: grid;
+  }
+
+  .hidden1, .hidden2, .hidden3, .hidden4, .secondmatrix, .logo, .info {
+    display: none;
   }
 
   .mailing {
     width: 50%;
-  }
-
-  .hidden-mc {
-    display: none;
-  }
-
-  .hidden-bc {
-    display: grid;
   }
 
   .mailing {
@@ -221,22 +238,31 @@
 
   #mailchimp_form input[type=submit] {
     border-left: solid 1px var(--color-gold);
-}
+  }
 }
 
 @media (max-width: 700px) {
   .container {
-    grid-template-rows: 80px repeat(6, 1fr) 80px;
-    grid-template-columns: 1fr;
-  }
+      grid-template-rows: 80px 1fr 1fr 1fr 1fr 1fr 1fr 80px;
+      grid-template-areas:
+        'header navbar navbar navbar navbar navbar'
+        'logo_info logo_info logo_info logo_info logo_info logo_info'
+        'matrix matrix matrix matrix matrix matrix'
+        'description description description description description description'
+        'contact contact contact contact contact contact'
+        'callfortalk callfortalk callfortalk callfortalk callfortalk callfortalk'
+        'sponsor sponsor sponsor sponsor sponsor sponsor'
+        'footer footer footer footer footer footer';
 
-  .header, .footer {
-    grid-column: 1 / span 1;
   }
 
   .matrix {
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(5, 1fr);
+  }
+
+  .hidden-sc {
+    display: none;
   }
 
   .line-sc {
@@ -251,11 +277,4 @@
              var(--color-black) 100%);
   }
 
-  .hidden-sc {
-    display: none;
-  }
-
-  .hidden-bc {
-    display: grid;
-  }
 }
