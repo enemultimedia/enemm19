@@ -38,8 +38,9 @@
         <div id="myMenuIcon3" class="bar3"></div>
       </div>
       <script>
-        function myFunction(x) {
-          x.classList.toggle("change");
+        function myFunction(slug) {
+          $("[data-slug="+slug+"]").toggleClass('change');
+          //x.classList.toggle("change");
         }
         function openNav() {
           document.getElementById("mySidenav").classList.toggle("sidenavtoogle");
@@ -70,14 +71,14 @@
     <div class="square"></div>
   </div>
   <div id="myMatrix_Speaker" class="item matrix_speakers">
-    <div class="square speaker1" onclick="myFunction(this), openInfo(this)">
+    <div class="square speaker1" data-slug="studio-mals" onclick="myFunction('studio-mals'), openInfo('studio-mals')">
       <div class="speaker_info">
         <span class="speaker_name">Studio Mals</span><span>Studio Mals</span>
       </div>
     </div>
   </div>
-  <div id="myInfo" class="info_noshow">
-    <div id="myMenuInfo" class="menuInfo" onclick="openInfo(this)">
+  <div id="myInfo" class="info_noshow" data-slug="studio-mals">
+    <div id="myMenuInfo" class="menuInfo" data-slug="studio-mals" onclick="openInfo('studio-mals')">
       <div class="bar1"></div>
         <div class="bar2"></div>
         </div>
@@ -91,15 +92,23 @@
       </div>
     </div>
     <script>
-      function openInfo() {
-        document.getElementById("myInfo").classList.toggle("info_show");
-        document.getElementById("myHeader").classList.toggle("grayscale_toogle");
-        document.getElementById("myNavbar").classList.toggle("grayscale_toogle");
-        document.getElementById("myTitle").classList.toggle("grayscale_toogle");
-        document.getElementById("myHidden").classList.toggle("grayscale_toogle");
-        document.getElementById("myMatrix_Hidden").classList.toggle("grayscale_toogle");
-        document.getElementById("myMatrix_Speaker").classList.toggle("grayscale_toogle");
-        document.getElementById("myFooter").classList.toggle("grayscale_toogle");
+      function openInfo(slug) {
+        $(".info_noshow[data-slug="+slug+"]").toggleClass("info_show");
+        // document.getElementById("myInfo").classList.toggle("info_show");
+        $("#myHeader").toggleClass("grayscale_toogle");
+        //document.getElementById("myHeader").classList.toggle("grayscale_toogle");
+        $("#myNavbar").toggleClass("grayscale_toogle");
+        //document.getElementById("myNavbar").classList.toggle("grayscale_toogle");
+        $("#myTitle").toggleClass("grayscale_toogle");
+        //document.getElementById("myTitle").classList.toggle("grayscale_toogle");
+        $("#myHidden").toggleClass("grayscale_toogle");
+        //document.getElementById("myHidden").classList.toggle("grayscale_toogle");
+        $("#myMatrix_Hidden").toggleClass("grayscale_toogle");
+        //document.getElementById("myMatrix_Hidden").classList.toggle("grayscale_toogle");
+        $("#myMatrix_Speaker").toggleClass("grayscale_toogle");
+        //document.getElementById("myMatrix_Speaker").classList.toggle("grayscale_toogle");
+        $("#myFooter").toggleClass("grayscale_toogle");
+        //document.getElementById("myFooter").classList.toggle("grayscale_toogle");
       }
     </script>
   </div>
@@ -109,3 +118,17 @@
 </div>
 
 <%= javascript_include_tag 'pages', 'data-turbolinks-track': 'reload' %>
+
+<script type="text/javascript">
+  $(document).ready(() => {
+    var pathname = window.location.pathname;
+    var pathname_array = pathname.split('/');
+    console.log(pathname_array);
+    if(pathname_array.length == 3) {
+      var slug = pathname_array[2];
+      console.log(slug);
+      myFunction(slug);
+      openInfo(slug);
+    }
+  });
+</script>
