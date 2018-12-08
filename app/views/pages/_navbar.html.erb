@@ -1,0 +1,49 @@
+<div class="item header center">
+  <%= link_to root_path do %>
+  <h1>ENEMM'19</h1>
+  <% end %>
+</div>
+<div class="item navbar right">
+  <div class="bs">
+    <%= link_to 'Sobre', about_path %>
+    <%= link_to 'Oradores', speakers_path %>
+    <%= link_to 'Bilheteira', 'https://ti.to/encontro-nacional-de-estudantes-de-multimedia/2019' %>
+  </div>
+  <div class="ss">
+    <div id="mySidenav" class="sidenav">
+      <div class="lazy">
+        <div class="menu_title center">
+          <h1>ENEMM'19</h1>
+        </div>
+      </div>
+      <div class="menu_links">
+        <%= link_to about_path do %>
+        <h1>Sobre</h1>
+        <% end %>
+        <%= link_to speakers_path do %>
+        <h1>Oradores</h1>
+        <% end %>
+        <%= link_to 'https://ti.to/encontro-nacional-de-estudantes-de-multimedia/2019' do %>
+        <h1>Bilheteira</h1>
+        <% end %>
+      </div>
+    </div>
+    <div id="myMenuIcon" class="menuIcon" onclick="myFunction(this), openNav(this)">
+      <div id="myMenuIcon1" class="bar1"></div>
+      <div id="myMenuIcon2" class="bar2"></div>
+      <div id="myMenuIcon3" class="bar3"></div>
+    </div>
+    <script>
+      function myFunction(x) {
+        x.classList.toggle("change");
+      }
+      function openNav() {
+        document.getElementById("mySidenav").classList.toggle("sidenavtoogle");
+        document.getElementById("myMenuIcon").classList.toggle("menuIcontooglePosition");
+        document.getElementById("myMenuIcon1").classList.toggle("menuIcontoogle");
+        document.getElementById("myMenuIcon2").classList.toggle("menuIcontoogle");
+        document.getElementById("myMenuIcon3").classList.toggle("menuIcontoogle");
+      }
+    </script>
+  </div>
+</div>
