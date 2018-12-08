@@ -49,27 +49,19 @@
 
   function openInfo(slug) {
     $(".info_noshow[data-slug="+slug+"]").toggleClass("info_show");
-        // document.getElementById("myInfo").classList.toggle("info_show");
-        $("#myHeader").toggleClass("grayscale_toogle");
-        //document.getElementById("myHeader").classList.toggle("grayscale_toogle");
-        $("#myNavbar").toggleClass("grayscale_toogle");
-        //document.getElementById("myNavbar").classList.toggle("grayscale_toogle");
-        $("#myTitle").toggleClass("grayscale_toogle");
-        //document.getElementById("myTitle").classList.toggle("grayscale_toogle");
-        $("#myHidden").toggleClass("grayscale_toogle");
-        //document.getElementById("myHidden").classList.toggle("grayscale_toogle");
-        $("#myMatrix_Hidden").toggleClass("grayscale_toogle");
-        //document.getElementById("myMatrix_Hidden").classList.toggle("grayscale_toogle");
-        $("#myMatrix_Speaker").toggleClass("grayscale_toogle");
-        //document.getElementById("myMatrix_Speaker").classList.toggle("grayscale_toogle");
-        $("#myFooter").toggleClass("grayscale_toogle");
-        //document.getElementById("myFooter").classList.toggle("grayscale_toogle");
-      }
-    </script>
-  </div>
-  <div id="myFooter" class="item footer right">
-    <small>Made with ♥ by <a href="https://nei.dei.uc.pt" target="_blank">NEI/AAC</a></small>
-  </div>
+    $("#myHeader").toggleClass("grayscale_toogle");
+    $("#myNavbar").toggleClass("grayscale_toogle");
+    $("#myTitle").toggleClass("grayscale_toogle");
+    $("#myHidden").toggleClass("grayscale_toogle");
+    $("#myMatrix_Hidden").toggleClass("grayscale_toogle");
+    $("#myMatrix_Speaker").toggleClass("grayscale_toogle");
+    $("#myFooter").toggleClass("grayscale_toogle");
+  }
+</script>
+</div>
+<div id="myFooter" class="item footer right">
+  <small>Made with ♥ by <a href="https://nei.dei.uc.pt" target="_blank">NEI/AAC</a></small>
+</div>
 </div>
 
 <%= javascript_include_tag 'pages', 'data-turbolinks-track': 'reload' %>
@@ -78,10 +70,8 @@
   $(document).ready(() => {
     var pathname = window.location.pathname;
     var pathname_array = pathname.split('/');
-    console.log(pathname_array);
     if(pathname_array.length == 3) {
       var slug = pathname_array[2];
-      console.log(slug);
       myFunction(slug);
       openInfo(slug);
     }
