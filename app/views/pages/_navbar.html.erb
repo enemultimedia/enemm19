@@ -28,14 +28,14 @@
         <% end %>
       </div>
     </div>
-    <div id="myMenuIcon" class="menuIcon" onclick="myFunction(this), openNav(this)">
+    <div id="myMenuIcon" class="menuIcon" onclick="toggleMenu(this), openNav(this)">
       <div id="myMenuIcon1" class="bar1"></div>
       <div id="myMenuIcon2" class="bar2"></div>
       <div id="myMenuIcon3" class="bar3"></div>
     </div>
     <script>
-      function myFunction(x) {
-        x.classList.toggle("change");
+      function toggleMenu(x) {
+        $(x).toggleClass('change');
       }
       function openNav() {
         document.getElementById("mySidenav").classList.toggle("sidenavtoogle");

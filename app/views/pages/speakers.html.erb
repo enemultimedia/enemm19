@@ -43,6 +43,10 @@
   </div>
 </div>
 <script>
+  function myFunction(slug) {
+    $("[data-slug="+slug+"]").toggleClass('change');
+  }
+
   function openInfo(slug) {
     $(".info_noshow[data-slug="+slug+"]").toggleClass("info_show");
         // document.getElementById("myInfo").classList.toggle("info_show");
