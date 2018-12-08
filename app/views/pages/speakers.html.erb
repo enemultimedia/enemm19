@@ -28,38 +28,42 @@
       </div>
     </div>
   </div>
-  <div id="myInfo" class="info_noshow" data-slug="studio-mals">
+  <div id="myInfo" class="info_content info_noshow" data-slug="studio-mals">
     <div id="myMenuInfo" class="menuInfo" data-slug="studio-mals" onclick="openInfo('studio-mals')">
       <div class="bar1"></div>
       <div class="bar2"></div>
     </div>
     <h1>Studio Mals</h1>
+    <h3>Sobre o nosso estúdio</h3>
     <p>O Studio Mals produz imagens e filmagens cativantes e de alta qualidade. O seu trabalho é quase sempre tangível - de preferência feito à mão. Com uma abordagem conceptual, resulta numa forte linguagem visual.</p>
-    <p></p>
+    <h3>Sobre a nossa sessão</h3>
+    <p>Nós sabemos que uma simples apresentação de portfólio pode tornar-se bastante aborrecida. Preferimos mostrar o que se passa por trás de cada uma das nossas criações e discutir o nosso processo. Assim, torna-se mais fácil explicar como chegamos aos nossos produtos extremamente atraentes e chamativos!</p>
+    <hr/>
+    <h3>About our studio</h3>
     <p>Mals crafts high quality eye-catching images and film. Our work is often tangible -preferably handmade- and has a conceptual approach. Combined with a playful attitude, it results in a strong visual language.</p>
+    <h3>About our talk</h3>
+    <p>We know a simple portfolio slideshow is very boring. We prefer to show loads of behind the scenes and talk about the making of process. This way we can really get to the bottom of our ridiculously sexy crafted eye candy!  </p>
     <a href="http://www.studiomals.com" target="_blank">Saber Mais</a>
   </div>
-</div>
-<script>
-  function myFunction(slug) {
-    $("[data-slug="+slug+"]").toggleClass('change');
-  }
+  <script>
+    function myFunction(slug) {
+      $("[data-slug="+slug+"]").toggleClass('change');
+    }
 
-  function openInfo(slug) {
-    $(".info_noshow[data-slug="+slug+"]").toggleClass("info_show");
-    $("#myHeader").toggleClass("grayscale_toogle");
-    $("#myNavbar").toggleClass("grayscale_toogle");
-    $("#myTitle").toggleClass("grayscale_toogle");
-    $("#myHidden").toggleClass("grayscale_toogle");
-    $("#myMatrix_Hidden").toggleClass("grayscale_toogle");
-    $("#myMatrix_Speaker").toggleClass("grayscale_toogle");
-    $("#myFooter").toggleClass("grayscale_toogle");
-  }
-</script>
-</div>
-<div id="myFooter" class="item footer right">
-  <small>Made with ♥ by <a href="https://nei.dei.uc.pt" target="_blank">NEI/AAC</a></small>
-</div>
+    function openInfo(slug) {
+      $(".info_noshow[data-slug="+slug+"]").toggleClass("info_show");
+      $("#myHeader").toggleClass("grayscale_toogle");
+      $("#myNavbar").toggleClass("grayscale_toogle");
+      $("#myTitle").toggleClass("grayscale_toogle");
+      $("#myHidden").toggleClass("grayscale_toogle");
+      $("#myMatrix_Hidden").toggleClass("grayscale_toogle");
+      $("#myMatrix_Speaker").toggleClass("grayscale_toogle");
+      $("#myFooter").toggleClass("grayscale_toogle");
+    }
+  </script>
+  <div id="myFooter" class="item footer right">
+    <small>Made with ♥ by <a href="https://nei.dei.uc.pt" target="_blank">NEI/AAC</a></small>
+  </div>
 </div>
 
 <%= javascript_include_tag 'pages', 'data-turbolinks-track': 'reload' %>
@@ -73,5 +77,8 @@
       myFunction(slug);
       openInfo(slug);
     }
+  });
+  $(".info_show").on("scroll", function(data) {
+    console.log(data);
   });
 </script>
