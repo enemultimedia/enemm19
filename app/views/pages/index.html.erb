@@ -3,13 +3,14 @@
 
 <div class="container">
   <div class="item header center">
-      <%= link_to root_path do %>
-        <h1>ENEMM'19</h1>
-        <% end %>
+    <%= link_to root_path do %>
+      <h1>ENEMM'19</h1>
+    <% end %>
   </div>
   <div class="item navbar right">
     <div class="bs">
       <%= link_to 'Sobre', about_path %>
+      <%= link_to 'Oradores', speakers_path %>
       <%= link_to 'Bilheteira', 'https://ti.to/encontro-nacional-de-estudantes-de-multimedia/2019' %>
     </div>
     <div class="ss">
@@ -22,6 +23,9 @@
         <div class="menu_links">
           <%= link_to about_path do %>
             <h1>Sobre</h1>
+          <% end %>
+          <%= link_to speakers_path do %>
+            <h1>Oradores</h1>
           <% end %>
           <%= link_to 'https://ti.to/encontro-nacional-de-estudantes-de-multimedia/2019' do %>
             <h1>Bilheteira</h1>

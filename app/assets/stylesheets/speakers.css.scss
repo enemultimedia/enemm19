@@ -1,0 +1,245 @@
+html {
+  background-color: var(--color-black);
+  color: var(--color-black);
+}
+
+.container {
+  height: 100%;
+  display: grid;
+  grid-template-areas:
+    'header navbar navbar navbar navbar navbar'
+    'title title hidden matrix_hidden matrix_hidden matrix_hidden'
+    'matrix_speakers matrix_speakers matrix_speakers matrix_speakers matrix_speakers matrix_speakers'
+    'footer footer footer footer footer footer';
+  grid-gap: 1px;
+  background-color: var(--color-black);
+}
+
+.item {
+  background-color: var(--color-gold);
+}
+
+.title, .price_early, .price_group, .price_single {
+  padding: 2em;
+}
+
+.title {
+  grid-area: title;
+  min-width: 100px;
+  min-height: 150px;
+}
+
+.matrix_hidden {
+  grid-area: matrix_hidden;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 1px;
+  background-color: var(--color-black);
+  height: 214px;
+}
+
+.matrix_hidden .square {
+  background-color: var(--color-gold);
+  min-width: 75px;
+  min-height: 75px;
+}
+
+.hidden {
+  grid-area: hidden;
+  min-width: 214px;
+}
+
+.matrix_speakers {
+  grid-area: matrix_speakers;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 1px;
+  background-color: var(--color-black);
+}
+
+.matrix_speakers .square {
+  background-color: var(--color-gold);
+  min-width: 100px;
+  min-height: 200px;
+}
+
+.speaker1 {
+  background-image: image-url('TeamMals.jpg');
+  background-size: cover;
+  cursor: pointer;
+}
+
+//.speaker2 {
+//  min-height: 100px;
+//  background-image: url(file:///Users/luisgonzaganunesmoreira/Desktop/enemm/assets/img/speaker2.png);
+//  background-size: cover;
+//  cursor: pointer;
+//}
+
+.speaker_info {
+  display: none;
+}
+
+.speaker_info p:last-child{
+  padding-top: .2em;
+  font-weight: 100;
+}
+
+.speaker1:hover > .speaker_info, .speaker2:hover > .speaker_info {
+  display: inline-flex;
+  flex-direction: column;
+  padding: .5em;
+  background-color: var(--color-black);
+  color: var(--color-gold);
+  font-weight: 500;
+}
+
+.speaker_name {
+  font-weight: bold;
+}
+
+a {
+  color: var(--color-black);
+}
+
+/* NAVBAR MENU ICON */
+.bar1, .bar2, .bar3 {
+    background-color: var(--color-black);
+}
+
+html .info_show {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: fixed;
+  width: 600px;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  background: var(--color-black);
+  color: var(--color-gold);
+}
+
+.info_noshow {
+  display: none;
+}
+
+.info_noshow a {
+  display: flex;
+  align-self: flex-start;
+  margin: 2rem 0 0 2rem;
+  padding: .5em;
+  color: var(--color-gold);
+  border: 1px solid var(--color-gold);
+}
+
+.info_noshow a:hover {
+  text-decoration: none;
+  color: var(--color-black);
+  border: 1px solid var(--color-black);
+  background-color: var(--color-gold);
+}
+
+
+.info_show p, .info_show h1, .info_show h3 {
+  margin: 1rem 2rem;
+}
+
+.info_show h1 {
+  margin-top: 5rem;
+}
+
+.info_show h3 {
+  margin-top: 3rem;
+}
+
+.menuInfo {
+    position: absolute;
+    top: 1.2rem;
+    right: 1rem;
+    cursor: pointer;
+}
+
+.menuInfo .bar1, .menuInfo .bar2, .menuInfo .bar3 {
+    background-color: var(--color-gold);
+}
+
+.menuInfo .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-1px, 6px);
+    transform: rotate(-45deg) translate(-1px, 6px);
+}
+
+.menuInfo .bar2 {
+    -webkit-transform: rotate(45deg) translate(-2px, -7px);
+    transform: rotate(45deg) translate(-2px, -7px);
+}
+
+.grayscale_toogle {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+@media (max-width: 950px) {
+  .container {
+      grid-template-rows: 80px 80px 1610px 80px;
+      grid-template-areas:
+        'header navbar'
+        'title hidden'
+        'matrix_speakers matrix_speakers'
+        'footer footer'
+  }
+
+  .matrix_speakers {
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .matrix_hidden {
+    display: none;
+  }
+
+  .title {
+    justify-content: center;
+    align-items: center;
+    min-width: 0;
+    min-height: 0;
+  }
+
+  .hidden {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .container {
+    grid-template-rows: 80px 80px 2420px 80px;
+      grid-template-areas:
+        'header navbar'
+        'title title'
+        'matrix_speakers matrix_speakers'
+        'footer footer'
+  }
+
+  .matrix_speakers {
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .matrix_hidden, .hidden {
+    display: none;
+  }
+
+  .title {
+    justify-content: flex-start;
+  }
+
+  html .info_show {
+    width: 100%;
+    height: 100%;
+    top: 0;
+  }
+}
