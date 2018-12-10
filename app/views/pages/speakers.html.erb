@@ -80,9 +80,17 @@
         $("#myMatrix_Hidden").removeClass("grayscale_toogle");
         $("#myMatrix_Speaker").removeClass("grayscale_toogle");
         $("#myFooter").removeClass("grayscale_toogle");
+
+        if(window.history.pushState) {
+          window.history.pushState(null, '', '/speakers');
+        }
       } else if($(".info_show").length !== 0) {
         $(".info_noshow").not("[data-slug="+slug+"]").removeClass('info_show');
         $(".info_noshow[data-slug="+slug+"]").addClass("info_show");
+
+        if(window.history.pushState) {
+          window.history.pushState(null, '', '/speakers/'+slug);
+        }
       } else {
         $(".info_noshow[data-slug="+slug+"]").addClass("info_show");
         $("#myHeader").addClass("grayscale_toogle");
@@ -92,6 +100,10 @@
         $("#myMatrix_Hidden").addClass("grayscale_toogle");
         $("#myMatrix_Speaker").addClass("grayscale_toogle");
         $("#myFooter").addClass("grayscale_toogle");
+
+        if(window.history.pushState) {
+          window.history.pushState(null, '', '/speakers/'+slug);
+        }
       }
     }
   </script>
