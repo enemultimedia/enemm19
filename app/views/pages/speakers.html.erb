@@ -27,6 +27,18 @@
         <span class="speaker_name">Studio Mals</span><span>Studio Mals</span>
       </div>
     </div>
+    <div class="square speaker2" data-slug="pedro-pombo" onclick="myFunction('pedro-pombo'), openInfo('pedro-pombo')">
+      <div class="speaker_info">
+        <span class="speaker_name">Pedro Pombo</span><span>Pedro Pombo</span>
+      </div>
+    </div>
+    <% (1..13).each do |index| %>
+      <div class="square speaker_temp">
+        <div class="speaker_info">
+          <span class="speaker_name">Por anunciar</span>
+        </div>
+      </div>
+    <% end %>
   </div>
   <div id="myInfo" class="info_content info_noshow" data-slug="studio-mals">
     <div id="myMenuInfo" class="menuInfo" data-slug="studio-mals" onclick="openInfo('studio-mals')">
@@ -45,20 +57,42 @@
     <p>We know a simple portfolio slideshow is very boring. We prefer to show loads of behind the scenes and talk about the making of process. This way we can really get to the bottom of our ridiculously sexy crafted eye candy!  </p>
     <a href="http://www.studiomals.com" target="_blank">Saber Mais</a>
   </div>
+  <div id="myInfo" class="info_content info_noshow" data-slug="pedro-pombo">
+    <div id="myMenuInfo" class="menuInfo" data-slug="pedro-pombo" onclick="openInfo('pedro-pombo')">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+    </div>
+    <h1>Pedro Pombo</h1>
+    <p>Pedro Pombo é Director da Fábrica Centro Ciência Viva de Aveiro, docente no Departamento de Física da Universidade de Aveiro e especialista em Holografia, Comunicação de Ciência e Ensino da Física. Desenvolve investigação em técnicas holográficas, holografia educacional, compreensão pública da ciência, STEAM na educação em ciência e ensino experimental da física. Desenvolve exposições, centros de ciência, espaços Maker, materiais educativos, cursos de formação. Foi coordenador de 3 projetos europeus, 9 exposições, 29 projetos nacionais e é autor de 1 capítulo de livro, 3 manuais escolares, mais de 50 publicações em revistas nacionais e internacionais e recebeu 9 prémios europeus.</p>
+  </div>
   <script>
     function myFunction(slug) {
       $("[data-slug="+slug+"]").toggleClass('change');
     }
 
     function openInfo(slug) {
-      $(".info_noshow[data-slug="+slug+"]").toggleClass("info_show");
-      $("#myHeader").toggleClass("grayscale_toogle");
-      $("#myNavbar").toggleClass("grayscale_toogle");
-      $("#myTitle").toggleClass("grayscale_toogle");
-      $("#myHidden").toggleClass("grayscale_toogle");
-      $("#myMatrix_Hidden").toggleClass("grayscale_toogle");
-      $("#myMatrix_Speaker").toggleClass("grayscale_toogle");
-      $("#myFooter").toggleClass("grayscale_toogle");
+      if($(".info_noshow[data-slug="+slug+"]").hasClass('info_show')) {
+        $(".info_noshow[data-slug="+slug+"]").removeClass("info_show");
+        $("#myHeader").removeClass("grayscale_toogle");
+        $("#myNavbar").removeClass("grayscale_toogle");
+        $("#myTitle").removeClass("grayscale_toogle");
+        $("#myHidden").removeClass("grayscale_toogle");
+        $("#myMatrix_Hidden").removeClass("grayscale_toogle");
+        $("#myMatrix_Speaker").removeClass("grayscale_toogle");
+        $("#myFooter").removeClass("grayscale_toogle");
+      } else if($(".info_show").length !== 0) {
+        $(".info_noshow").not("[data-slug="+slug+"]").removeClass('info_show');
+        $(".info_noshow[data-slug="+slug+"]").addClass("info_show");
+      } else {
+        $(".info_noshow[data-slug="+slug+"]").addClass("info_show");
+        $("#myHeader").addClass("grayscale_toogle");
+        $("#myNavbar").addClass("grayscale_toogle");
+        $("#myTitle").addClass("grayscale_toogle");
+        $("#myHidden").addClass("grayscale_toogle");
+        $("#myMatrix_Hidden").addClass("grayscale_toogle");
+        $("#myMatrix_Speaker").addClass("grayscale_toogle");
+        $("#myFooter").addClass("grayscale_toogle");
+      }
     }
   </script>
   <div id="myFooter" class="item footer right">

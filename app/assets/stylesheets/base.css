@@ -70,6 +70,7 @@ a:hover {
 }
 
 .header {
+  height: 80px;
   grid-area: header;
   padding: 0 2em;
 }
@@ -86,7 +87,8 @@ a:hover {
 }
 
 .footer {
+  height: 80px;
   grid-area: footer;
   align-items: center;
-  padding: 2em;
+  padding-right: 2em;
 }
