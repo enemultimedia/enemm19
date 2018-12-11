@@ -1,5 +1,5 @@
 html {
-  font-family: Neue Montreal;
+  font-family: 'Neue Montreal', Helvetica, Arial, Sans-Serif;
   height: 100%;
   width: 100%;
   overflow-x: hidden;
@@ -17,21 +17,42 @@ h1, h2, h3 {
   margin: 0;
 }
 
+h1{
+  font-size: 38px;
+}
+
+h2{
+  font-size: 32px;
+}
+
+h3{
+  font-size: 28px;
+}
+
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: var(--color-gold);
+    color: rgba(255,170,49,0.5);
     opacity: 1; /* Firefox */
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: var(--color-gold);
+    color: rgba(255,170,49,0.5);
 }
 
 ::-ms-input-placeholder { /* Microsoft Edge */
-    color: var(--color-gold);
+    color: rgba(255,170,49,0.5);
+}
+
+textarea{
+  resize: vertical;
+  max-height: 120px;
 }
 
 textarea:focus, input:focus, a:focus {
     outline: none;
+}
+
+input[type=submit]{
+  font-size: 16px;
 }
 
 input[type=submit]:hover {
@@ -40,6 +61,8 @@ input[type=submit]:hover {
 
 p {
   margin: 0;
+  font-size: 18px;
+  line-height: 26px;
 }
 
 a {
@@ -72,7 +95,9 @@ a:hover {
 .header {
   height: 80px;
   grid-area: header;
+  align-items: flex-start;
   padding: 0 2em;
+  border-right: solid 2px var(--color-gold);
 }
 
 .navbar {
@@ -80,9 +105,10 @@ a:hover {
   height: 80px;
   align-items: center;
   padding-right: 2em;
+  justify-content: space-between;
 }
 
-.navbar a {
+.navbar a:not(:last-child) {
   margin-right: 1em;
 }
 
@@ -91,4 +117,22 @@ a:hover {
   grid-area: footer;
   align-items: center;
   padding-right: 2em;
+}
+
+.footer p{
+  font-size: 16px;
+}
+
+@media (max-width: 1200px) {
+  h1{
+    font-size: 32px;
+  }
+
+  h2{
+    font-size: 28px;
+  }
+
+  h3{
+    font-size: 22px;
+  }
 }

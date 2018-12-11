@@ -8,12 +8,16 @@ html {
   display: grid;
   grid-template-rows: 80px 214px 1fr 80px;
   grid-template-areas:
-    'header navbar navbar navbar navbar navbar'
+    'navbar navbar navbar navbar navbar navbar'
     'title title hidden matrix_hidden matrix_hidden matrix_hidden'
     'matrix_speakers matrix_speakers matrix_speakers matrix_speakers matrix_speakers matrix_speakers'
     'footer footer footer footer footer footer';
-  grid-gap: 1px;
+  grid-gap: 2px;
   background-color: var(--color-black);
+}
+
+.header{
+  border-right: solid 2px var(--color-black);
 }
 
 .item {
@@ -35,7 +39,7 @@ html {
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(6, 1fr);
-  grid-gap: 1px;
+  grid-gap: 2px;
   background-color: var(--color-black);
   height: 214px;
 }
@@ -56,7 +60,7 @@ html {
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(5, 1fr);
-  grid-gap: 1px;
+  grid-gap: 2px;
   background-color: var(--color-black);
 }
 
@@ -196,7 +200,7 @@ html .info_show {
   .container {
       grid-template-rows: 80px 80px 1fr 80px;
       grid-template-areas:
-        'header navbar'
+        'navbar navbar'
         'title hidden'
         'matrix_speakers matrix_speakers'
         'footer footer'
@@ -227,7 +231,7 @@ html .info_show {
   .container {
     grid-template-rows: 80px 80px 1fr 80px;
     grid-template-areas:
-      'header navbar'
+      'navbar navbar'
       'title title'
       'matrix_speakers matrix_speakers'
       'footer footer'
