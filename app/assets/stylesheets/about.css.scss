@@ -7,17 +7,19 @@ html {
   height: 100%;
   display: grid;
   grid-template-areas:
-    'header navbar navbar navbar navbar navbar'
+    'navbar navbar navbar navbar navbar navbar'
     'title title about about about about'
     'matrix matrix about about about about'
     'hidden1 hidden1 about about about about'
     'img img local local local local'
     'hidden2 hidden2 local local local local'
-    'hidden2 hidden2 map map map map'
-    'hidden2 hidden2 partners partners partners partners'
     'footer footer footer footer footer footer';
-  grid-gap: 1px;
+  grid-gap: 2px;
   background-color: var(--color-purple);
+}
+
+.header{
+  border-right: solid 2px var(--color-purple);
 }
 
 .item {
@@ -55,7 +57,7 @@ html {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 1px;
+  grid-gap: 2px;
   background-color: var(--color-purple);
 }
 
@@ -149,14 +151,12 @@ a {
 @media (max-width: 950px) {
   .container {
     grid-template-areas:
-      'header navbar navbar navbar navbar navbar'
+      'navbar navbar navbar navbar navbar navbar'
       'title title about about about about'
       'hidden1 hidden1 about about about about'
       'hidden1 hidden1 about about about about'
       'img img local local local local'
       'hidden2 hidden2 local local local local'
-      'hidden2 hidden2 map map map map'
-      'hidden2 hidden2 partners partners partners partners'
       'footer footer footer footer footer footer';
   }
 
@@ -189,13 +189,11 @@ a {
   .container {
       grid-template-rows: 80px 80px 1fr 1fr 1fr 1fr 1fr 80px;
       grid-template-areas:
-        'header navbar'
+        'navbar navbar'
         'title title'
         'about about'
         'img img'
         'local local'
-        'map map'
-        'partners partners'
         'footer footer'
   }
 

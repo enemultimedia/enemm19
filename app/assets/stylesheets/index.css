@@ -1,15 +1,16 @@
 .container {
   height: 100%;
   display: grid;
-  grid-template-rows: 80px 1fr 1fr 1fr 1fr 80px;
+  grid-template-rows: 80px 33vw 33vw 33vw 33vw 80px;
+  grid-template-columns: repeat(6, 1fr);
   grid-template-areas:
-    'header navbar navbar navbar navbar navbar'
+    'navbar navbar navbar navbar navbar navbar'
     'logo logo info info matrix matrix'
     'description description hidden1 hidden1 contact contact'
     'secondmatrix secondmatrix callfortalk callfortalk hidden2 hidden2'
     'hidden3 hidden3 hidden4 hidden4 sponsor sponsor'
     'footer footer footer footer footer footer';
-  grid-gap: 1px;
+  grid-gap: 2px;
   background-color: var(--color-gold);
 }
 
@@ -26,6 +27,13 @@
 
 .logo {
   grid-area: logo;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img{
+  width: 75%;
 }
 
 .info {
@@ -38,7 +46,8 @@
 }
 
 .logo_info img {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  height: 35%;
 }
 
 .bottom {
@@ -58,7 +67,7 @@
   display: grid;
   grid-template-rows: repeat(5, 1fr);
   grid-template-columns: repeat(5, 1fr);
-  grid-gap: 1px;
+  grid-gap: 2px;
   background-color: var(--color-gold);
 }
 
@@ -73,14 +82,15 @@
   background:
        linear-gradient(to top right,
            var(--color-black) 0%,
-           var(--color-black) calc(50% - 0.8px),
+           var(--color-black) calc(50% - 2px),
            var(--color-gold) 50%,
-           var(--color-black) calc(50% + 0.8px),
+           var(--color-black) calc(50% + 2px),
            var(--color-black) 100%);
 }
 
 .description {
   grid-area: description;
+  justify-content: flex-end;
 }
 
 .hidden1 {
@@ -89,36 +99,47 @@
 
 .contact {
   grid-area: contact;
+  justify-content: flex-end;
 }
 
 .social-logos, .subscribe-button {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 1em 0;
+  margin: 1.5em 0;
 }
 
 .social-logos a:nth-child(2) {
   margin: 0 20px;
 }
 
-.mailchimp {
+.mailchimp{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  justify-content: flex-start;
 }
 
 .email, .button {
   font-family: Neue Montreal;
   border-style: none;
   border: 2px solid var(--color-gold);
+  font-size: 16px;
+  padding: 10px 20px;
+}
+
+.email{
   padding: 10px;
-  font-size: smaller;
+  font-size: 16px;
 }
 
 .call-for-talks {
   display: flex;
   flex-direction: column;
+  width: 100%;
+}
+
+.call-for-talks input{
 }
 
 .call-for-talks input[type=text] {
@@ -130,7 +151,6 @@
 }
 
 .button {
-  flex-grow: 2;
   color: var(--color-gold);
   background: var(--color-black);
 }
@@ -144,20 +164,17 @@
   flex-grow: 3;
   color: var(--color-gold);
   background: var(--color-black);
-  opacity: 0.8;
 }
 
 .input {
-  width: 60%;
   flex-grow: 3;
-  opacity: 0.8;
   font-family: Neue Montreal;
   color: var(--color-gold);
   background: none;
   border-style: none;
   border: 2px solid var(--color-gold);
   padding: 10px;
-  font-size: smaller;
+  font-size: 16px;
 }
 
 #talk_suggestion_subject_or_speaker {
@@ -175,9 +192,9 @@
 .secondmatrix {
   grid-area: secondmatrix;
   display: grid;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   grid-template-columns: repeat(5, 1fr);
-  grid-gap: 1px;
+  grid-gap: 2px;
   background-color: var(--color-gold);
 }
 
@@ -185,8 +202,18 @@
     grid-column: 1 / span 3;
 }
 
+.rectangle-right {
+    grid-column: 3 / span 3;
+}
+
 .callfortalk {
   grid-area: callfortalk;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.callfortalk-text{
+  margin-bottom: 1.5em;
 }
 
 .hidden2 {
@@ -203,14 +230,15 @@
 
 .sponsor {
   grid-area: sponsor;
+  justify-content: space-between;
 }
 
 .subscribe-botton {
-  margin: 1em 0;
+  margin: 1.5em 0;
 }
 
 h3 {
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
 }
 
 /* NAVBAR MENU ICON */
@@ -218,11 +246,11 @@ h3 {
     background-color: var(--color-gold);
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
   .container {
-    grid-template-rows: 80px 1fr 1fr 1fr 80px;
+    grid-template-rows: 80px 50vw auto auto auto 80px;
     grid-template-areas:
-      'header navbar navbar navbar navbar navbar'
+      'navbar navbar navbar navbar navbar navbar'
       'logo_info logo_info logo_info matrix matrix matrix'
       'description description description contact contact contact'
       'callfortalk callfortalk callfortalk sponsor sponsor sponsor'
@@ -238,15 +266,20 @@ h3 {
   }
 
   .mailing {
-    width: 50%;
-  }
-
-  .mailing {
-    width: 75%;
+    width: 100%;
   }
 
   .mailchimp {
     flex-wrap: wrap;
+  }
+
+  .callfortalk {
+    overflow: visible;
+    justify-content: flex-start;
+  }
+
+  .description {
+    justify-content: flex-start;
   }
 
   #mailchimp_form input[type=submit] {
@@ -256,9 +289,9 @@ h3 {
 
 @media (max-width: 700px) {
   .container {
-      grid-template-rows: 80px 1fr 1fr 1fr 1fr 1fr 1fr 80px;
+      grid-template-rows: auto;
       grid-template-areas:
-        'header navbar navbar navbar navbar navbar'
+        'navbar navbar navbar navbar navbar navbar'
         'logo_info logo_info logo_info logo_info logo_info logo_info'
         'matrix matrix matrix matrix matrix matrix'
         'description description description description description description'
@@ -272,6 +305,7 @@ h3 {
   .matrix {
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(5, 1fr);
+    height: 38.5vw;
   }
 
   .hidden-sc {
@@ -284,10 +318,14 @@ h3 {
     background:
          linear-gradient(to top right,
              var(--color-black) 0%,
-             var(--color-black) calc(50% - 0.8px),
+             var(--color-black) calc(50% - 2px),
              var(--color-gold) 50%,
-             var(--color-black) calc(50% + 0.8px),
+             var(--color-black) calc(50% + 2px),
              var(--color-black) 100%);
+  }
+
+  .logo_info img {
+    height: auto;
   }
 
 }

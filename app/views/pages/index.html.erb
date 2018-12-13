@@ -85,7 +85,7 @@
 <div class="item callfortalk">
   <h3>Queres fazer parte do evento?</h3>
   <div class="mailing">
-    <p>Tens um tema ou um orador que gostavas mesmo de ver no ENEMM? Sugere em baixo!</p>
+    <p class="callfortalk-text">Tens um tema ou um orador que gostavas mesmo de ver no ENEMM? Sugere em baixo!</p>
     <%= render partial: 'talk_suggestion_form', locals: {talk_suggestion: @talk_suggestion} %>
   </div>
 </div>
@@ -103,19 +103,28 @@
   <div class="square"></div>
   <div class="square"></div>
   <div class="square"></div>
+  <div class="square"></div>
+  <div class="square"></div>
+  <div class="square rectangle-right"></div>
+  <div class="square"></div>
+  <div class="square"></div>
+  <div class="square"></div>
+  <div class="square"></div>
+  <div class="square"></div>
 </div>
 <div class="item hidden2"></div>
 <div class="item hidden3"></div>
 <div class="item hidden4"></div>
 <div class="item sponsor">
-  <h3>Queres patrocinar o evento?</h3>
-  <p>Carrega no botão e sabe mais!</p>
-  <div class="subscribe-botton">
-    <p>
-      <%= link_to 'Documento de Apresentação.pdf', target: '_blank' do%>
-      <input type="submit" value="Mais informação" name="subscribe" class="button">
-      <% end %>
-    </p>
+  <div>
+    <h3>Queres patrocinar o evento?</h3>
+    <div class="subscribe-botton">
+      <p>
+        <%= link_to 'Documento de Apresentação.pdf', target: '_blank' do%>
+        <input type="submit" value="Sabe mais informação" name="subscribe" class="button">
+        <% end %>
+      </p>
+    </div>
   </div>
   <div class="mailing">
     <h3>Contacto</h3>
@@ -123,7 +132,7 @@
   </div>
 </div>
 <div class="item footer right">
-  <small>Made with ♥ by <a href="https://nei.dei.uc.pt" target="_blank">NEI/AAC</a></small>
+  <p>Made with ♥ by <a href="https://nei.dei.uc.pt" target="_blank">NEI/AAC</a></p>
 </div>
 </div>
 

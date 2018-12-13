@@ -1,17 +1,17 @@
 @font-face {
-  font-family: Neue Montreal;
-  src: font-url('NeueMontreal-Medium.otf');
-  font-weight: normal;
+  font-family: 'Neue Montreal';
+  src: font-url('NeueMontreal-Medium.otf') format('opentype');
+  font-weight: 500;
 }
 
 @font-face {
-  font-family: Neue Montreal;
-  src: font-url('NeueMontreal-Bold.otf');
-  font-weight: bold;
+  font-family: 'Neue Montreal';
+  src: font-url('NeueMontreal-Bold.otf') format('opentype');
+  font-weight: 700;
 }
 
 @font-face {
-  font-family: Neue Montreal;
-  src: font-url('NeueMontreal-Regular.otf');
+  font-family: 'Neue Montreal';
+  src: font-url('NeueMontreal-Regular.otf') format('opentype');
   font-weight: 400;
 }
