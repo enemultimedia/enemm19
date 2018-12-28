@@ -70,16 +70,7 @@ html {
   min-height: 250px;
 }
 
-.speaker1 {
-  background-image: image-url('TeamMals.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  cursor: pointer;
-}
-
-.speaker2 {
-  background-image: image-url('PedroPombo.jpg');
+.speaker {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
