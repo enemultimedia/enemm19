@@ -16,6 +16,15 @@ html {
   background-color: var(--color-black);
 }
 
+.header a:hover {
+  color: var(--color-gold);
+  background-color: var(--color-black);
+}
+
+.menu_links--speakers{
+  font-weight: 600;
+}
+
 .header{
   border-right: solid 2px var(--color-black);
 }
@@ -222,6 +231,7 @@ html .info_show {
   border: 2px solid var(--color-gold);
   font-size: 16px;
   padding: 10px 20px;
+  transition: color 0.2s ease, background-color 0.2s ease;
 
   &:hover{
     text-decoration: none;

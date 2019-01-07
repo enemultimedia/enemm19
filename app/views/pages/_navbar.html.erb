@@ -6,9 +6,9 @@
   </div>
   <div>
     <div class="bs">
-      <%= link_to 'Sobre', about_path %>
-      <%= link_to 'Oradores', speakers_path %>
-      <%= link_to 'Bilheteira', '//tickets.enemm.pt' %>
+      <%= link_to 'Sobre', about_path, class:"menu_links--about" %>
+      <%= link_to 'Oradores', speakers_path, class:"menu_links--speakers" %>
+      <%= link_to 'Bilheteira', '//tickets.enemm.pt', target:"_blank" %>
     </div>
     <div class="ss">
       <div id="mySidenav" class="sidenav">
@@ -24,7 +24,7 @@
           <%= link_to speakers_path do %>
           <h1>Oradores</h1>
           <% end %>
-          <%= link_to '//tickets.enemm.pt' do %>
+          <%= link_to '//tickets.enemm.pt', target:"_blank" do %>
           <h1>Bilheteira</h1>
           <% end %>
         </div>
