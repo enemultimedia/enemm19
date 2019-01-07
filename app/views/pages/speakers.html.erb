@@ -29,7 +29,7 @@
         </div>
       </div>
     <% end %>
-    <% (1..7).each do |index| %>
+    <% (1..(10-@speakers.length)).each do |index| %>
       <div class="square speaker_temp">
         <div class="speaker_info">
           <span class="speaker_name">Por anunciar</span>
@@ -38,7 +38,7 @@
     <% end %>
   </div>
   <% @speakers.each do |speaker| %>
-    <div id="myInfo" class="info_content info_noshow" data-slug="<%= speaker.slug %>">
+    <div class="info_content" data-slug="<%= speaker.slug %>">
       <div id="myMenuInfo" class="menuInfo" data-slug="<%= speaker.slug %>" onclick="openInfo('<%= speaker.slug %>')">
         <div class="bar1"></div>
         <div class="bar2"></div>
@@ -61,22 +61,22 @@
   <% end %>
   <script>
     function openInfo(slug) {
-      if($(".info_noshow[data-slug="+slug+"]").hasClass('info_show')) {
-        $(".info_noshow[data-slug="+slug+"]").removeClass("info_show");
+      if($(".info_content[data-slug="+slug+"]").hasClass('info_show')) {
+        $(".info_content[data-slug="+slug+"]").removeClass("info_show");
         $(".info_content-background").hide();
 
         if(window.history.pushState) {
           window.history.pushState(null, '', '/speakers');
         }
       } else if($(".info_show").length !== 0) {
-        $(".info_noshow").not("[data-slug="+slug+"]").removeClass('info_show');
-        $(".info_noshow[data-slug="+slug+"]").addClass("info_show");
+        $(".info_content").removeClass('info_show');
+        $(".info_content[data-slug="+slug+"]").addClass("info_show");
 
         if(window.history.pushState) {
           window.history.pushState(null, '', '/speakers/'+slug);
         }
       } else {
-        $(".info_noshow[data-slug="+slug+"]").addClass("info_show");
+        $(".info_content[data-slug="+slug+"]").addClass("info_show");
         $(".info_content-background").show();
 
         if(window.history.pushState) {

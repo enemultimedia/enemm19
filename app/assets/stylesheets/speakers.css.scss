@@ -151,7 +151,7 @@ a {
     background-color: var(--color-black);
 }
 
-html .info_show {
+.info_content {
   position: fixed;
   overflow-y: scroll;
   display: flex;
@@ -160,22 +160,16 @@ html .info_show {
   width: 600px;
   top: 0;
   bottom: 0;
-  right: 0;
-  z-index: 10;
+  right: -600px;
   background: var(--color-black);
   color: var(--color-gold);
-  animation: infoShowAnimation 0.2s ease;
   padding: 1rem 0 3rem 0;
   z-index: 3;
+  transition: 0.3s ease;
 }
 
-@keyframes infoShowAnimation{
-  from{
-    transform: translateX(100%);
-  }
-  to{
-    transform: translateX(0%);
-  }
+.info_show {
+  right: 0;
 }
 
 .info_content-background{
@@ -189,28 +183,21 @@ html .info_show {
   z-index: 2;
 }
 
-.info_noshow {
-  display: none;
-}
-
-.info_noshow a {
+.info_content p, .info_content h1, .info_content h3, .info_content a {
+  margin: 1rem 2rem;
   color: var(--color-gold);
 }
 
-.info_show p, .info_show h1, .info_show h3, .info_show a {
-  margin: 1rem 2rem;
-}
-
-.info_show h1 {
+.info_content h1 {
   margin-top: 2rem;
 }
 
-.info_show h3 {
+.info_content h3 {
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
 }
 
-.info_show hr {
+.info_content hr {
   color: transparent;
   background-color: transparent;
   border: none;
