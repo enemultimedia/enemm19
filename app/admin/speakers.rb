@@ -1,5 +1,5 @@
 ActiveAdmin.register Speaker do
-  permit_params :name, :slug, :company, :image, :active, person_infos_attributes: [:person_id, :category, :content, :order, :id, :_destroy]
+  permit_params :id, :name, :slug, :company, :image, :active, person_infos_attributes: [:person_id, :category, :content, :order, :id, :_destroy]
 
   index do
     selectable_column
