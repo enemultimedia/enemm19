@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
+  devise_for :users
   resources :talk_suggestions, only: :create
   get 'index', to: 'pages#index', as: 'index'
   get 'about', to: 'pages#about', as: 'about'

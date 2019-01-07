@@ -22,21 +22,13 @@
     <div class="square"></div>
   </div>
   <div id="myMatrix_Speaker" class="item matrix_speakers">
-    <div class="square speaker" data-slug="studio-mals" style="background-image: url('<%= image_url 'StudioMals.jpg' %>');" onclick="openInfo('studio-mals')">
-      <div class="speaker_info">
-        <span class="speaker_name">Studio Mals</span>
+    <% @speakers.each do |speaker| %>
+      <div class="square speaker" data-slug="<%= speaker.slug %>" style="background-image: url('<%= speaker.image.attached? ? url_for(speaker.image) : '' %>');" onclick="openInfo('<%= speaker.slug %>')">
+        <div class="speaker_info">
+          <span class="speaker_name"><%= speaker.name %></span>
+        </div>
       </div>
-    </div>
-    <div class="square speaker" data-slug="pedro-pombo" style="background-image: url('<%= image_url 'PedroPombo.jpg' %>');" onclick="openInfo('pedro-pombo')">
-      <div class="speaker_info">
-        <span class="speaker_name">Pedro Pombo</span>
-      </div>
-    </div>
-    <div class="square speaker" data-slug="rafaela-ferro" style="background-image: url('<%= image_url 'RafaelaFerro.jpg' %>');" onclick="openInfo('rafaela-ferro')">
-      <div class="speaker_info">
-        <span class="speaker_name">Rafaela Ferro</span>
-      </div>
-    </div>
+    <% end %>
     <% (1..7).each do |index| %>
       <div class="square speaker_temp">
         <div class="speaker_info">
@@ -45,44 +37,28 @@
       </div>
     <% end %>
   </div>
-  <div class="info_content-background"></div>
-  <div id="myInfo" class="info_content info_noshow" data-slug="studio-mals">
-    <div id="myMenuInfo" class="menuInfo" data-slug="studio-mals" onclick="openInfo('studio-mals')">
-      <div class="bar1"></div>
-      <div class="bar2"></div>
+  <% @speakers.each do |speaker| %>
+    <div id="myInfo" class="info_content info_noshow" data-slug="<%= speaker.slug %>">
+      <div id="myMenuInfo" class="menuInfo" data-slug="<%= speaker.slug %>" onclick="openInfo('<%= speaker.slug %>')">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+      </div>
+      <h1><%= speaker.name %></h1>
+      <% speaker.person_infos.each do |info| %>
+        <% case info.category %>
+        <% when 'title' %>
+          <h1><%= info.content %></h1>
+        <% when 'paragraph' %>
+          <p><%= info.content %></p>
+        <% when 'spacer' %>
+          <hr/>
+        <% when 'link' %>
+          <% content = info.content.scan( /\A\[(.+)\] \(([\w\.\-\/]+)\)\z/ix )[0] %>
+          <a target="_blank" href="<%= content[1] %>"><%= content[0] %></a>
+        <% end %>
+      <% end %>
     </div>
-    <h1>Studio Mals</h1>
-    <h3>Sobre o nosso estúdio</h3>
-    <p>O Studio Mals produz imagens e filmagens cativantes e de alta qualidade. O seu trabalho é quase sempre tangível - de preferência feito à mão. Com uma abordagem conceptual, resulta numa forte linguagem visual.</p>
-    <h3>Sobre a nossa sessão</h3>
-    <p>Nós sabemos que uma simples apresentação de portfólio pode tornar-se bastante aborrecida. Preferimos mostrar o que se passa por trás de cada uma das nossas criações e discutir o nosso processo. Assim, torna-se mais fácil explicar como chegamos aos nossos produtos extremamente atraentes e chamativos!</p>
-    <hr/>
-    <h3>About our studio</h3>
-    <p>Mals crafts high quality eye-catching images and film. Our work is often tangible -preferably handmade- and has a conceptual approach. Combined with a playful attitude, it results in a strong visual language.</p>
-    <h3>About our talk</h3>
-    <p>We know a simple portfolio slideshow is very boring. We prefer to show loads of behind the scenes and talk about the making of process. This way we can really get to the bottom of our ridiculously sexy crafted eye candy!  </p>
-    <a href="http://www.studiomals.com" target="_blank" class="button">Saber Mais</a>
-  </div>
-  <div id="myInfo" class="info_content info_noshow" data-slug="pedro-pombo">
-    <div id="myMenuInfo" class="menuInfo" data-slug="pedro-pombo" onclick="openInfo('pedro-pombo')">
-      <div class="bar1"></div>
-      <div class="bar2"></div>
-    </div>
-    <h1>Pedro Pombo</h1>
-    <p>Pedro Pombo é Director da Fábrica Centro Ciência Viva de Aveiro, docente no Departamento de Física da Universidade de Aveiro e especialista em Holografia, Comunicação de Ciência e Ensino da Física. Desenvolve investigação em técnicas holográficas, holografia educacional, compreensão pública da ciência, STEAM na educação em ciência e ensino experimental da física. Desenvolve exposições, centros de ciência, espaços Maker, materiais educativos, cursos de formação. Foi coordenador de 3 projetos europeus, 9 exposições, 29 projetos nacionais e é autor de 1 capítulo de livro, 3 manuais escolares, mais de 50 publicações em revistas nacionais e internacionais e recebeu 9 prémios europeus.</p>
-  </div>
-  <div id="myInfo" class="info_content info_noshow" data-slug="rafaela-ferro">
-    <div id="myMenuInfo" class="menuInfo" data-slug="rafaela-ferro" onclick="openInfo('rafaela-ferro')">
-      <div class="bar1"></div>
-      <div class="bar2"></div>
-    </div>
-    <h1>Rafaela Ferro</h1>
-    <h3>Sobre mim</h3>
-    <p>Designer e frontend developer na Deemaze Software, uma agência de software a criar produtos para web e mobile.</p>
-    <a target="_blank" href="//rafaelaferro.com" class="button">rafaelaferro.com</a>
-    <h3>Sobre a talk</h3>
-    <p>Como parar de ver acessibilidade como um requisito extra, e integrar um processo de design+desenvolvimento inclusivo nas equipas de software. Vamos analisar algumas pré-concepções ligadas a acessibilidade e conversar sobre o papel de cada um na criação de tecnologia inclusiva.</p>
-  </div>
+  <% end %>
   <script>
     function openInfo(slug) {
       if($(".info_noshow[data-slug="+slug+"]").hasClass('info_show')) {
