@@ -7,5 +7,6 @@ class PagesController < ApplicationController
   end
 
   def speakers
+    @speakers = Speaker.all.order(:created_at)
   end
 end

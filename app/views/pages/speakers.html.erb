@@ -22,21 +22,13 @@
     <div class="square"></div>
   </div>
   <div id="myMatrix_Speaker" class="item matrix_speakers">
-    <div class="square speaker" data-slug="studio-mals" style="background-image: url('<%= image_url 'StudioMals.jpg' %>');" onclick="openInfo('studio-mals')">
-      <div class="speaker_info">
-        <span class="speaker_name">Studio Mals</span><span>Studio Mals</span>
+    <% @speakers.each do |speaker| %>
+      <div class="square speaker" data-slug="<%= speaker.slug %>" style="background-image: url('<%= image_url speaker.image_url %>');" onclick="openInfo('<%= speaker.slug %>')">
+        <div class="speaker_info">
+          <span class="speaker_name"><%= speaker.name %></span><span><%= speaker.name %></span>
+        </div>
       </div>
-    </div>
-    <div class="square speaker" data-slug="pedro-pombo" style="background-image: url('<%= image_url 'PedroPombo.jpg' %>');" onclick="openInfo('pedro-pombo')">
-      <div class="speaker_info">
-        <span class="speaker_name">Pedro Pombo</span><span>Pedro Pombo</span>
-      </div>
-    </div>
-    <div class="square speaker" data-slug="rafaela-ferro" style="background-image: url('<%= image_url 'RafaelaFerro.jpg' %>');" onclick="openInfo('rafaela-ferro')">
-      <div class="speaker_info">
-        <span class="speaker_name">Rafaela Ferro</span><span>Rafaela Ferro</span>
-      </div>
-    </div>
+    <% end %>
     <% (1..7).each do |index| %>
       <div class="square speaker_temp">
         <div class="speaker_info">
