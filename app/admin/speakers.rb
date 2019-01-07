@@ -6,7 +6,7 @@ ActiveAdmin.register Speaker do
       row :name
       row :slug
       row :image do |s|
-        image_tag(url_for(s.image), height: '256') unless s.image.nil?
+        image_tag(url_for(s.image), height: '256') if s.image.attached?
       end
     end
     panel 'Info' do
@@ -23,7 +23,7 @@ ActiveAdmin.register Speaker do
     f.inputs 'Details' do
       f.input :name
       f.input :slug
-      f.input :image, as: :file, :hint => f.object.image.present? \
+      f.input :image, as: :file, :hint => f.object.image.attached? \
                                   ? image_tag(url_for(f.object.image), height: '256') \
                                   : content_tag(:span, "No image yet")
     end
