@@ -1,0 +1,2 @@
+class Ambassador < Person
+end

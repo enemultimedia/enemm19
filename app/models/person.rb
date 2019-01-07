@@ -7,6 +7,8 @@ class Person < ApplicationRecord
   scope :ordered, -> { order(created_at: :asc) }
   scope :with_info, -> { includes(:person_infos) }
 
+  alias_attribute :institution, :company
+
   def activate!
     self.update(active: true)
   end
