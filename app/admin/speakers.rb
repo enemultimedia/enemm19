@@ -1,5 +1,5 @@
 ActiveAdmin.register Speaker do
-  permit_params :name, :slug, :image, :active, person_infos_attributes: [:person_id, :category, :content, :order, :id, :_destroy]
+  permit_params :name, :slug, :company, :image, :active, person_infos_attributes: [:person_id, :category, :content, :order, :id, :_destroy]
 
   index do
     selectable_column
@@ -7,6 +7,7 @@ ActiveAdmin.register Speaker do
     column :active
     column :name
     column :slug
+    column :company
     column :image do |s|
       image_tag(url_for(s.image), height: '64') if s.image.attached?
     end
@@ -19,6 +20,7 @@ ActiveAdmin.register Speaker do
     attributes_table do
       row :name
       row :slug
+      row :company
       row :active
       row :image do |s|
         image_tag(url_for(s.image), height: '256') if s.image.attached?
@@ -38,6 +40,7 @@ ActiveAdmin.register Speaker do
     f.inputs 'Details' do
       f.input :name
       f.input :slug
+      f.input :company
       f.input :active
       f.input :image, as: :file, :hint => f.object.image.attached? \
                                   ? image_tag(url_for(f.object.image), height: '256') \

@@ -22,13 +22,7 @@
     <div class="square"></div>
   </div>
   <div id="myMatrix_Speaker" class="item matrix_speakers">
-    <% @speakers.each do |speaker| %>
-      <div class="square speaker" data-slug="<%= speaker.slug %>" style="background-image: url('<%= speaker.image.attached? ? url_for(speaker.image) : '' %>');" onclick="openInfo('<%= speaker.slug %>')">
-        <div class="speaker_info">
-          <span class="speaker_name"><%= speaker.name %></span>
-        </div>
-      </div>
-    <% end %>
+    <%= render partial: 'pages/partials/speakers/speaker_square', collection: @speakers, as: :speaker %>
     <% (1..(10-@speakers.length)).each do |index| %>
       <div class="square speaker_temp">
         <div class="speaker_info">
@@ -37,28 +31,7 @@
       </div>
     <% end %>
   </div>
-  <% @speakers.each do |speaker| %>
-    <div class="info_content" data-slug="<%= speaker.slug %>">
-      <div id="myMenuInfo" class="menuInfo" data-slug="<%= speaker.slug %>" onclick="openInfo('<%= speaker.slug %>')">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-      </div>
-      <h1><%= speaker.name %></h1>
-      <% speaker.person_infos.each do |info| %>
-        <% case info.category %>
-        <% when 'title' %>
-          <h3><%= info.content %></h3>
-        <% when 'paragraph' %>
-          <p><%= info.content %></p>
-        <% when 'spacer' %>
-          <hr/>
-        <% when 'link' %>
-          <% content = info.content.scan( /\A\[(.+)\] \(([\w\.\-\/]+)\)\z/ix )[0] %>
-          <a target="_blank" href="<%= content[1] %>"><%= content[0] %></a>
-        <% end %>
-      <% end %>
-    </div>
-  <% end %>
+  <%= render partial: 'pages/partials/speakers/speaker_info', collection: @speakers, as: :speaker %>
   <script>
     function openInfo(slug) {
       if($(".info_content[data-slug="+slug+"]").hasClass('info_show')) {
