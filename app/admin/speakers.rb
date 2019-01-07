@@ -8,10 +8,10 @@ ActiveAdmin.register Speaker do
       row :image_url
     end
     panel 'Info' do
-      attributes_table_for speaker.person_infos do
-        row :order
-        row :category
-        row :content
+      table_for speaker.person_infos do
+        column :order
+        column :category
+        column :content
       end
     end
     active_admin_comments
