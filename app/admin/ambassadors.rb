@@ -32,6 +32,7 @@ ActiveAdmin.register Ambassador do
   end
 
   form do |f|
+    f.semantic_errors *f.object.errors.keys
     f.inputs 'Details' do
       f.input :name
       f.input :slug
