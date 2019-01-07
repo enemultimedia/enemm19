@@ -47,7 +47,7 @@
       <% speaker.person_infos.each do |info| %>
         <% case info.category %>
         <% when 'title' %>
-          <h1><%= info.content %></h1>
+          <h3><%= info.content %></h3>
         <% when 'paragraph' %>
           <p><%= info.content %></p>
         <% when 'spacer' %>
