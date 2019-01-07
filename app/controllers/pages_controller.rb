@@ -7,6 +7,6 @@ class PagesController < ApplicationController
   end
 
   def speakers
-    @speakers = Speaker.all.order(:created_at).includes(:person_infos)
+    @speakers = Speaker.active.ordered.with_info
   end
 end

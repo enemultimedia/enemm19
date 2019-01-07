@@ -10,18 +10,15 @@ speakers = Speaker.create(
   [
     {
       name: 'Studio Mals',
-      slug: 'studio-mals',
-      image_url: 'StudioMals.jpg'
+      slug: 'studio-mals'
     },
     {
       name: 'Pedro Pombo',
-      slug: 'pedro-pombo',
-      image_url: 'PedroPombo.jpg'
+      slug: 'pedro-pombo'
     },
     {
       name: 'Rafaela Ferro',
-      slug: 'rafaela-ferro',
-      image_url: 'RafaelaFerro.jpg'
+      slug: 'rafaela-ferro'
     }
   ]
 )
