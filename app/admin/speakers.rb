@@ -1,11 +1,13 @@
 ActiveAdmin.register Speaker do
-  permit_params :name, :slug, :image_url, person_infos_attributes: [:person_id, :category, :content, :order, :id, :_destroy]
+  permit_params :name, :slug, :image, person_infos_attributes: [:person_id, :category, :content, :order, :id, :_destroy]
 
   show do
     attributes_table do
       row :name
       row :slug
-      row :image_url
+      row :image do |s|
+        image_tag(url_for(s.image), height: '256') unless s.image.nil?
+      end
     end
     panel 'Info' do
       table_for speaker.person_infos do
@@ -21,7 +23,9 @@ ActiveAdmin.register Speaker do
     f.inputs 'Details' do
       f.input :name
       f.input :slug
-      f.input :image_url
+      f.input :image, as: :file, :hint => f.object.image.present? \
+                                  ? image_tag(url_for(f.object.image), height: '256') \
+                                  : content_tag(:span, "No image yet")
     end
 
     f.inputs do

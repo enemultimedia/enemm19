@@ -23,7 +23,7 @@
   </div>
   <div id="myMatrix_Speaker" class="item matrix_speakers">
     <% @speakers.each do |speaker| %>
-      <div class="square speaker" data-slug="<%= speaker.slug %>" style="background-image: url('<%= image_url speaker.image_url %>');" onclick="openInfo('<%= speaker.slug %>')">
+      <div class="square speaker" data-slug="<%= speaker.slug %>" style="background-image: url('<%= url_for speaker.image %>');" onclick="openInfo('<%= speaker.slug %>')">
         <div class="speaker_info">
           <span class="speaker_name"><%= speaker.name %></span><span><%= speaker.name %></span>
         </div>
