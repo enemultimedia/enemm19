@@ -1,0 +1,5 @@
+en:
+  devise:
+    failure:
+      user:
+        not_approved: 'Your user has not been approved yet.'

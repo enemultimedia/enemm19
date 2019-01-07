@@ -6,4 +6,12 @@ class Person < ApplicationRecord
   scope :active, -> { where(active: true) }
   scope :ordered, -> { order(created_at: :asc) }
   scope :with_info, -> { includes(:person_infos) }
+
+  def activate!
+    self.update(active: true)
+  end
+
+  def deactivate!
+    self.update(active: false)
+  end
 end

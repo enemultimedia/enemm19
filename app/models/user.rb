@@ -9,4 +9,12 @@ class User < ApplicationRecord
   def inactive_message
     approved? ? super : :not_approved
   end
+
+  def approve!
+    self.update(approved: true)
+  end
+
+  def lock!
+    self.update(approved: false)
+  end
 end

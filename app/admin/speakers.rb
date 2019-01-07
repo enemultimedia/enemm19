@@ -1,6 +1,20 @@
 ActiveAdmin.register Speaker do
   permit_params :name, :slug, :image, :active, person_infos_attributes: [:person_id, :category, :content, :order, :id, :_destroy]
 
+  index do
+    selectable_column
+    id_column
+    column :active
+    column :name
+    column :slug
+    column :image do |s|
+      image_tag(url_for(s.image), height: '64') if s.image.attached?
+    end
+    actions
+  end
+
+  filter :active
+
   show do
     attributes_table do
       row :name
@@ -43,5 +57,39 @@ ActiveAdmin.register Speaker do
     end
 
     f.actions
+  end
+
+  batch_action :activate do |ids|
+    batch_action_collection.find(ids).each do |speaker|
+      speaker.activate!
+    end
+    redirect_to collection_path, notice: "The selected speakers have been activated."
+  end
+
+  batch_action :disable do |ids|
+    batch_action_collection.find(ids).each do |speaker|
+      speaker.deactivate!
+    end
+    redirect_to collection_path, notice: "The selected speakers have been disabled."
+  end
+
+  batch_action :destroy, false
+
+  member_action :activate, method: :put do
+    resource.activate!
+    redirect_to resource_path, notice: 'Activated!'
+  end
+
+  action_item :activate, only: :show, if: proc{ !speaker.active? } do
+    link_to 'Activate', activate_admin_speaker_path(speaker), method: :put
+  end
+
+  member_action :disable, method: :put do
+    resource.deactivate!
+    redirect_to resource_path, notice: 'Disabled!'
+  end
+
+  action_item :disable, only: :show, if: proc{ speaker.active? } do
+    link_to 'Disable', disable_admin_speaker_path(speaker), method: :put
   end
 end
