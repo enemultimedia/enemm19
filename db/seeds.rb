@@ -14,11 +14,13 @@ speakers = Speaker.create(
     },
     {
       name: 'Pedro Pombo',
-      slug: 'pedro-pombo'
+      slug: 'pedro-pombo',
+      company: 'Fábrica Centro Ciência Viva de Aveiro'
     },
     {
       name: 'Rafaela Ferro',
-      slug: 'rafaela-ferro'
+      slug: 'rafaela-ferro',
+      company: 'Deemaze Software'
     }
   ]
 )
