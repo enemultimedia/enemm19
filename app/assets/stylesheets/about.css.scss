@@ -134,7 +134,7 @@ html {
   grid-area: partners;
 }
 
-.img_big, .img_medium, .img_small {
+.partner_list {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -193,6 +193,7 @@ a {
       'hidden1 hidden1 about about about about'
       'hidden1 hidden1 about about about about'
       'img img local local local local'
+      'hidden2 hidden2 partners partners partners partners'
       'footer footer footer footer footer footer';
   }
 
@@ -204,13 +205,24 @@ a {
     min-width: 275px;
   }
 
-  .img_big, .img_medium, .img_small {
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-
   .matrix {
     display: none;
+  }
+
+  .img_big .partner_link {
+    flex-basis: 125px;
+  }
+
+  .img_medium .partner_link {
+    flex-basis: 100px;
+  }
+
+  .img_small .partner_link {
+    flex-basis: 75px;
+  }
+
+  .partner_link {
+    margin: 10px auto;
   }
 }
 
@@ -230,6 +242,7 @@ a {
         'about about'
         'img img'
         'local local'
+        'partners partners'
         'footer footer'
   }
 
