@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   end
 
   def about
+    @sponsors = Sponsor.active.ordered
   end
 
   def speakers

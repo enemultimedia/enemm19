@@ -1,0 +1,10 @@
+<div class="<%= class_name %>">
+  <% sponsors.each do |sponsor| %>
+    <% if sponsor.logo.attached? %>
+      <%= link_to sponsor.website, target: '_blank' do %>
+        <%= image_tag(url_for(sponsor.logo)) %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+

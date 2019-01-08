@@ -12,6 +12,7 @@ html {
     'matrix matrix about about about about'
     'hidden1 hidden1 about about about about'
     'img img local local local local'
+    'hidden2 hidden2 partners partners partners partners'
     'footer footer footer footer footer footer';
   grid-gap: 2px;
   background-color: var(--color-purple);
@@ -93,6 +94,10 @@ html {
 
 .hidden1 {
   grid-area: hidden1;
+}
+
+.hidden2 {
+  grid-area: hidden2;
 }
 
 .img {

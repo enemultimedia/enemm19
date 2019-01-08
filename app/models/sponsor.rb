@@ -16,6 +16,9 @@ class Sponsor < ApplicationRecord
 
   scope :active, -> { where(active: true) }
   scope :ordered, -> { order(created_at: :asc) }
+  scope :kapa, -> { where(type: 'Kapa') }
+  scope :mega, -> { where(type: 'Mega') }
+  scope :giga, -> { where(type: 'Giga') }
 
   require_dependency 'kapa'
   require_dependency 'mega'

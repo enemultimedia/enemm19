@@ -65,6 +65,21 @@
     <div id="map"></div>
   </div>
   %>
+  <% if @sponsors.any? %>
+    <div class="item hidden2"></div>
+    <div class="item partners">
+      <h1>Parceiros</h1>
+      <% if @sponsors.giga.any? %>
+        <%= render partial: 'pages/partials/about/sponsor_list', locals: {sponsors: @sponsors.giga, class_name: 'img_big'} %>
+      <% end %>
+      <% if @sponsors.mega.any? %>
+        <%= render partial: 'pages/partials/about/sponsor_list', locals: {sponsors: @sponsors.mega, class_name: 'img_medium'} %>
+      <% end %>
+      <% if @sponsors.kapa.any? %>
+        <%= render partial: 'pages/partials/about/sponsor_list', locals: {sponsors: @sponsors.kapa, class_name: 'img_small'} %>
+      <% end %>
+    </div>
+  <% end %>
   <%#=
   <div class="item partners">
     <h1>Parceiros</h1>
