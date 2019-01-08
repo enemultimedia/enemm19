@@ -261,12 +261,12 @@ a {
   }
 
   .matrix_speakers {
-    grid-template-rows: repeat(auto-fill, 250px);
+    grid-template-rows: repeat(auto-fill, 33vw);
     grid-template-columns: repeat(3, 1fr);
   }
 
   .matrix_speakers .square {
-    min-height: 32vw;
+    min-height: 33vw;
   }
 
   .matrix_hidden {
