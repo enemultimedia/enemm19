@@ -52,8 +52,9 @@
   top: 0;
   position: absolute;
   width: auto;
-  padding: 0 2em;
+  padding: 0 2.3em;
   height: 80px;
+  line-height: 80px;
   margin: 0;
   align-self: flex-start;
 }
