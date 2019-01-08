@@ -12,3 +12,6 @@ migrate:
 
 rollback:
 	docker-compose run --rm web rails db:rollback
+
+routes:
+	docker-compose run --rm web rails routes

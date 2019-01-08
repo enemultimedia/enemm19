@@ -9,6 +9,9 @@
       <%= link_to 'Sobre', about_path, class:"menu_links--about" %>
       <%= link_to 'Oradores', speakers_path, class:"menu_links--speakers" %>
       <%= link_to 'Bilheteira', '//tickets.enemm.pt', target:"_blank" %>
+      <% if user_signed_in? %>
+        <%= link_to 'Admin', admin_root_path, class: "menu_links--about" %>
+      <% end %>
     </div>
     <div class="ss">
       <div id="mySidenav" class="sidenav">
@@ -27,6 +30,11 @@
           <%= link_to '//tickets.enemm.pt', target:"_blank" do %>
           <h1>Bilheteira</h1>
           <% end %>
+          <% if user_signed_in? %>
+          <%= link_to admin_root_path do%>
+          <h1>Admin</h1>
+          <% end %>
+        <% end %>
         </div>
       </div>
       <div id="myMenuIcon" class="menuIcon" onclick="toggleMenu(this), openNav(this)">
