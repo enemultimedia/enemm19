@@ -143,7 +143,7 @@ html {
   flex-wrap: wrap;
 }
 
-.sponsor_link {
+.partner_link {
   flex-shrink: 0;
   flex-grow: 1;
   display: flex;
@@ -152,31 +152,31 @@ html {
   align-items: center;
 }
 
-.img_big .sponsor_link {
+.img_big .partner_link {
   flex-basis: 200px;
 }
 
-.img_medium .sponsor_link {
+.img_medium .partner_link {
   flex-basis: 150px;
 }
 
-.img_small .sponsor_link {
+.img_small .partner_link {
   flex-basis: 100px;
 }
 
-.sponsor_logo {
+.partner_logo {
   height: auto;
 }
 
-.img_big .sponsor_logo {
+.img_big .partner_logo {
   width: 100px;
 }
 
-.img_medium .sponsor_logo {
+.img_medium .partner_logo {
   width: 75px;
 }
 
-.img_small .sponsor_logo {
+.img_small .partner_logo {
   width: 50px;
 }
 
