@@ -18,6 +18,9 @@ class Person < ApplicationRecord
   has_one_attached :image
   accepts_nested_attributes_for :person_infos, allow_destroy: true
 
+  require_dependency 'speaker'
+  require_dependency 'ambassador'
+
   scope :active, -> { where(active: true) }
   scope :ordered, -> { order(created_at: :asc) }
   scope :with_info, -> { includes(:person_infos) }

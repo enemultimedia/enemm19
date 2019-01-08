@@ -9,3 +9,6 @@ console:
 
 migrate:
 	docker-compose run --rm web rails db:migrate
+
+rollback:
+	docker-compose run --rm web rails db:rollback
