@@ -137,24 +137,47 @@ html {
 .img_big, .img_medium, .img_small {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: flex-start;
   margin-top: 2em;
+  flex-wrap: wrap;
 }
 
-.img_big img {
+.sponsor_link {
+  flex-shrink: 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.img_big .sponsor_link {
+  flex-basis: 200px;
+}
+
+.img_medium .sponsor_link {
+  flex-basis: 150px;
+}
+
+.img_small .sponsor_link {
+  flex-basis: 100px;
+}
+
+.sponsor_logo {
+  height: auto;
+}
+
+.img_big .sponsor_logo {
   width: 100px;
-  height: auto;
 }
 
-.img_medium img {
+.img_medium .sponsor_logo {
   width: 75px;
-  height: auto;
 }
 
-.img_small img {
+.img_small .sponsor_logo {
   width: 50px;
-  height: auto;
 }
 
 
