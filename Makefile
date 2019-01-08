@@ -15,3 +15,6 @@ rollback:
 
 routes:
 	docker-compose run --rm web rails routes
+
+bundle:
+	docker-compose run --rm web bundle

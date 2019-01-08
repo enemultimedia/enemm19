@@ -1,7 +1,10 @@
 ActiveAdmin.register Ambassador do
-  permit_params :id, :name, :slug, :institution, :facebook_link, :image, :active
+  config.sort_order = 'position_asc'
+  config.paginate = false
+  reorderable
+  permit_params :id, :position, :name, :slug, :institution, :facebook_link, :image, :active
 
-  index do
+  index as: :reorderable_table do
     selectable_column
     id_column
     column :active

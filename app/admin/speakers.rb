@@ -1,7 +1,10 @@
 ActiveAdmin.register Speaker do
-  permit_params :id, :name, :slug, :company, :image, :active, person_infos_attributes: [:person_id, :category, :content, :order, :id, :_destroy]
+  config.sort_order = 'position_asc'
+  config.paginate = false
+  reorderable
+  permit_params :id, :position, :name, :slug, :company, :image, :active, person_infos_attributes: [:person_id, :category, :content, :order, :id, :_destroy]
 
-  index do
+  index as: :reorderable_table do
     selectable_column
     id_column
     column :active
