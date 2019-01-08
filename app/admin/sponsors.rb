@@ -1,5 +1,5 @@
 ActiveAdmin.register Sponsor do
-  permit_params :id, :name, :type, :link, :logo, :active
+  permit_params :id, :name, :type, :website, :logo, :active
 
   index do
     selectable_column
@@ -7,7 +7,7 @@ ActiveAdmin.register Sponsor do
     column :active
     column :name
     column :type
-    column :link
+    column :website
     column :logo do |s|
       image_tag(url_for(s.logo), height: '64') if s.logo.attached?
     end
@@ -20,7 +20,7 @@ ActiveAdmin.register Sponsor do
     attributes_table do
       row :name
       row :type
-      row :link
+      row :website
       row :active
       row :logo do |s|
         image_tag(url_for(s.logo), height: '64') if s.logo.attached?
@@ -34,7 +34,7 @@ ActiveAdmin.register Sponsor do
     f.inputs 'Details' do
       f.input :name
       f.input :type, as: :select, collection: Sponsor.subclasses
-      f.input :link
+      f.input :website
       f.input :active
       f.input :logo, as: :file, :hint => f.object.logo.attached? \
                                   ? image_tag(url_for(f.object.logo), height: '256') \
