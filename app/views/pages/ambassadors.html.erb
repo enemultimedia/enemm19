@@ -6,7 +6,10 @@
   <div id="myTitle" class="item title right">
     <h1>Embaixadores</h1>
   </div>
-  <div id="myHidden" class="item hidden"></div>
+  <div class="item cta">
+    <span class="ambassador_name">Torna-te embaixador do ENEMM’19!</span>
+    <%= mail_to "geral@enemm.pt", "Saber mais", subject: "Quero ser embaixador do ENEMM'19" %>
+  </div>
   <div id="myMatrix_Hidden" class="item matrix_hidden">
     <div class="square"></div>
     <div class="square"></div>
@@ -23,11 +26,7 @@
   </div>
   <div id="myMatrix_Ambassador" class="item matrix_ambassadors">
     <%= render partial: 'pages/partials/ambassadors/ambassador_square', collection: @ambassadors, as: :ambassador %>
-    <div class="square cta">
-      <span class="ambassador_name">Torna-te embaixador do ENEMM’19!</span>
-      <a href="https://www.facebook.com/enemm.multimedia/photos/a.974311715973334/2353480834723075" target="_blank">Saber mais</a>
-    </div>
-    <% (1..(9-@ambassadors.length)).each do |index| %>
+    <% (1..(10-@ambassadors.length)).each do |index| %>
       <div class="square ambassador_temp">
         <div class="ambassador_info">
           <span class="ambassador_name">Por anunciar</span>
