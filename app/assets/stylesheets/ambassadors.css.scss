@@ -126,6 +126,9 @@ html {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  background-color: var(--color-purple);
+  color: var(--color-light-grey);
+  transition: 0.2s ease;
 }
 
 .ambassador_social {
@@ -134,7 +137,7 @@ html {
   align-self: center;
 }
 
-.ambassador_social img {
+.ambassador_social {
   margin: auto 20px;
 }
 
@@ -142,10 +145,7 @@ html {
   display: inline-flex;
   flex-direction: column;
   padding: .5em;
-  background-color: var(--color-purple);
-  color: var(--color-light-grey);
   font-weight: 500;
-  transition: 0.2s ease;
 }
 
 .ambassador_info p:last-child{
@@ -153,19 +153,20 @@ html {
   font-weight: 100;
 }
 
-.ambassador_temp > .ambassador_info {
+.ambassador_temp > .ambassador_row {
   background-color: var(--color-light-grey);
   color: var(--color-purple);
   border-top: solid 2px var(--color-purple);
-  border-right: solid 2px var(--color-purple);
 }
 
-.ambassador:hover > .ambassador_row > .ambassador_info {
-  // display: inline-flex;
+.ambassador:hover > .ambassador_row {
   background-color: var(--color-light-grey);
   color: var(--color-purple);
   border-top: solid 2px var(--color-purple);
-  border-right: solid 2px var(--color-purple);
+}
+
+.ambassador:hover > .ambassador_row .ambassador_social svg .changeable {
+  fill: var(--color-purple);
 }
 
 .ambassador_name {
