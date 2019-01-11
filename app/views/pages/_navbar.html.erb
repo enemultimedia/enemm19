@@ -8,7 +8,7 @@
     <div class="bs">
       <%= link_to 'Sobre', about_path, class:"menu_links--about" %>
       <%= link_to 'Oradores', speakers_path, class:"menu_links--speakers" %>
-      <%= link_to 'Embaixadores', ambassadors_path, class:"menu_links--speakers" %>
+      <%= link_to 'Embaixadores', ambassadors_path, class:"menu_links--ambassadors" %>
       <%= link_to 'Bilheteira', '//tickets.enemm.pt', target:"_blank" %>
       <% if user_signed_in? %>
         <%= link_to 'Admin', admin_root_path, class: "menu_links--about" %>
