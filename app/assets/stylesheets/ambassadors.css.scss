@@ -1,6 +1,14 @@
 html {
-  background-color: var(--color-black);
-  color: var(--color-black);
+  background-color: var(--color-purple);
+  color: var(--color-purple);
+}
+
+.bs a {
+  color: var(--color-purple);
+}
+
+.footer a {
+  color: var(--color-purple);
 }
 
 .container {
@@ -13,12 +21,16 @@ html {
     'matrix_ambassadors matrix_ambassadors matrix_ambassadors matrix_ambassadors matrix_ambassadors matrix_ambassadors'
     'footer footer footer footer footer footer';
   grid-gap: 2px;
-  background-color: var(--color-black);
+  background-color: var(--color-purple);
+}
+
+.header a {
+  color: var(--color-purple);
 }
 
 .header a:hover {
-  color: var(--color-purple);
-  background-color: var(--color-black);
+  color: var(--color-light-grey);
+  background-color: var(--color-purple);
 }
 
 .menu_links--ambassadors{
@@ -26,11 +38,11 @@ html {
 }
 
 .header{
-  border-right: solid 2px var(--color-black);
+  border-right: solid 2px var(--color-purple);
 }
 
 .item {
-  background-color: var(--color-purple);
+  background-color: var(--color-light-grey);
 }
 
 .title, .price_early, .price_group, .price_single {
@@ -49,12 +61,12 @@ html {
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(6, 1fr);
   grid-gap: 2px;
-  background-color: var(--color-black);
+  background-color: var(--color-purple);
   height: 214px;
 }
 
 .matrix_hidden .square {
-  background-color: var(--color-purple);
+  background-color: var(--color-light-grey);
   min-width: 75px;
   min-height: 75px;
 }
@@ -70,11 +82,11 @@ html {
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 2px;
-  background-color: var(--color-black);
+  background-color: var(--color-purple);
 }
 
 .matrix_ambassadors .square {
-  background-color: var(--color-purple);
+  background-color: var(--color-light-grey);
   min-width: 100px;
   min-height: 20vw;
 }
@@ -130,8 +142,8 @@ html {
   display: inline-flex;
   flex-direction: column;
   padding: .5em;
-  background-color: var(--color-black);
-  color: var(--color-purple);
+  background-color: var(--color-purple);
+  color: var(--color-light-grey);
   font-weight: 500;
   transition: 0.2s ease;
 }
@@ -139,6 +151,21 @@ html {
 .ambassador_info p:last-child{
   padding-top: .2em;
   font-weight: 100;
+}
+
+.ambassador_temp > .ambassador_info {
+  background-color: var(--color-light-grey);
+  color: var(--color-purple);
+  border-top: solid 2px var(--color-purple);
+  border-right: solid 2px var(--color-purple);
+}
+
+.ambassador:hover > .ambassador_row > .ambassador_info {
+  // display: inline-flex;
+  background-color: var(--color-light-grey);
+  color: var(--color-purple);
+  border-top: solid 2px var(--color-purple);
+  border-right: solid 2px var(--color-purple);
 }
 
 .ambassador_name {
