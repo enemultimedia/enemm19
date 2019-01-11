@@ -2,14 +2,13 @@ ActiveAdmin.register Ambassador do
   config.sort_order = 'position_asc'
   config.paginate = false
   reorderable
-  permit_params :id, :position, :name, :slug, :institution, :facebook_link, :image, :active
+  permit_params :id, :position, :name, :institution, :facebook_link, :image, :active
 
   index as: :reorderable_table do
     selectable_column
     id_column
     column :active
     column :name
-    column :slug
     column :institution
     column :facebook_link
     column :image do |s|
@@ -23,7 +22,6 @@ ActiveAdmin.register Ambassador do
   show do
     attributes_table do
       row :name
-      row :slug
       row :institution
       row :facebook_link
       row :active
@@ -38,7 +36,6 @@ ActiveAdmin.register Ambassador do
     f.semantic_errors *f.object.errors.keys
     f.inputs 'Details' do
       f.input :name
-      f.input :slug
       f.input :institution
       f.input :facebook_link
       f.input :active

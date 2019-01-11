@@ -1,0 +1,15 @@
+<div class="square ambassador" style="background-image: url('<%= ambassador.image.attached? ? url_for(ambassador.image) : '' %>');">
+  <div class="ambassador_row">
+    <div class="ambassador_info">
+      <span class="ambassador_name"><%= ambassador.name %></span>
+      <% if ambassador.company.present? %>
+        <span class="ambassador_company"><%= ambassador.company %></span>
+      <% end %>
+    </div>
+    <div class="ambassador_social">
+      <%= link_to ambassador.facebook_link, target: '_blank' do %>
+        <%= image_tag(image_path('facebook_purple.svg'), alt: 'Facebook') %>
+      <% end %>
+    </div>
+  </div>
+</div>

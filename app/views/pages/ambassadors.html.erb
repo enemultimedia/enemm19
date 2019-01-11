@@ -1,0 +1,43 @@
+<%= stylesheet_link_tag    'pages', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag    'ambassadors', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+<div class="container">
+  <%= render partial: 'navbar' %>
+  <div id="myTitle" class="item title right">
+    <h1>Embaixadores</h1>
+  </div>
+  <div id="myHidden" class="item hidden"></div>
+  <div id="myMatrix_Hidden" class="item matrix_hidden">
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+  </div>
+  <div id="myMatrix_Ambassador" class="item matrix_ambassadors">
+    <%= render partial: 'pages/partials/ambassadors/ambassador_square', collection: @ambassadors, as: :ambassador %>
+    <div class="square cta">
+      <span class="ambassador_name">Torna-te embaixador do ENEMM’19!</span>
+      <a href="https://www.facebook.com/enemm.multimedia/photos/a.974311715973334/2353480834723075" target="_blank">Saber mais</a>
+    </div>
+    <% (1..(9-@ambassadors.length)).each do |index| %>
+      <div class="square ambassador_temp">
+        <div class="ambassador_info">
+          <span class="ambassador_name">Por anunciar</span>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div id="myFooter" class="item footer right">
+    <p>Made with ♥ by <a href="https://nei.dei.uc.pt" target="_blank">NEI/AAC</a></p>
+  </div>
+</div>
+
+<%= javascript_include_tag 'pages', 'data-turbolinks-track': 'reload' %>

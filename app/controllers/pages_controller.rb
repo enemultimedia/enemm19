@@ -10,4 +10,8 @@ class PagesController < ApplicationController
   def speakers
     @speakers = Speaker.active.ordered.with_info
   end
+
+  def ambassadors
+    @ambassadors = Ambassador.active.ordered
+  end
 end

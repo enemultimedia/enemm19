@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about', as: 'about'
   get 'speakers', to: 'pages#speakers', as: 'speakers'
   get 'speakers/:slug', to: 'pages#speakers', as: 'speaker'
+  get 'ambassadors', to: 'pages#ambassadors', as: 'ambassadors'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'pages#index'
 end
