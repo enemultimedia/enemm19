@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.0'
 
 gem 'activeadmin', '~> 1.3.1'
+gem 'activeadmin_addons', '~> 1.7.0'
 gem 'activeadmin_reorderable', '~> 0.1.2'
 gem 'acts_as_list', '~> 0.8.0'
 gem 'bootsnap', '>= 1.1.0', require: false
