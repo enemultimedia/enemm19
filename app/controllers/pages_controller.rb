@@ -15,6 +15,8 @@ class PagesController < ApplicationController
     @ambassadors = Ambassador.active.ordered
   end
 
+  def schedule
+  end
   def faqs
     @faqs = Faq.active.ordered
   end
