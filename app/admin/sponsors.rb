@@ -3,7 +3,6 @@ ActiveAdmin.register Sponsor do
 
   index do
     selectable_column
-    id_column
     column :active
     column :name
     column :type

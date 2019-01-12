@@ -6,7 +6,6 @@ ActiveAdmin.register Ambassador do
 
   index as: :reorderable_table do
     selectable_column
-    id_column
     column :active
     column :name
     column :institution
