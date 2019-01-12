@@ -7,6 +7,7 @@
   <div>
     <div class="bs">
       <%= link_to 'Sobre', about_path, class:"menu_links--about" %>
+      <%= link_to 'Programa', schedule_path, class:"menu_links--schedule" %>
       <%= link_to 'Oradores', speakers_path, class:"menu_links--speakers" %>
       <%= link_to 'Embaixadores', ambassadors_path, class:"menu_links--ambassadors" %>
       <%= link_to 'Bilheteira', '//tickets.enemm.pt', target:"_blank" %>
@@ -24,6 +25,9 @@
         <div class="menu_links">
           <%= link_to about_path do %>
           <h1>Sobre</h1>
+          <% end %>
+          <%= link_to schedule_path do %>
+          <h1>Programa</h1>
           <% end %>
           <%= link_to speakers_path do %>
           <h1>Oradores</h1>
