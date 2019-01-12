@@ -44,4 +44,38 @@ ActiveAdmin.register Event do
     end
     f.actions
   end
+
+  batch_action :activate do |ids|
+    batch_action_collection.find(ids).each do |event|
+      event.activate!
+    end
+    redirect_to collection_path, notice: "The selected events have been activated."
+  end
+
+  batch_action :disable do |ids|
+    batch_action_collection.find(ids).each do |event|
+      event.deactivate!
+    end
+    redirect_to collection_path, notice: "The selected events have been disabled."
+  end
+
+  batch_action :destroy, false
+
+  member_action :activate, method: :put do
+    resource.activate!
+    redirect_to resource_path, notice: 'Activated!'
+  end
+
+  action_item :activate, only: :show, if: proc{ !event.active? } do
+    link_to 'Activate', activate_admin_event_path(event), method: :put
+  end
+
+  member_action :disable, method: :put do
+    resource.deactivate!
+    redirect_to resource_path, notice: 'Disabled!'
+  end
+
+  action_item :disable, only: :show, if: proc{ event.active? } do
+    link_to 'Disable', disable_admin_event_path(event), method: :put
+  end
 end
