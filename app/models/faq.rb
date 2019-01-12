@@ -3,7 +3,7 @@
 # Table name: faqs
 #
 #  id         :bigint(8)        not null, primary key
-#  active     :boolean
+#  active     :boolean          default(FALSE), not null
 #  answer     :text             default(""), not null
 #  position   :integer
 #  question   :string           default(""), not null

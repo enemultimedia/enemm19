@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2019_01_12_025723) do
   end
 
   create_table "faqs", force: :cascade do |t|
-    t.boolean "active"
+    t.boolean "active", default: false, null: false
     t.string "question", default: "", null: false
     t.text "answer", default: "", null: false
     t.integer "position"
