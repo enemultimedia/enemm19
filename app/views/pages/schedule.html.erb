@@ -2,6 +2,702 @@
 <%= stylesheet_link_tag    'schedule', media: 'all', 'data-turbolinks-track': 'reload' %>
 
 <div class="container">
+  <%= render partial: 'navbar' %>
+  <div id="myTitle" class="item title right">
+    <h1>Programa</h1>
+  </div>
+  <div id="myHiddsen" class="item hidden"></div>
+  <div id="myMatrix_Hidden" class="item matrix_hidden">
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+  </div>
+  <div class="matrix_day1 item">
+    <div class="activity_info right">
+      <h2>1 Março</h2>
+    </div>
+    <div class="activity_info">
+      <h3>Sexta-feira</h3>
+    </div>
+    <div class="activity_info right">
+      <p>14:00 - 19:00</p>
+    </div>
+    <div class="activity_info">
+      <p>Check-In</p>
+    </div>
+    <div class="activity_info right">
+      <p>14:00 - 16:30</p>
+    </div>
+    <div class="activity_info">
+      <p>Leisure</p>
+    </div>
+    <div class="activity_info right">
+      <p>17:00 - 19:00</p>
+    </div>
+    <div class="activity_info">
+      <p>Inauguração Pátio das Escolas: “UC 725 Anos: Uma História de Luz</p>
+    </div>
+    <div class="activity_info right">
+      <p>19:30 - 21:00</p>
+    </div>
+    <div class="activity_info">
+      <p>Jantar</p>
+    </div>
+    <div class="activity_info right">
+      <p>21:00 - 02:00</p>
+    </div>
+    <div class="activity_info">
+      <p>Party Party</p>
+    </div>
+
+
+    <div class="activity_info_hidden">
+      <h2>1 Março</h2>
+      <h3>Sexta-feira</h3>
+    </div>
+    <div class="activity_info_hidden">
+      <p>14:00 - 19:00</p>
+      <p>Check-In</p>
+    </div>
+    <div class="activity_info_hidden">
+      <p>14:00 - 16:30</p>
+      <p>Leisure</p>
+    </div>
+    <div class="activity_info_hidden">
+      <p>17:00 - 19:00</p>
+      <p>Inauguração Pátio das Escolas: “UC 725 Anos: Uma História de Luz</p>
+    </div>
+    <div class="activity_info_hidden">
+      <p>19:30 - 21:00</p>
+      <p>Jantar</p>
+    </div>
+    <div class="activity_info_hidden">
+      <p>21:00 - 02:00</p>
+      <p>Party Party</p>
+    </div>
+  </div>
+  <div class="matrix_day2 item">
+    <div class="activity_info right">
+      <h2>2 Março</h2>
+    </div>
+    <div class="activity_info">
+      <h3>Sábado</h3>
+    </div>
+    <div class="activity_info right">
+      <p>10:00 - 11:00</p>
+    </div>
+    <div class="activity_info">
+      <p>Pequeno-Almoço</p>
+    </div>
+    <div class="activity_info right">
+      <p>11:00 - 19:30</p>
+    </div>
+    <div class="activity_info">
+      <p>Exibição</p>
+    </div>
+    <div class="activity_info right">
+      <p>11:00 - 13:00</p>
+    </div>
+    <div class="activity_info talks">
+      <div class="talk_info">
+        <h4>Talks - Light and Sound</h4>
+        <div>
+          <p>Binaural Audio</p>
+          <h5>Speaker Name</h5>
+        </div>
+        <div>
+          <p>Light</p>
+          <h5>Speaker Name</h5>
+        </div>
+        <div>
+          <p>Holography</p>
+          <h5>Speaker Name</h5>
+        </div>
+        <div>
+          <p>UC 725 Anos: Uma História de Luz</p>
+          <h5>Speaker Name</h5>
+        </div>
+      </div>
+      <div class="talk_info">
+        <h4>Talks - Business</h4>
+        <div>
+          <p>Wandson Lisboa</p>
+          <h5>Speaker Name</h5>
+        </div>
+        <div>
+          <p>Digital Marketing</p>
+          <h5>Speaker Name</h5>
+        </div>
+        <div>
+          <p>Brand Recognition</p>
+          <h5>Speaker Name</h5>
+        </div>
+        <div>
+          <p>Videogames Streaming: Business Model</p>
+          <h5>Speaker Name</h5>
+        </div>
+      </div>
+    </div>
+    <div class="activity_info right">
+      <p>13:00 - 14:00</p>
+    </div>
+    <div class="activity_info">
+      <p>Almoço</p>
+    </div>
+    <div class="activity_info right">
+      <p>13:45 - 14:45</p>
+    </div>
+    <div class="activity_info talks">
+      <div class="talk_info">
+        <h4>Talks - Hardware</h4>
+        <div>
+          <p>Robotics</p>
+          <h5>Speaker Name</h5>
+        </div>
+        <div>
+          <p>Drones</p>
+          <h5>Speaker Name</h5>
+        </div>
+      </div>
+      <div class="talk_info">
+        <h4>Talks - Web Interface</h4>
+        <div>
+          <p>Demystifying Accessibility</p>
+          <h5>Speaker Name</h5>
+        </div>
+        <div>
+          <p>Information Visualization</p>
+          <h5>Speaker Name</h5>
+        </div>
+      </div>
+    </div>
+    <div class="activity_info right">
+      <p>14:45 - 16:45</p>
+    </div>
+    <div class="activity_info">
+      <div>
+        <p>Did New Media Kill the Traditional Media Star?</p>
+        <h5>Conversa aberta — Speaker Name, Speaker Name, Speaker Name</h5>
+      </div>
+    </div>
+    <div class="activity_info right">
+      <p>16:45 - 17:00</p>
+    </div>
+    <div class="activity_info">
+      <p>Coffee-Break</p>
+    </div>
+    <div class="activity_info right">
+      <p>17:00 - 18:00</p>
+    </div>
+    <div class="activity_info">
+      <p>Middle Ground</p>
+    </div>
+    <div class="activity_info right">
+      <p>18:00 - 19:00</p>
+    </div>
+    <div class="activity_info">
+      <div>
+        <p>Creativity, Art Direction, and Processes</p>
+        <h5>Conversa aberta — Tavo Studio</h5>
+      </div>
+    </div>
+    <div class="activity_info right">
+      <p>19:30 - 21:00</p>
+    </div>
+    <div class="activity_info">
+      <p>Jantar</p>
+    </div>
+    <div class="activity_info right">
+      <p>21:00 - 02:00</p>
+    </div>
+    <div class="activity_info">
+      <p>Party Party</p>
+    </div>
+
+    <div class="activity_info_hidden">
+      <h2>2 Março</h2>
+      <h3>Sábado</h3>
+    </div>
+    <div class="activity_info_hidden">
+      <p>10:00 - 11:00</p>
+      <p>Pequeno-Almoço</p>
+    </div>
+    <div class="activity_info_hidden">
+      <p>11:00 - 19:30</p>
+      <p>Exibição</p>
+    </div>
+    <div class="activity_info_hidden talks">
+      <p>11:00 - 13:00</p>
+      <div class="talk_info">
+        <h4>Talks - Light and Sound</h4>
+        <div>
+          <p>Binaural Audio</p>
+          <h5>Speaker Name</h5>
+        </div>
+        <div>
+          <p>Light</p>
+          <h5>Speaker Name</h5>
+        </div>
+        <div>
+          <p>Holography</p>
+          <h5>Speaker Name</h5>
+        </div>
+        <div>
+          <p>UC 725 Anos: Uma História de Luz</p>
+          <h5>Speaker Name</h5>
+        </div>
+      </div>
+      <div class="talk_info">
+        <h4>Talks - Business</h4>
+        <div>
+          <p>Wandson Lisboa</p>
+          <h5>Speaker Name</h5>
+        </div>
+        <div>
+          <p>Digital Marketing</p>
+          <h5>Speaker Name</h5>
+        </div>
+        <div>
+          <p>Brand Recognition</p>
+          <h5>Speaker Name</h5>
+        </div>
+        <div>
+          <p>Videogames Streaming: Business Model</p>
+          <h5>Speaker Name</h5>
+        </div>
+      </div>
+    </div>
+    <div class="activity_info_hidden">
+      <p>13:00 - 14:00</p>
+      <p>Almoço</p>
+    </div>
+    <div class="activity_info_hidden talks">
+      <p>13:45 - 14:45</p>
+      <div class="talk_info">
+        <h4>Talks - Hardware</h4>
+        <div>
+          <p>Robotics</p>
+          <h5>Speaker Name</h5>
+        </div>
+        <div>
+          <p>Drones</p>
+          <h5>Speaker Name</h5>
+        </div>
+      </div>
+      <div class="talk_info">
+        <h4>Talks - Web Interface</h4>
+        <div>
+          <p>Demystifying Accessibility</p>
+          <h5>Speaker Name</h5>
+        </div>
+        <div>
+          <p>Information Visualization</p>
+          <h5>Speaker Name</h5>
+        </div>
+      </div>
+    </div>
+    <div class="activity_info_hidden">
+      <p>14:45 - 16:45</p>
+      <div>
+        <p>Did New Media Kill the Traditional Media Star?</p>
+        <h5>Conversa aberta — Speaker Name, Speaker Name, Speaker Name</h5>
+      </div>
+    </div>
+    <div class="activity_info_hidden">
+      <p>16:45 - 17:00</p>
+      <p>Coffee-Break</p>
+    </div>
+    <div class="activity_info_hidden">
+      <p>17:00 - 18:00</p>
+      <p>Middle Ground</p>
+    </div>
+    <div class="activity_info_hidden">
+      <p>18:00 - 19:00</p>
+      <div>
+        <p>Creativity, Art Direction, and Processes</p>
+        <h5>Conversa aberta — Tavo Studio</h5>
+      </div>
+    </div>
+    <div class="activity_info_hidden">
+      <p>19:30 - 21:00</p>
+      <p>Jantar</p>
+    </div>
+    <div class="activity_info_hidden">
+      <p>21:00 - 02:00</p>
+      <p>Party Party</p>
+    </div>
+  </div>
+  <div class="matrix_day3 item">
+    <div class="activity_info right">
+      <h2>3 Março</h2>
+    </div>
+    <div class="activity_info">
+      <h3>Domingo</h3>
+    </div>
+    <div class="activity_info right">
+      <p>10:00 - 11:00</p>
+    </div>
+    <div class="activity_info">
+      <p>Pequeno-Almoço</p>
+    </div>
+    <div class="activity_info right">
+      <p>11:00 - 19:30</p>
+    </div>
+    <div class="activity_info">
+      <p>Exibição</p>
+    </div>
+    <div class="activity_info right">
+      <p>11:00 - 13:00</p>
+    </div>
+    <div class="activity_info talks">
+      <div class="talk_info">
+        <h4>Talks - Graphics and Interaction</h4>
+        <div>
+          <p>Hey Luísa!</p>
+          <h5>Speaker Name</h5>
+        </div>
+        <div>
+          <p>Augmented Reality in graphic design</p>
+          <h5>Speaker Name</h5>
+        </div>
+        <div>
+          <p>Scripting Tipography</p>
+          <h5>Speaker Name</h5>
+        </div>
+        <div>
+          <p>Illustrations / Fotografia / Teresa Chambel</p>
+          <h5>Speaker Name</h5>
+        </div>
+      </div>
+      <div class="talk_info">
+        <h4>Talks - Multimedia applied</h4>
+        <div>
+          <p>The Influence of music on the human being</p>
+          <h5>Speaker Name</h5>
+        </div>
+        <div>
+          <p>Harpa Laser: a traditional harp.. with lasers!</p>
+          <h5>Speaker Name</h5>
+        </div>
+        <div>
+          <p>Medicine</p>
+          <h5>Speaker Name</h5>
+        </div>
+        <div>
+          <p>Game Design</p>
+          <h5>Speaker Name</h5>
+        </div>
+      </div>
+    </div>
+    <div class="activity_info right">
+      <p>13:00 - 14:00</p>
+    </div>
+    <div class="activity_info">
+      <p>Almoço</p>
+    </div>
+    <div class="activity_info right">
+      <p>13:45 - 14:45</p>
+    </div>
+    <div class="activity_info talks">
+      <div class="talk_info">
+        <h4>Talks - Light and Sound</h4>
+        <div>
+          <p>Binaural Audio</p>
+          <h5>Speaker Name</h5>
+        </div>
+        <div>
+          <p>Light</p>
+          <h5>Speaker Name</h5>
+        </div>
+        <div>
+          <p>Holography</p>
+          <h5>Speaker Name</h5>
+        </div>
+        <div>
+          <p>UC 725 Anos: Uma História de Luz</p>
+          <h5>Speaker Name</h5>
+        </div>
+      </div>
+      <div class="talk_info">
+        <h4>Talks - Business</h4>
+        <div>
+          <p>Wandson Lisboa</p>
+          <h5>Speaker Name</h5>
+        </div>
+        <div>
+          <p>Digital Marketing</p>
+          <h5>Speaker Name</h5>
+        </div>
+        <div>
+          <p>Brand Recognition</p>
+          <h5>Speaker Name</h5>
+        </div>
+        <div>
+          <p>Videogames Streaming: Business Model</p>
+          <h5>Speaker Name</h5>
+        </div>
+      </div>
+    </div>
+    <div class="activity_info right">
+      <p>13:30 - 16:45</p>
+    </div>
+    <div class="activity_info">
+      <p>Analog Multimedia</p>
+    </div>
+    <div class="activity_info right">
+      <p>16:45 - 17:00</p>
+    </div>
+    <div class="activity_info">
+      <p>Coffee-Break</p>
+    </div>
+    <div class="activity_info right">
+      <p>17:00 - 18:00</p>
+    </div>
+    <div class="activity_info">
+      <p>Closing</p>
+    </div>
+    <div class="activity_info right">
+      <p>18:00 - 19:00</p>
+    </div>
+    <div class="activity_info">
+      <p>Mr Bingo</p>
+    </div>
+    <div class="activity_info right">
+      <p>19:30 - 21:00</p>
+    </div>
+    <div class="activity_info">
+      <p>Jantar</p>
+    </div>
+    <div class="activity_info right">
+      <p>21:00 - 02:00</p>
+    </div>
+    <div class="activity_info">
+      <p>Party Hard / Peddy-Tascas</p>
+    </div>
+  <div class="activity_info_hidden">
+    <h2>3 Março</h2>
+    <h3>Domingo</h3>
+  </div>
+  <div class="activity_info_hidden">
+    <p>10:00 - 11:00</p>
+    <p>Pequeno-Almoço</p>
+  </div>
+  <div class="activity_info_hidden">
+    <p>11:00 - 19:30</p>
+    <p>Exibição</p>
+  </div>
+  <div class="activity_info_hidden talks">
+    <p>11:00 - 13:00</p>
+    <div class="talk_info">
+      <h4>Talks - Graphics and Interaction</h4>
+      <div>
+        <p>Hey Luísa!</p>
+        <h5>Speaker Name</h5>
+      </div>
+      <div>
+        <p>Augmented Reality in graphic design</p>
+        <h5>Speaker Name</h5>
+      </div>
+      <div>
+        <p>Scripting Tipography</p>
+        <h5>Speaker Name</h5>
+      </div>
+      <div>
+        <p>Illustrations / Fotografia / Teresa Chambel</p>
+        <h5>Speaker Name</h5>
+      </div>
+    </div>
+    <div class="talk_info">
+      <h4>Talks - Multimedia applied</h4>
+      <div>
+        <p>The Influence of music on the human being</p>
+        <h5>Speaker Name</h5>
+      </div>
+      <div>
+        <p>Harpa Laser: a traditional harp.. with lasers!</p>
+        <h5>Speaker Name</h5>
+      </div>
+      <div>
+        <p>Medicine</p>
+        <h5>Speaker Name</h5>
+      </div>
+      <div>
+        <p>Game Design</p>
+        <h5>Speaker Name</h5>
+      </div>
+    </div>
+  </div>
+  <div class="activity_info_hidden">
+    <p>13:00 - 14:00</p>
+    <p>Almoço</p>
+  </div>
+  <div class="activity_info_hidden talks">
+    <p>13:45 - 14:45</p>
+    <div class="talk_info">
+      <h4>Talks - Light and Sound</h4>
+      <div>
+        <p>Binaural Audio</p>
+        <h5>Speaker Name</h5>
+      </div>
+      <div>
+        <p>Light</p>
+        <h5>Speaker Name</h5>
+      </div>
+      <div>
+        <p>Holography</p>
+        <h5>Speaker Name</h5>
+      </div>
+      <div>
+        <p>UC 725 Anos: Uma História de Luz</p>
+        <h5>Speaker Name</h5>
+      </div>
+    </div>
+    <div class="talk_info">
+      <h4>Talks - Business</h4>
+      <div>
+        <p>Wandson Lisboa</p>
+        <h5>Speaker Name</h5>
+      </div>
+      <div>
+        <p>Digital Marketing</p>
+        <h5>Speaker Name</h5>
+      </div>
+      <div>
+        <p>Brand Recognition</p>
+        <h5>Speaker Name</h5>
+      </div>
+      <div>
+        <p>Videogames Streaming: Business Model</p>
+        <h5>Speaker Name</h5>
+      </div>
+    </div>
+  </div>
+  <div class="activity_info_hidden">
+    <p>13:30 - 16:45</p>
+    <p>Analog Multimedia</p>
+  </div>
+  <div class="activity_info_hidden">
+    <p>16:45 - 17:00</p>
+    <p>Coffee-Break</p>
+  </div>
+  <div class="activity_info_hidden">
+    <p>17:00 - 18:00</p>
+    <p>Closing</p>
+  </div>
+  <div class="activity_info_hidden">
+    <p>18:00 - 19:00</p>
+    <p>Mr Bingo</p>
+  </div>
+  <div class="activity_info_hidden">
+    <p>19:30 - 21:00</p>
+    <p>Jantar</p>
+  </div>
+  <div class="activity_info_hidden">
+    <p>21:00 - 02:00</p>
+    <p>Party Hard / Peddy-Tascas</p>
+  </div>
+  </div>
+  <div class="matrix_day4 item">
+    <div class="activity_info right">
+      <h2>4 Março</h2>
+    </div>
+    <div class="activity_info">
+      <h3>Segunda-feira</h3>
+    </div>
+    <div class="activity_info right">
+      <p>10:00 - 13:00</p>
+    </div>
+    <div class="activity_info">
+      <p>Workshops</p>
+    </div>
+    <div class="activity_info right">
+      <p>13:00 - 14:00</p>
+    </div>
+    <div class="activity_info">
+      <p>Almoço</p>
+    </div>
+    <div class="activity_info right">
+      <p>13:45 - 16:45</p>
+    </div>
+    <div class="activity_info">
+      <p>Workshops</p>
+    </div>
+    <div class="activity_info right">
+      <p>16:45 - 17:00</p>
+    </div>
+    <div class="activity_info">
+      <p>Coffee-break</p>
+    </div>
+    <div class="activity_info right">
+      <p>17:00 - 19:00</p>
+    </div>
+    <div class="activity_info">
+      <p>Workshops</p>
+    </div>
+
+    <div class="activity_info_hidden">
+      <h2>4 Março</h2>
+      <h3>Segunda-feira</h3>
+    </div>
+    <div class="activity_info_hidden">
+      <p>10:00 - 13:00</p>
+      <p>Workshops</p>
+    </div>
+    <div class="activity_info_hidden">
+      <p>13:00 - 14:00</p>
+      <p>Almoço</p>
+    </div>
+    <div class="activity_info_hidden">
+      <p>13:45 - 16:45</p>
+      <p>Workshops</p>
+    </div>
+    <div class="activity_info_hidden">
+      <p>16:45 - 17:00</p>
+      <p>Coffee-break</p>
+    </div>
+    <div class="activity_info_hidden">
+      <p>17:00 - 19:00</p>
+      <p>Workshops</p>
+    </div>
+  </div>
+  <script>
+    function openInfo(slug) {
+      if($(".info_content[data-slug="+slug+"]").hasClass('info_show')) {
+        $(".info_content[data-slug="+slug+"]").removeClass("info_show");
+        $(".info_content-background").hide();
+
+        if(window.history.pushState) {
+          window.history.pushState(null, '', '/speakers');
+        }
+      } else if($(".info_show").length !== 0) {
+        $(".info_content").removeClass('info_show');
+        $(".info_content[data-slug="+slug+"]").addClass("info_show");
+
+        if(window.history.pushState) {
+          window.history.pushState(null, '', '/speakers/'+slug);
+        }
+      } else {
+        $(".info_content[data-slug="+slug+"]").addClass("info_show");
+        $(".info_content-background").show();
+
+        if(window.history.pushState) {
+          window.history.pushState(null, '', '/speakers/'+slug);
+        }
+      }
+    }
+  </script>
+  <div id="myFooter" class="item footer right">
+    <p>Made with ♥ by <a href="https://nei.dei.uc.pt" target="_blank">NEI/AAC</a></p>
+  </div>
 </div>
 
 <%= javascript_include_tag 'pages', 'data-turbolinks-track': 'reload' %>
