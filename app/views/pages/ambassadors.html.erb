@@ -26,7 +26,7 @@
   </div>
   <div id="myMatrix_Ambassador" class="item matrix_ambassadors">
     <%= render partial: 'pages/partials/ambassadors/ambassador_square', collection: @ambassadors, as: :ambassador %>
-    <% (1..(10-@ambassadors.length)).each do |index| %>
+    <% (1..(5-(@ambassadors.length % 5))).each do |index| %>
       <div class="square ambassador_temp">
         <div class="ambassador_info">
           <span class="ambassador_name">Por anunciar</span>

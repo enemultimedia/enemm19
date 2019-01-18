@@ -23,7 +23,7 @@
   </div>
   <div id="myMatrix_Speaker" class="item matrix_speakers">
     <%= render partial: 'pages/partials/speakers/speaker_square', collection: @speakers, as: :speaker %>
-    <% (1..(10-@speakers.length)).each do |index| %>
+    <% (1..(5-(@speakers.length % 5))).each do |index| %>
       <div class="square speaker_temp">
         <div class="speaker_info">
           <span class="speaker_name">Por anunciar</span>
