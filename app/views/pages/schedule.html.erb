@@ -43,7 +43,7 @@
     <div class="activity_info right">
       <p>17:00 - 19:00</p>
     </div>
-    <div class="activity_info">
+    <div class="activity_info" onclick="openInfo()">
       <p>Inauguração Pátio das Escolas: “UC 725 Anos: Uma História de Luz</p>
     </div>
     <div class="activity_info right">
@@ -58,8 +58,6 @@
     <div class="activity_info">
       <p>Party Party</p>
     </div>
-
-
     <div class="activity_info_hidden">
       <h2>1 Março</h2>
       <h3>Sexta-feira</h3>
@@ -669,28 +667,44 @@
       <p>Workshops</p>
     </div>
   </div>
+  <div class="info_content">
+    <div id="myMenuInfo" class="menuInfo" onclick="openInfo()">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+    </div>
+    <h3>Inauguração Pátio das Escolas: “UC 725 Anos: Uma História de Luz"</h3>
+    <hr>
+    <p class="activity_date">Sexta-feira, 1 Março</p>
+    <p class="activity_hour">17:00 — 19:00</p>
+    <p class="activity_local">Pátio das Escolas</p>
+    <hr>
+    <p>O ENED - Encontro Nacional de Estudantes de Design - é um encontro que recebe
+      desde a primeira edição centenas de estudantes, entusiastas e profissionais de
+      referência das diferentes disciplinas da área do Design.</p>
+  </div>
+
   <script>
     function openInfo(slug) {
-      if($(".info_content[data-slug="+slug+"]").hasClass('info_show')) {
-        $(".info_content[data-slug="+slug+"]").removeClass("info_show");
+      if($(".info_content").hasClass('info_show')) {
+        $(".info_content").removeClass("info_show");
         $(".info_content-background").hide();
 
         if(window.history.pushState) {
-          window.history.pushState(null, '', '/speakers');
+          window.history.pushState(null, '', '/schedule');
         }
       } else if($(".info_show").length !== 0) {
         $(".info_content").removeClass('info_show');
-        $(".info_content[data-slug="+slug+"]").addClass("info_show");
+        $(".info_content").addClass("info_show");
 
         if(window.history.pushState) {
-          window.history.pushState(null, '', '/speakers/'+slug);
+          window.history.pushState(null, '', '/schedule/');
         }
       } else {
-        $(".info_content[data-slug="+slug+"]").addClass("info_show");
+        $(".info_content").addClass("info_show");
         $(".info_content-background").show();
 
         if(window.history.pushState) {
-          window.history.pushState(null, '', '/speakers/'+slug);
+          window.history.pushState(null, '', '/schedule/');
         }
       }
     }

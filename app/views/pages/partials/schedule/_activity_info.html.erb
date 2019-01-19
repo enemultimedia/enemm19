@@ -1,0 +1,20 @@
+<div class="info_content" data-slug="<%= schedule.slug %>">
+  <div id="myMenuInfo" class="menuInfo" data-slug="<%= schedule.slug %>" onclick="openInfo('<%= schedule.slug %>')">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+  </div>
+  <h1><%= schedule.name %></h1>
+  <% schedule.person_infos.each do |info| %>
+    <% case info.category %>
+    <% when 'title' %>
+      <h3><%= info.content %></h3>
+    <% when 'paragraph' %>
+      <p><%= info.content %></p>
+    <% when 'spacer' %>
+      <hr/>
+    <% when 'link' %>
+      <% content = info.content.scan( /\A\[(.+)\] \(([\w\.\-\:\/]+)\)\z/ix )[0] %>
+      <a target="_blank" href="<%= content[1] %>"><%= content[0] %></a>
+    <% end %>
+  <% end %>
+</div>
