@@ -44,7 +44,7 @@ html {
   background-color: var(--color-light-grey);
 }
 
-.menu_links--speakers{
+.menu_links--schedule {
   font-weight: 600;
 }
 
@@ -127,6 +127,13 @@ html {
   padding: 2rem;
 }
 
+.activity_info:hover, .talk_info:hover {
+  margin: 1px solid var(--color-black);
+  color: var(--color-black);
+  background-color: var(--color-light-grey);
+  transition: 0.4s ease;
+}
+
 .activity_info h3, .activity_info_hidden h3 {
   font-weight: normal;
   font-size: 28px;
@@ -154,7 +161,16 @@ html {
   justify-content: flex-start;
   align-items: flex-start;
   background-color: var(--color-black);
-  padding: 1rem 2rem;
+  padding: 0 2rem;
+  height: 100%;
+}
+
+.talk_info h4 {
+  margin-top: 2rem;
+}
+
+.talk_info h5:last-child {
+  margin-bottom: 2rem;
 }
 
 .activity_info_hidden {
@@ -214,7 +230,7 @@ a {
   z-index: 2;
 }
 
-.info_content p, .info_content h1, .info_content h3, .info_content a {
+.info_content p, .info_content h1, .info_content h3 {
   margin: 0rem 4rem 1rem 4rem;
   line-height: 1.5;
   color: var(--color-black);
@@ -224,17 +240,9 @@ a {
   font-size: 16px;
 }
 
-.info_content h1 {
-  margin-top: 2rem;
-}
-
 .info_content h3 {
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   margin-bottom: 0.5rem;
-}
-
-.info_content a {
-  text-decoration: underline;
 }
 
 .info_content hr {
@@ -242,6 +250,26 @@ a {
   background-color: transparent;
   border: none;
   margin: 1rem 0;
+}
+
+.activity_date, .activity_hour, .activity_local {
+  display: flex;
+  align-items: center
+}
+
+.activity_date::before {
+  content: url(date.png);
+  margin-right: .5rem;
+}
+
+.activity_hour::before {
+  content: url(hours.png);
+  margin-right: .5rem;
+}
+
+.activity_local::before {
+  content: url(local.png);
+  margin-right: .5rem;
 }
 
 .menuInfo {
