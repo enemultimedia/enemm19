@@ -1,0 +1,252 @@
+html {
+  background-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+.container {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 80px 214px 214px 1fr 214px 80px;
+  grid-template-areas:
+    'navbar navbar navbar navbar navbar navbar'
+    'title title hidden1 matrix_hidden1 matrix_hidden1 matrix_hidden1'
+    'hidden2 hidden2 faq faq faq faq'
+    'matrix_hidden2 matrix_hidden2 faq faq faq faq'
+    'hidden3 hidden3 faq faq faq faq'
+    'footer footer footer footer footer footer';
+  grid-gap: 2px;
+  background-color: var(--color-gold);
+}
+
+.header a:hover {
+  color: var(--color-black);
+  background-color: var(--color-gold);
+}
+
+.menu_links--faqs{
+  font-weight: 600;
+}
+
+.header{
+  border-right: solid 2px var(--color-gold);
+}
+
+.item {
+  background-color: var(--color-black);
+}
+
+.title {
+  padding: 2em;
+}
+
+.title {
+  grid-area: title;
+  min-width: 100px;
+  min-height: 150px;
+}
+
+.matrix_hidden1 {
+  grid-area: matrix_hidden1;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 2px;
+  background-color: var(--color-gold);
+  height: 214px;
+}
+
+.matrix_hidden1 .square {
+  background-color: var(--color-black);
+  min-width: 75px;
+  min-height: 75px;
+}
+
+.matrix_hidden2 {
+  grid-area: matrix_hidden2;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2px;
+  background-color: var(--color-gold);
+  height: 321px;
+}
+
+.matrix_hidden2 .square {
+  background-color: var(--color-black);
+  min-width: 105.5px;
+  min-height: 105.5px;
+}
+
+.line {
+  grid-row: 1 / span 2;
+  grid-column: 1 / span 2;
+  background:
+       linear-gradient(to top right,
+           var(--color-black) 0%,
+           var(--color-black) calc(50% - 2px),
+           var(--color-gold) 50%,
+           var(--color-black) calc(50% + 2px),
+           var(--color-black) 100%);
+}
+
+.hidden1 {
+  grid-area: hidden1;
+  min-width: 214px;
+}
+
+.hidden2 {
+  grid-area: hidden2;
+}
+
+.hidden3 {
+  grid-area: hidden3;
+}
+
+.faq {
+  grid-area: faq;
+  overflow: auto;
+}
+
+a {
+  color: var(--color-gold);
+}
+
+.accordion {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  min-height: 107.5px;
+  padding: 2rem;
+  border: 1px solid var(--color-gold);
+  border-left: none;
+  border-right: none;
+  outline: none;
+  text-align: left;
+  background-color: var(--color-black);
+  color: var(--color-gold);
+  cursor: pointer;
+}
+
+.accordion:first-child {
+  border-top: none;
+}
+
+.accordion:last-child {
+  border-bottom: none;
+}
+
+.accordion:hover {
+  color: var(--color-black);
+  background-color: var(--color-gold);
+}
+
+.accordion:after {
+  content: '+';
+  margin-left: 1rem;
+  float: right;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.active:after {
+  content: "-";
+}
+
+.panel {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 2rem;
+  background-color: var(--color-black);
+  transition: max-height 0.5s ease-out;
+  transition: padding 0.5s ease-out;
+}
+
+/* NAVBAR MENU ICON */
+.bar1, .bar2, .bar3 {
+    background-color: var(--color-gold);
+}
+
+.menuInfo {
+    position: absolute;
+    top: 1.2rem;
+    right: 1rem;
+    cursor: pactivity_infonter;
+}
+
+.button {
+  width: fit-content;
+  font-family: Neue Montreal;
+  border-style: none;
+  border: 2px solid var(--color-black);
+  font-size: 16px;
+  padding: 10px 20px;
+  transition: color 0.2s ease, background-color 0.2s ease;
+
+  &:hover{
+    text-decoration: none;
+    color: var(--color-gold);
+    background: var(--color-black);
+  }
+}
+
+.menuInfo .bar1, .menuInfo .bar2, .menuInfo .bar3 {
+    background-color: var(--color-black);
+}
+
+.menuInfo .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-1px, 6px);
+    transform: rotate(-45deg) translate(-1px, 6px);
+}
+
+.menuInfo .bar2 {
+    -webkit-transform: rotate(45deg) translate(-2px, -7px);
+    transform: rotate(45deg) translate(-2px, -7px);
+}
+
+@media (max-width: 1100px) {
+  .container {
+      grid-template-rows: 80px 80px 1fr 80px;
+      grid-template-areas:
+        'navbar navbar'
+        'title hidden1'
+        'faq faq'
+        'footer footer'
+}
+
+  .matrix_hidden1, .hidden2, .hidden3, .matrix_hidden2 {
+    display: none;
+  }
+
+  .title {
+    justify-content: flex-start;
+    align-items: center;
+    min-width: 0;
+    min-height: 0;
+  }
+
+  .hidden1 {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .container {
+    grid-template-rows: 80px 80px 1fr 80px;
+    grid-template-areas:
+    'navbar'
+    'title'
+    'faq'
+    'faq'
+    'footer'
+  }
+
+  .title {
+    justify-content: flex-start;
+  }
+
+  .hidden1 {
+    display: none;
+  }
+}
