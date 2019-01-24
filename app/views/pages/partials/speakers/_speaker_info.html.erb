@@ -13,7 +13,7 @@
     <% when 'spacer' %>
       <hr/>
     <% when 'link' %>
-      <% content = info.content.scan( /\A\[(.+)\] \(([\w\.\-\:\/]+)\)\z/ix )[0] %>
+      <% content = info.content.scan( /\A\[([a-zA-Z0-9\.\,\!\?]+)\] \(([a-zA-Z0-9\.\-\:\/]+)\)\z/ix )[0].to_a %>
       <a target="_blank" href="<%= content[1] %>"><%= content[0] %></a>
     <% end %>
   <% end %>

@@ -2,5 +2,11 @@
   <h3><%= faq.question %></h3>
 </button>
 <div class="panel">
-  <p><%= faq.answer %></p>
+  <% if faq.image.attached? %>
+    <%= image_tag(url_for(faq.image), class: 'faq_image') %>
+  <% end %>
+  <p>
+    <% regex = /\[([a-zA-Z0-9\.\,\!\?]+)\] \(([a-zA-Z0-9\.\-\:\/]+)\)/ix %>
+    <%= raw faq.answer.gsub(regex) {|match|  "<a target=\"_blank\" href=\"#{match.scan(regex)[0].to_a[1]}\">#{raw match.scan(regex)[0].to_a[0]}</a>" } %>
+  </p>
 </div>

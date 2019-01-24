@@ -2,13 +2,16 @@ ActiveAdmin.register Faq do
   config.sort_order = 'position_asc'
   config.paginate = false
   reorderable
-  permit_params :id, :position, :active, :question, :answer
+  permit_params :id, :position, :image, :active, :question, :answer
 
   index as: :reorderable_table do
     selectable_column
     column :active
     column :question
     column :answer
+    column :image do |f|
+      image_tag(url_for(f.image), height: '64') if f.image.attached?
+    end
     actions
   end
 
@@ -19,6 +22,9 @@ ActiveAdmin.register Faq do
       row :question
       row :answer
       row :active
+      row :image do |f|
+        image_tag(url_for(f.image), height: '256') if f.image.attached?
+      end
     end
     active_admin_comments
   end
@@ -29,6 +35,9 @@ ActiveAdmin.register Faq do
       f.input :question
       f.input :answer
       f.input :active
+      f.input :image, as: :file, :hint => f.object.image.attached? \
+                                  ? image_tag(url_for(f.object.image), height: '256') \
+                                  : content_tag(:span, "No image yet")
     end
     f.actions
   end

@@ -14,6 +14,8 @@
 class Faq < ApplicationRecord
   acts_as_list
 
+  has_one_attached :image
+
   scope :active, -> { where(active: true) }
   scope :ordered, -> { order(position: :asc) }
 
