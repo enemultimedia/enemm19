@@ -16,5 +16,6 @@ class PagesController < ApplicationController
   end
 
   def faqs
+    @faqs = Faq.active.ordered
   end
 end

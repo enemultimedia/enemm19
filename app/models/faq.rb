@@ -14,6 +14,9 @@
 class Faq < ApplicationRecord
   acts_as_list
 
+  scope :active, -> { where(active: true) }
+  scope :ordered, -> { order(position: :asc) }
+
   def activate!
     self.update(active: true)
   end
