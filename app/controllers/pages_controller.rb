@@ -14,4 +14,8 @@ class PagesController < ApplicationController
   def ambassadors
     @ambassadors = Ambassador.active.ordered
   end
+
+  def faqs
+    @faqs = Faq.active.ordered
+  end
 end

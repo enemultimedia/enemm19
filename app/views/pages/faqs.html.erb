@@ -1,0 +1,67 @@
+<%= stylesheet_link_tag    'pages', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag    'faqs', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+<div class="container">
+  <%= render partial: 'navbar' %>
+  <div class="item title right">
+    <h1>FAQ</h1>
+  </div>
+  <div class="item hidden1"></div>
+  <div class="item matrix_hidden1">
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+  </div>
+  <div class="item hidden2"></div>
+  <div class="item matrix_hidden2">
+    <div class="square line"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+  </div>
+  <div class="item hidden3"></div>
+  <div class="item faq">
+    <%= render partial: 'pages/partials/faqs/faqs_entry', collection: @faqs, as: :faq %>
+  </div>
+  <div id="myFooter" class="item footer right">
+    <p>Made with ♥ by <a href="https://nei.dei.uc.pt" target="_blank">NEI/AAC</a></p>
+  </div>
+</div>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+      panel.style.paddingTop = 0;
+      panel.style.paddingBottom = 0;
+      panel.style.borderBottom = 0;
+      this.style.borderBottom = "1px solid var(--color-gold)";
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+      panel.style.padding = 2+"rem";
+      this.style.borderBottom = 0;
+      panel.style.borderBottom = "1px solid var(--color-gold)";
+    }
+  });
+}
+</script>
+<%= javascript_include_tag 'pages', 'data-turbolinks-track': 'reload' %>
