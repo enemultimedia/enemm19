@@ -2,7 +2,7 @@ ActiveAdmin.register Speaker do
   config.sort_order = 'position_asc'
   config.paginate = false
   reorderable
-  permit_params :id, :position, :name, :slug, :company, :image, :active, person_infos_attributes: [:person_id, :category, :content, :order, :id, :_destroy]
+  permit_params :id, :position, :name, :slug, :company, :image, :active, person_infos_attributes: [:person_id, :category, :content, :order, :id, :_destroy], :event_ids => []
 
   index as: :reorderable_table do
     selectable_column
@@ -27,6 +27,9 @@ ActiveAdmin.register Speaker do
       row :image do |s|
         image_tag(url_for(s.image), height: '256') if s.image.attached?
       end
+      row :events do |s|
+        s.events.map(&:title).join(', ')
+      end
     end
     panel 'Info' do
       table_for speaker.person_infos do
@@ -48,6 +51,7 @@ ActiveAdmin.register Speaker do
       f.input :image, as: :file, :hint => f.object.image.attached? \
                                   ? image_tag(url_for(f.object.image), height: '256') \
                                   : content_tag(:span, "No image yet")
+      f.input :event_ids, as: :selected_list, display_name: :title
     end
 
     f.inputs do

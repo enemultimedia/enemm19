@@ -19,6 +19,8 @@ class Event < ApplicationRecord
   acts_as_list scope: [:start]
   acts_as_taggable
 
+  has_and_belongs_to_many :speakers, join_table: "events_speakers"
+
   enum event_type: {Talk: 0, Panel: 1, Exhibit: 2, Meal: 3, Night: 4}
 
   def activate!
