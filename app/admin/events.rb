@@ -7,7 +7,7 @@ ActiveAdmin.register Event do
   end
   config.paginate = false
   reorderable
-  permit_params :id, :position, :active, :start, :end, :place, :title, :description
+  permit_params :id, :position, :active, :start, :end, :place, :title, :description, :event_type
 
   index as: :reorderable_table do
     selectable_column
@@ -15,6 +15,7 @@ ActiveAdmin.register Event do
     column :start
     column :end
     column :title
+    column :event_type
     actions
   end
 
@@ -23,6 +24,7 @@ ActiveAdmin.register Event do
   show do
     attributes_table do
       row :title
+      row :event_type
       row :start
       row :end
       row :place
@@ -36,6 +38,7 @@ ActiveAdmin.register Event do
     f.semantic_errors *f.object.errors.keys
     f.inputs do
       f.input :title
+      f.input :event_type, as: :select
       f.input :start, as: :date_time_picker
       f.input :end, as: :date_time_picker
       f.input :place

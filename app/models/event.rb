@@ -6,6 +6,7 @@
 #  active      :boolean          default(FALSE), not null
 #  description :text             default(""), not null
 #  end         :datetime
+#  event_type  :integer          default(0)
 #  place       :string           default(""), not null
 #  position    :integer
 #  start       :datetime
@@ -16,6 +17,8 @@
 
 class Event < ApplicationRecord
   acts_as_list scope: [:start]
+
+  enum event_type: {Talk: 0, Panel: 1, Exhibit: 2, Meal: 3, Night: 4}
 
   def activate!
     self.update(active: true)
