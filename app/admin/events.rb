@@ -7,7 +7,7 @@ ActiveAdmin.register Event do
   end
   config.paginate = false
   reorderable
-  permit_params :id, :position, :active, :start, :end, :place, :title, :description, :event_type
+  permit_params :id, :position, :active, :start, :end, :place, :title, :description, :event_type, :tag_ids => []
 
   index as: :reorderable_table do
     selectable_column
@@ -16,10 +16,14 @@ ActiveAdmin.register Event do
     column :end
     column :title
     column :event_type
+    column :tags do |e|
+      e.tags.join(', ')
+    end
     actions
   end
 
   filter :active
+  filter :event_type
 
   show do
     attributes_table do
@@ -30,6 +34,9 @@ ActiveAdmin.register Event do
       row :place
       row :description
       row :active
+      row :tags do |e|
+        e.tags.join(', ')
+      end
     end
     active_admin_comments
   end
@@ -44,6 +51,10 @@ ActiveAdmin.register Event do
       f.input :place
       f.input :description
       f.input :active
+      f.input :tags,
+        as: :select,
+        multiple: :true,
+        collection: ActsAsTaggableOn::Tag.select(:id, :name).all
     end
     f.actions
   end
