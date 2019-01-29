@@ -2,13 +2,14 @@
 #
 # Table name: faqs
 #
-#  id         :bigint(8)        not null, primary key
-#  active     :boolean          default(FALSE), not null
-#  answer     :text             default(""), not null
-#  position   :integer
-#  question   :string           default(""), not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id             :bigint(8)        not null, primary key
+#  active         :boolean          default(FALSE), not null
+#  answer         :text             default(""), not null
+#  position       :integer
+#  question       :string           default(""), not null
+#  render_as_html :boolean          default(FALSE)
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
 #
 
 class Faq < ApplicationRecord
