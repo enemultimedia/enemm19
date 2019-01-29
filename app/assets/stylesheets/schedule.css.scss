@@ -90,7 +90,7 @@ html {
 .matrix_day1 {
   grid-area: matrix_day1;
   display: grid;
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   grid-template-columns: 1fr 2fr;
   grid-gap: 2px;
   background-color: var(--color-light-grey);
@@ -98,7 +98,7 @@ html {
 .matrix_day2 {
   grid-area: matrix_day2;
   display: grid;
-  grid-template-rows: repeat(3, 102px) 1fr 102px 267px 153px repeat(2, 102px) 153px repeat(2, 102px);
+  grid-template-rows: repeat(2, 102px) 1fr 102px 290px 102px 153px repeat(2, 102px);
   grid-template-columns: 1fr 2fr;
   grid-gap: 2px;
   background-color: var(--color-light-grey);
@@ -106,7 +106,7 @@ html {
 .matrix_day3 {
   grid-area: matrix_day3;
   display: grid;
-  grid-template-rows: repeat(3, 102px) 1fr 102px 1fr repeat(6, 102px);
+  grid-template-rows: repeat(2, 102px) 1fr 102px 1fr repeat(5, 102px);
   grid-template-columns: 1fr 2fr;
   grid-gap: 2px;
   background-color: var(--color-light-grey);
@@ -122,7 +122,7 @@ html {
 
 .activity_info {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   background-color: var(--color-black);
   padding: 2rem;
 }
@@ -176,11 +176,11 @@ html {
 }
 
 .talk_info h4 {
-  margin-top: 2rem;
+  margin: 2rem 0 3rem;
 }
 
 .talk_info h5:last-child {
-  margin-bottom: 2rem;
+  margin: 1rem 0 2rem;
 }
 
 .activity_info_hidden {
