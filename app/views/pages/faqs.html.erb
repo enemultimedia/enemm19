@@ -45,10 +45,9 @@
         <h3>Como me posso inscrever?</h3>
     </button>
     <div class="panel">
-      <p>Para participar no ENEMM’19 deves adquirir o teu bilhete na Bilheteira. Existem vários tipos de bilhete que podes consultar aqui.</p>
-      <p>Para participar no ENEMM’19 deves adquirir o teu bilhete na Bilheteira. Existem vários tipos de bilhete que podes consultar <a href="https://tickets.enemm.pt" target="_blank">aqui</a>.</p>
+      <p>Para participar no ENEMM’19 deves adquirir o teu bilhete na <a href="https://tickets.enemm.pt" target="_blank">Bilheteira</a>. Existem vários tipos de bilhete que podes consultar <a href="javascript:openTag('[data-id=1]');" target="_blank">aqui</a>.</p>
     </div>
-    <button class="accordion">
+    <button class="accordion" data-id="1">
         <h3>O que é que um bilhete x inclui?</h3>
     </button>
     <div class="panel">
@@ -276,5 +275,11 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 }
+</script>
+<script>
+  function openTag(tag) {
+    $(tag).click();
+    $(tag).get(0).scrollIntoView({behavior: 'smooth', block: 'center'});
+  }
 </script>
 <%= javascript_include_tag 'pages', 'data-turbolinks-track': 'reload' %>
