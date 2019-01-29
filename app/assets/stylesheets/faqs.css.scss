@@ -179,10 +179,9 @@ a {
   justify-content: center;
 }
 
-.items p {
+#grid3 .items p, #grid4 .items p  {
   text-align: center;
 }
-
 
 #grid1 .items:nth-child(2), #grid1 .items:nth-child(5), #grid1 .items:nth-child(7) {
   grid-column: 2/11;
