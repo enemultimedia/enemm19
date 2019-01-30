@@ -2,13 +2,15 @@ ActiveAdmin.register Faq do
   config.sort_order = 'position_asc'
   config.paginate = false
   reorderable
-  permit_params :id, :position, :image, :active, :question, :answer
+  permit_params :id, :position, :image, :active, :question, :answer, :render_as_html
 
   index as: :reorderable_table do
     selectable_column
     column :active
     column :question
-    column :answer
+    column :answer do |f|
+      f.render_as_html? ? nil : f.answer
+    end
     column :image do |f|
       image_tag(url_for(f.image), height: '64') if f.image.attached?
     end
@@ -21,6 +23,7 @@ ActiveAdmin.register Faq do
     attributes_table do
       row :question
       row :answer
+      row :render_as_html
       row :active
       row :image do |f|
         image_tag(url_for(f.image), height: '256') if f.image.attached?
@@ -34,6 +37,7 @@ ActiveAdmin.register Faq do
     f.inputs do
       f.input :question
       f.input :answer
+      f.input :render_as_html
       f.input :active
       f.input :image, as: :file, :hint => f.object.image.attached? \
                                   ? image_tag(url_for(f.object.image), height: '256') \

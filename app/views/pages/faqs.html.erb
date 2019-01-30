@@ -64,4 +64,10 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 </script>
+<script>
+  function openTag(tag) {
+    $(tag).click();
+    $(tag).get(0).scrollIntoView({behavior: 'smooth', block: 'center'});
+  }
+</script>
 <%= javascript_include_tag 'pages', 'data-turbolinks-track': 'reload' %>

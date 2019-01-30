@@ -1,4 +1,4 @@
-<button class="accordion">
+<button class="accordion" data-id="<%= faq.id %>">
   <h3><%= faq.question %></h3>
 </button>
 <div class="panel">
@@ -6,7 +6,11 @@
     <%= image_tag(url_for(faq.image), class: 'faq_image') %>
   <% end %>
   <p>
-    <% regex = /\[([a-zA-Z0-9\.\,\!\?]+)\] \(([a-zA-Z0-9\.\-\:\/]+)\)/ix %>
-    <%= raw faq.answer.gsub(regex) {|match|  "<a target=\"_blank\" href=\"#{match.scan(regex)[0].to_a[1]}\">#{raw match.scan(regex)[0].to_a[0]}</a>" } %>
+    <% if faq.render_as_html? %>
+      <%= faq.answer.html_safe %>
+    <% else %>
+      <% regex = /\[([a-zA-Z0-9\.\,\!\?]+)\] \(([a-zA-Z0-9\.\-\:\/\(\)\;\'\"\[\]\=]+)\)/ix %>
+      <%= raw faq.answer.gsub(regex) {|match|  "<a target=\"_blank\" href=\"#{match.scan(regex)[0].to_a[1]}\">#{raw match.scan(regex)[0].to_a[0]}</a>" } %>
+    <% end %>
   </p>
 </div>
