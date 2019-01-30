@@ -524,7 +524,7 @@
       <p>Workshops</p>
     </div>
   </div>
-  <div class="info_content">
+  <%#<div class="info_content">
     <div id="myMenuInfo" class="menuInfo" onclick="openInfo()">
       <div class="bar1"></div>
       <div class="bar2"></div>
@@ -538,9 +538,13 @@
     <p>O ENED - Encontro Nacional de Estudantes de Design - é um encontro que recebe
       desde a primeira edição centenas de estudantes, entusiastas e profissionais de
       referência das diferentes disciplinas da área do Design.</p>
-  </div>
-
-  <script>
+  </div>%>
+  <script type="text/javascript">
+    function openInfo(slug) {
+      console.log("Computer says no.");
+    }
+  </script>
+  <%#<script>
     function openInfo(slug) {
       if($(".info_content").hasClass('info_show')) {
         $(".info_content").removeClass("info_show");
@@ -565,7 +569,7 @@
         }
       }
     }
-  </script>
+  </script>%>
   <div id="myFooter" class="item footer right">
     <p>Made with ♥ by <a href="https://nei.dei.uc.pt" target="_blank">NEI/AAC</a></p>
   </div>

@@ -127,13 +127,13 @@ html {
   padding: 2rem;
 }
 
-.open_info:hover, .activity_info_hidden:hover, .talks:hover > .talk_info{
+/*.open_info:hover, .activity_info_hidden:hover, .talks:hover > .talk_info{
   margin: 1px solid var(--color-black);
   color: var(--color-black);
   background-color: var(--color-light-grey);
   transition: 0.5s ease;
   cursor: pointer;
-}
+}*/
 
  .talks:hover > .talk_info {
    cursor: default;
