@@ -386,12 +386,12 @@ a {
   }
 
   .matrix_day2 {
-    grid-template-rows: repeat(2, 116px) 1fr 116px 600px 116px 116px 160px repeat(2, 116px);
+    //grid-template-rows: repeat(2, 116px) 1fr 116px 600px 116px 116px 160px repeat(2, 116px);
     grid-template-columns: 1fr;
   }
 
   .matrix_day3 {
-    grid-template-rows: repeat(2, 116px) 1fr 116px 1fr 160px repeat(4, 116px);
+    //grid-template-rows: repeat(2, 116px) 1fr 116px 1fr 160px repeat(4, 116px);
     grid-template-columns: 1fr;
   }
 
