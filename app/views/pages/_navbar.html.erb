@@ -39,6 +39,9 @@
           <%= link_to '//tickets.enemm.pt', target:"_blank" do %>
           <h1>Bilheteira</h1>
           <% end %>
+          <%= link_to faqs_path do %>
+          <h1>FAQs</h1>
+          <% end %>
           <% if user_signed_in? %>
           <%= link_to admin_root_path do%>
           <h1>Admin</h1>
