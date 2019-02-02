@@ -14,7 +14,7 @@ html {
 .container {
   height: 100%;
   display: grid;
-  grid-template-rows: 80px 214px 1fr 80px;
+  grid-template-rows: 80px 16.6vw 1fr 80px;
   grid-template-areas:
     'navbar navbar navbar navbar navbar navbar'
     'title title hidden matrix_hidden matrix_hidden matrix_hidden'
@@ -52,23 +52,21 @@ html {
 .title {
   grid-area: title;
   min-width: 100px;
-  min-height: 150px;
 }
 
 .matrix_hidden {
   grid-area: matrix_hidden;
   display: grid;
   grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 2px;
   background-color: var(--color-purple);
-  height: 214px;
 }
 
 .matrix_hidden .square {
   background-color: var(--color-light-grey);
-  min-width: 75px;
-  min-height: 75px;
+  min-width: 4.2vw;
+  min-height: 4.22vw;
 }
 
 .hidden {
@@ -189,10 +187,12 @@ html {
 
 .cta a{
   margin-bottom: 1.5rem;
+  font-size: 16px;
   align-self: flex-end;
-  padding: .5em;
-  border: 1px solid var(--color-light-grey);
+  padding: 10px 20px;
+  border: 2px solid var(--color-light-grey);
   color: var(--color-light-grey);
+  transition: background-color 0.2s ease;
 }
 
 .cta a:hover{
@@ -249,7 +249,7 @@ a {
 
 @media (max-width: 950px) {
   .container {
-      grid-template-rows: 80px 80px 1fr 80px;
+      grid-template-rows: 80px auto 1fr 80px;
       grid-template-areas:
         'navbar navbar'
         'title hidden'
@@ -258,7 +258,7 @@ a {
   }
 
   .matrix_ambassadors {
-    grid-template-rows: repeat(auto-fill, 250px);
+    grid-template-rows: repeat(auto-fill, 33vw);
     grid-template-columns: repeat(3, 1fr);
   }
 
@@ -279,6 +279,11 @@ a {
 
   .hidden {
     min-width: 0;
+  }
+
+  .cta a{
+    align-self: flex-start;
+    margin-top: 20px;
   }
 }
 

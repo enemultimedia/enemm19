@@ -313,6 +313,16 @@ a {
   }
 }
 
+a.button--gold{
+  text-decoration: none;
+  border-color: var(--color-gold);
+  &:hover{
+    text-decoration: none;
+    color: var(--color-black);
+    background: var(--color-gold);
+  }
+}
+
 .menuInfo .bar1, .menuInfo .bar2, .menuInfo .bar3 {
     background-color: var(--color-black);
 }
@@ -336,6 +346,19 @@ a {
 
 .panel a {
   text-decoration: underline;
+}
+
+.panel p {
+  max-width: 650px;
+}
+
+.panel hr {
+  border-color: var(--color-gold);
+}
+
+.panel img{
+  max-width: 250px;
+  margin-bottom: 40px;
 }
 
 @media (max-width: 1100px) {
