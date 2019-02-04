@@ -26,6 +26,10 @@
     <button class="tablinks" onclick="openDay(event, 'secondday')">2 Março</button>
     <button class="tablinks" onclick="openDay(event, 'thirdday')">3 Março</button>
     <button class="tablinks" onclick="openDay(event, 'forthday')">4 Março</button>
+    <button class="tablinks_hidden" onclick="openDay(event, 'firstday')">1</button>
+    <button class="tablinks_hidden" onclick="openDay(event, 'secondday')">2</button>
+    <button class="tablinks_hidden" onclick="openDay(event, 'thirdday')">3</button>
+    <button class="tablinks_hidden" onclick="openDay(event, 'forthday')">4</button>
   </div>
   <div id="firstday" class="tabcontent">
     <div class="matrix_day1 item">
@@ -625,7 +629,7 @@
       console.log("Computer says no.");
     }
     function openDay(evt, dayName) {
-      var i, tabcontent, tablinks;
+      var i, tabcontent, tablinks, tablinks_hidden;
       tabcontent = document.getElementsByClassName("tabcontent");
       for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
@@ -633,6 +637,10 @@
       tablinks = document.getElementsByClassName("tablinks");
       for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      tablinks_hidden = document.getElementsByClassName("tablinks_hidden");
+      for (i = 0; i < tablinks_hidden.length; i++) {
+        tablinks_hidden[i].className = tablinks_hidden[i].className.replace(" active", "");
       }
       document.getElementById(dayName).style.display = "block";
       evt.currentTarget.className += " active";

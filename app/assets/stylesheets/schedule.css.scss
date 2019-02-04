@@ -197,6 +197,14 @@ a {
   animation: fadeEffect 1s;
 }
 
+.tablinks {
+  display: block;
+}
+
+.tablinks_hidden {
+  display: none;
+}
+
 @keyframes fadeEffect {
   from {opacity: 0;}
   to {opacity: 1;}
@@ -347,10 +355,14 @@ a {
   .matrix_day1 {
     grid-template-rows: 370px repeat(2, 102px);
   }
+
+  .matrix_day4 {
+    grid-template-rows: repeat(5, 116px);
+  }
 }
 @media (max-width: 760px) {
   .container {
-    grid-template-rows: 80px 80px 320px 1fr 80px;
+    grid-template-rows: 80px 80px 80px 1fr 80px;
     grid-template-areas:
     'navbar'
     'title'
@@ -374,7 +386,6 @@ a {
   }
 
   .matrix_day1 {
-    grid-template-rows: repeat(3, 1fr);
     grid-template-columns: 1fr;
   }
 
@@ -410,12 +421,11 @@ a {
     height: auto;
   }
 
-  .tab {
-    flex-direction: column;
-    flex-wrap: wrap;
+  .tablinks {
+    display: none;
   }
 
-  .tab button {
-    height: 25%;
+  .tablinks_hidden {
+    display: block;
   }
 }
