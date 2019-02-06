@@ -21,191 +21,184 @@
     <div class="square"></div>
     <div class="square"></div>
   </div>
-  <div class="matrix_day1 item">
-    <div class="activity_info right">
-      <h2>1 Março</h2>
-    </div>
-    <div class="activity_info">
-      <h3>Sexta-feira</h3>
-    </div>
-    <div class="activity_info right">
-      <p>13:45 - 19:00</p>
-    </div>
-    <div class="activity_info open_info" onclick="openInfo()">
-      <p>Check-In</p>
-    </div>
-    <div class="activity_info right">
-      <p>20:00 - 21:00</p>
-    </div>
-    <div class="activity_info open_info" onclick="openInfo()">
-      <p>Jantar</p>
-    </div>
-    <div class="activity_info right">
-      <p>21:00 - 02:00</p>
-    </div>
-    <div class="activity_info open_info" onclick="openInfo()">
-      <p>Animação Noturna</p>
-    </div>
-    <div class="activity_info_hidden oi">
-      <h2>1 Março</h2>
-      <h3>Sexta-feira</h3>
-    </div>
-    <div class="activity_info_hidden" onclick="openInfo()">
-      <p>13:45 - 19:00</p>
-      <p>Check-In</p>
-    </div>
-    <div class="activity_info_hidden" onclick="openInfo()">
-      <p>20:00 - 21:00</p>
-      <p>Jantar</p>
-    </div>
-    <div class="activity_info_hidden" onclick="openInfo()">
-      <p>21:00 - 02:00</p>
-      <p>Party Animação Noturna</p>
+  <div class="tab">
+    <button class="tablinks" onclick="openDay(event, 'firstday')" id="defaultOpen">1 Março</button>
+    <button class="tablinks" onclick="openDay(event, 'secondday')">2 Março</button>
+    <button class="tablinks" onclick="openDay(event, 'thirdday')">3 Março</button>
+    <button class="tablinks" onclick="openDay(event, 'forthday')">4 Março</button>
+    <button class="tablinks_hidden" onclick="openDay(event, 'firstday')">1</button>
+    <button class="tablinks_hidden" onclick="openDay(event, 'secondday')">2</button>
+    <button class="tablinks_hidden" onclick="openDay(event, 'thirdday')">3</button>
+    <button class="tablinks_hidden" onclick="openDay(event, 'forthday')">4</button>
+  </div>
+  <div id="firstday" class="tabcontent">
+    <div class="matrix_day1 item">
+      <div class="activity_info right">
+        <p>13:45 - 19:00</p>
+      </div>
+      <div class="activity_info open_info" onclick="openInfo()">
+        <p>Check-In</p>
+      </div>
+      <div class="activity_info right">
+        <p>20:00 - 21:00</p>
+      </div>
+      <div class="activity_info open_info" onclick="openInfo()">
+         <p>Jantar</p>
+      </div>
+      <div class="activity_info right">
+         <p>21:00 - 02:00</p>
+      </div>
+      <div class="activity_info open_info" onclick="openInfo()">
+         <p>Animação Noturna</p>
+      </div>
+      <div class="activity_info_hidden" onclick="openInfo()">
+        <p>13:45 - 19:00</p>
+        <p>Check-In</p>
+      </div>
+      <div class="activity_info_hidden" onclick="openInfo()">
+        <p>20:00 - 21:00</p>
+        <p>Jantar</p>
+      </div>
+      <div class="activity_info_hidden" onclick="openInfo()">
+        <p>21:00 - 02:00</p>
+        <p>Party Animação Noturna</p>
+      </div>
     </div>
   </div>
-  <div class="matrix_day2 item">
-    <div class="activity_info right">
-      <h2>2 Março</h2>
-    </div>
-    <div class="activity_info">
-      <h3>Sábado</h3>
-    </div>
-    <div class="activity_info right">
-      <p>10:00 - 11:00</p>
-    </div>
-    <div class="activity_info open_info" onclick="openInfo()">
-      <p>Pequeno-Almoço</p>
-    </div>
-    <div class="activity_info right">
-      <p>11:00 - 13:00</p>
-    </div>
-    <div class="activity_info talks">
-      <div class="talk_info">
-        <h4>Talks - Business</h4>
-        <div>
-          <p onclick="openInfo()">O meu Caminho</p>
-          <h5>Wandson Lisboa</h5>
+  <div id="secondday" class="tabcontent">
+    <div class="matrix_day2 item">
+      <div class="activity_info right">
+        <p>10:00 - 11:00</p>
+      </div>
+      <div class="activity_info open_info" onclick="openInfo()">
+        <p>Pequeno-Almoço</p>
+      </div>
+      <div class="activity_info right">
+        <p>11:00 - 13:00</p>
+      </div>
+      <div class="activity_info talks">
+        <div class="talk_info">
+          <h4>Talks - Business</h4>
+          <div>
+            <p onclick="openInfo()">O meu Caminho</p>
+            <h5>Wandson Lisboa</h5>
+          </div>
+          <div>
+            <p onclick="openInfo()">Digital Marketing</p>
+            <h5>Por Anunciar</h5>
+          </div>
+          <div>
+            <p onclick="openInfo()">Brand Recognition</p>
+            <h5>João Magalhães</h5>
+          </div>
+          <div>
+            <p onclick="openInfo()">Branded Content</p>
+            <h5>André Braz, Angie Silva</h5>
+          </div>
         </div>
-        <div>
-          <p onclick="openInfo()">Digital Marketing</p>
-          <h5>Por Anunciar</h5>
-        </div>
-        <div>
-          <p onclick="openInfo()">Brand Recognition</p>
-          <h5>João Magalhães</h5>
-        </div>
-        <div>
-          <p onclick="openInfo()">Branded Content</p>
-          <h5>André Braz, Angie Silva</h5>
+        <div class="talk_info">
+          <h4>Talks - Light and Sound</h4>
+          <div>
+            <p onclick="openInfo()">Manipulação Digital de Som</p>
+            <h5>Por Anunciar</h5>
+          </div>
+          <div>
+            <p onclick="openInfo()">Sound</p>
+            <h5>Por Anunciar</h5>
+          </div>
+          <div>
+            <p onclick="openInfo()">Holography</p>
+            <h5>Pedro Pombo</h5>
+          </div>
+          <div>
+            <p onclick="openInfo()">Por Anunciar</p>
+            <h5>Por Anunciar</h5>
+          </div>
         </div>
       </div>
-      <div class="talk_info">
-        <h4>Talks - Light and Sound</h4>
-        <div>
-          <p onclick="openInfo()">Manipulação Digital de Som</p>
-          <h5>Por Anunciar</h5>
+      <div class="activity_info right">
+        <p>13:00 - 14:00</p>
+      </div>
+      <div class="activity_info open_info" onclick="openInfo()">
+        <p>Almoço</p>
+      </div>
+      <div class="activity_info right">
+        <p>13:45 - 14:45</p>
+      </div>
+      <div class="activity_info talks">
+        <div class="talk_info">
+          <h4>Talks - Hardware</h4>
+          <div>
+            <p onclick="openInfo()">Robotics</p>
+            <h5>Por Anunciar</h5>
+          </div>
+          <div>
+            <p onclick="openInfo()">Drones: Produção de Media, Rentabilidade e Futuro</p>
+            <h5>José Nunes</h5>
+          </div>
+          <div>
+            <p onclick="openInfo()">Por Anunciar</p>
+            <h5>Por Anunciar</h5>
+          </div>
+          <div>
+            <p onclick="openInfo()">Por Anunciar</p>
+            <h5>Por Anunciar</h5>
+          </div>
         </div>
-        <div>
-          <p onclick="openInfo()">Sound</p>
-          <h5>Por Anunciar</h5>
-        </div>
-        <div>
-          <p onclick="openInfo()">Holography</p>
-          <h5>Pedro Pombo</h5>
-        </div>
-        <div>
-          <p onclick="openInfo()">Por Anunciar</p>
-          <h5>Por Anunciar</h5>
+        <div class="talk_info">
+          <h4>Talks - Web Interface</h4>
+          <div>
+            <p onclick="openInfo()">Demystifying Accessibility</p>
+            <h5>Rafaela Ferro</h5>
+          </div>
+          <div>
+            <p onclick="openInfo()">Information Visualization</p>
+            <h5>Por Anunciar</h5>
+          </div>
+          <div>
+            <p onclick="openInfo()">Por Anunciar</p>
+            <h5>Por Anunciar</h5>
+          </div>
+          <div>
+            <p onclick="openInfo()">Por Anunciar</p>
+            <h5>Por Anunciar</h5>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="activity_info right">
-      <p>13:00 - 14:00</p>
-    </div>
-    <div class="activity_info open_info" onclick="openInfo()">
-      <p>Almoço</p>
-    </div>
-    <div class="activity_info right">
-      <p>13:45 - 14:45</p>
-    </div>
-    <div class="activity_info talks">
-      <div class="talk_info">
-        <h4>Talks - Hardware</h4>
+      <div class="activity_info right">
+        <p>14:45 - 16:45</p>
+      </div>
+      <div class="activity_info open_info" onclick="openInfo()">
+        <p>Por Anunciar</p>
+      </div>
+      <div class="activity_info right">
+        <p>16:45 - 17:00</p>
+      </div>
+      <div class="activity_info open_info" onclick="openInfo()">
+        <p>Coffee-Break</p>
+      </div>
+      <div class="activity_info right">
+        <p>18:00 - 19:00</p>
+      </div>
+      <div class="activity_info open_info" onclick="openInfo()">
         <div>
-          <p onclick="openInfo()">Robotics</p>
-          <h5>Por Anunciar</h5>
-        </div>
-        <div>
-          <p onclick="openInfo()">Drones: Produção de Media, Rentabilidade e Futuro</p>
-          <h5>José Nunes</h5>
-        </div>
-        <div>
-          <p onclick="openInfo()">Por Anunciar</p>
-          <h5>Por Anunciar</h5>
-        </div>
-        <div>
-          <p onclick="openInfo()">Por Anunciar</p>
-          <h5>Por Anunciar</h5>
+          <p>Creativity, Art Direction, and Processes</p>
+          <h5>Conversa aberta — Tavo Studio</h5>
         </div>
       </div>
-      <div class="talk_info">
-        <h4>Talks - Web Interface</h4>
-        <div>
-          <p onclick="openInfo()">Demystifying Accessibility</p>
-          <h5>Rafaela Ferro</h5>
-        </div>
-        <div>
-          <p onclick="openInfo()">Information Visualization</p>
-          <h5>Por Anunciar</h5>
-        </div>
-        <div>
-          <p onclick="openInfo()">Por Anunciar</p>
-          <h5>Por Anunciar</h5>
-        </div>
-        <div>
-          <p onclick="openInfo()">Por Anunciar</p>
-          <h5>Por Anunciar</h5>
-        </div>
+      <div class="activity_info right">
+        <p>20:00 - 21:00</p>
       </div>
-    </div>
-    <div class="activity_info right">
-      <p>14:45 - 16:45</p>
-    </div>
-    <div class="activity_info open_info" onclick="openInfo()">
-      <p>Por Anunciar</p>
-    </div>
-    <div class="activity_info right">
-      <p>16:45 - 17:00</p>
-    </div>
-    <div class="activity_info open_info" onclick="openInfo()">
-      <p>Coffee-Break</p>
-    </div>
-    <div class="activity_info right">
-      <p>18:00 - 19:00</p>
-    </div>
-    <div class="activity_info open_info" onclick="openInfo()">
-      <div>
-        <p>Creativity, Art Direction, and Processes</p>
-        <h5>Conversa aberta — Tavo Studio</h5>
+      <div class="activity_info open_info" onclick="openInfo()">
+        <p>Jantar</p>
       </div>
-    </div>
-    <div class="activity_info right">
-      <p>20:00 - 21:00</p>
-    </div>
-    <div class="activity_info open_info" onclick="openInfo()">
-      <p>Jantar</p>
-    </div>
-    <div class="activity_info right">
-      <p>21:00 - 02:00</p>
-    </div>
-    <div class="activity_info open_info" onclick="openInfo()">
-      <p>Animação Noturna</p>
-    </div>
-    <div class="activity_info_hidden oi">
-      <h2>2 Março</h2>
-      <h3>Sábado</h3>
-    </div>
-    <div class="activity_info_hidden" onclick="openInfo()">
+      <div class="activity_info right">
+        <p>21:00 - 02:00</p>
+      </div>
+      <div class="activity_info open_info" onclick="openInfo()">
+        <p>Animação Noturna</p>
+      </div>
+      <div class="activity_info_hidden" onclick="openInfo()">
       <p>10:00 - 11:00</p>
       <p>Pequeno-Almoço</p>
     </div>
@@ -318,148 +311,140 @@
       <p>21:00 - 02:00</p>
       <p>Animação Noturna</p>
     </div>
+    </div>
   </div>
-  <div class="matrix_day3 item">
-    <div class="activity_info right">
-      <h2>3 Março</h2>
-    </div>
-    <div class="activity_info">
-      <h3>Domingo</h3>
-    </div>
-    <div class="activity_info right">
-      <p>10:00 - 11:00</p>
-    </div>
-    <div class="activity_info open_info" onclick="openInfo()">
-      <p>Pequeno-Almoço</p>
-    </div>
-    <div class="activity_info right">
-      <p>11:00 - 13:00</p>
-    </div>
-    <div class="activity_info talks">
-      <div class="talk_info">
-        <h4>Talks - Graphics and Interaction</h4>
-        <div>
-          <p onclick="openInfo()">O meu Caminho</p>
-          <h5>Luisa Azevedo</h5>
-        </div>
-        <div>
-          <p onclick="openInfo()">Augmented Reality in graphic design</p>
-          <h5>Luís Almeida</h5>
-        </div>
-        <div>
-          <p onclick="openInfo()">Scripting Tipography</p>
-          <h5>Pedro Neves</h5>
-        </div>
-        <div>
-          <p onclick="openInfo()">Por Anunciar</p>
-          <h5>Por Anunciar</h5>
-        </div>
-      </div>
-      <div class="talk_info">
-        <h4>Talks - Applied Multimedia</h4>
-        <div>
-          <p onclick="openInfo()">Game Design</p>
-          <h5>Por Anunciar</h5>
-        </div>
-        <div>
-          <p onclick="openInfo()">Por Anunciar</p>
-          <h5>Por Anunciar</h5>
-        </div>
-        <div>
-          <p onclick="openInfo()">Por Anunciar</p>
-          <h5>Por Anunciar</h5>
-        </div>
-        <div>
-          <p onclick="openInfo()">Por Anunciar</p>
-          <h5>Por Anunciar</h5>
-        </div>
-      </div>
-    </div>
-    <div class="activity_info right">
-      <p>13:00 - 14:00</p>
-    </div>
-    <div class="activity_info open_info" onclick="openInfo()">
-      <p>Almoço</p>
-    </div>
-    <div class="activity_info right">
-      <p>13:45 - 15:30</p>
-    </div>
-    <div class="activity_info talks">
-      <div class="talk_info">
-        <h4>Talks - Web Development</h4>
-        <div>
-          <p onclick="openInfo()">Product Design</p>
-          <h5>Daniel Cardoso</h5>
-        </div>
-        <div>
-          <p onclick="openInfo()">Company Culture and Creativity</p>
-          <h5>Filipe Almeida</h5>
-        </div>
-        <div>
-          <p onclick="openInfo()">Por Anunciar</p>
-          <h5>Por Anunciar</h5>
-        </div>
-      </div>
-      <div class="talk_info">
-        <h4>Talks - Miscellaneous</h4>
-        <div>
+  <div id="thirdday" class="tabcontent">
+    <div class="matrix_day3 item">
+     <div class="activity_info right">
+       <p>10:00 - 11:00</p>
+     </div>
+     <div class="activity_info open_info" onclick="openInfo()">
+       <p>Pequeno-Almoço</p>
+     </div>
+     <div class="activity_info right">
+       <p>11:00 - 13:00</p>
+     </div>
+     <div class="activity_info talks">
+       <div class="talk_info">
+         <h4>Talks - Graphics and Interaction</h4>
+         <div>
+           <p onclick="openInfo()">O meu Caminho</p>
+           <h5>Luisa Azevedo</h5>
+         </div>
+         <div>
+           <p onclick="openInfo()">Augmented Reality in graphic design</p>
+           <h5>Luís Almeida</h5>
+         </div>
+         <div>
+           <p onclick="openInfo()">Scripting Tipography</p>
+           <h5>Pedro Neves</h5>
+         </div>
+         <div>
+           <p onclick="openInfo()">Por Anunciar</p>
+           <h5>Por Anunciar</h5>
+         </div>
+       </div>
+       <div class="talk_info">
+         <h4>Talks - Applied Multimedia</h4>
+         <div>
+           <p onclick="openInfo()">Game Design</p>
+           <h5>Por Anunciar</h5>
+         </div>
+         <div>
+           <p onclick="openInfo()">Por Anunciar</p>
+           <h5>Por Anunciar</h5>
+         </div>
+         <div>
+           <p onclick="openInfo()">Por Anunciar</p>
+           <h5>Por Anunciar</h5>
+         </div>
+         <div>
+           <p onclick="openInfo()">Por Anunciar</p>
+           <h5>Por Anunciar</h5>
+         </div>
+       </div>
+     </div>
+     <div class="activity_info right">
+       <p>13:00 - 14:00</p>
+     </div>
+     <div class="activity_info open_info" onclick="openInfo()">
+       <p>Almoço</p>
+     </div>
+     <div class="activity_info right">
+       <p>13:45 - 15:30</p>
+     </div>
+     <div class="activity_info talks">
+       <div class="talk_info">
+         <h4>Talks - Web Development</h4>
+         <div>
+           <p onclick="openInfo()">Product Design</p>
+           <h5>Daniel Cardoso</h5>
+         </div>
+         <div>
+           <p onclick="openInfo()">Company Culture and Creativity</p>
+           <h5>Filipe Almeida</h5>
+         </div>
+         <div>
+           <p onclick="openInfo()">Por Anunciar</p>
+           <h5>Por Anunciar</h5>
+         </div>
+       </div>
+       <div class="talk_info">
+         <h4>Talks - Miscellaneous</h4>
+         <div>
           <p onclick="openInfo()">O Ciberespaço Vivo</p>
-          <h5>Henrique Jorge</h5>
-        </div>
-        <div>
-          <p onclick="openInfo()">Interactive Visualization</p>
-          <h5>Ana Jorge</h5>
-        </div>
-        <div>
-          <p onclick="openInfo()">Por Anunciar</p>
-          <h5>Por Anunciar</h5>
-        </div>
-      </div>
-    </div>
-    <div class="activity_info right">
-      <p>15:30 - 16:45</p>
-    </div>
-    <div class="activity_info open_info" onclick="openInfo()">
-      <div>
-        <p>Analog Multimedia</p>
-        <h5>Conversa aberta — Studio Mals</h5>
-      </div>
-    </div>
-    <div class="activity_info right">
-      <p>16:45 - 17:00</p>
-    </div>
-    <div class="activity_info open_info" onclick="openInfo()">
-      <p>Coffee-Break</p>
-    </div>
-    <div class="activity_info right">
-      <p>17:00 - 18:00</p>
-    </div>
-    <div class="activity_info open_info" onclick="openInfo()">
-      <p>Closing Session</p>
-    </div>
-    <div class="activity_info right">
-      <p>18:00 - 19:00</p>
-    </div>
-    <div class="activity_info open_info" onclick="openInfo()">
-      <p>Closing Keynote</p>
-    </div>
-    <div class="activity_info right">
-      <p>20:00 - 21:00</p>
-    </div>
-    <div class="activity_info open_info" onclick="openInfo()">
-      <p>Jantar</p>
-    </div>
-    <div class="activity_info right">
-      <p>21:00 - 02:00</p>
-    </div>
-    <div class="activity_info open_info" onclick="openInfo()">
-      <p>Animação Noturna</p>
-    </div>
-    <div class="activity_info_hidden oi">
-      <h2>3 Março</h2>
-      <h3>Domingo</h3>
-    </div>
-    <div class="activity_info_hidden" onclick="openInfo()">
+           <h5>Henrique Jorge</h5>
+         </div>
+         <div>
+           <p onclick="openInfo()">Interactive Visualization</p>
+           <h5>Ana Jorge</h5>
+         </div>
+         <div>
+           <p onclick="openInfo()">Por Anunciar</p>
+           <h5>Por Anunciar</h5>
+         </div>
+       </div>
+     </div>
+     <div class="activity_info right">
+       <p>15:30 - 16:45</p>
+     </div>
+     <div class="activity_info open_info" onclick="openInfo()">
+       <div>
+         <p>Analog Multimedia</p>
+         <h5>Conversa aberta — Studio Mals</h5>
+       </div>
+     </div>
+     <div class="activity_info right">
+       <p>16:45 - 17:00</p>
+     </div>
+     <div class="activity_info open_info" onclick="openInfo()">
+       <p>Coffee-Break</p>
+     </div>
+     <div class="activity_info right">
+       <p>17:00 - 18:00</p>
+     </div>
+     <div class="activity_info open_info" onclick="openInfo()">
+       <p>Closing Session</p>
+     </div>
+     <div class="activity_info right">
+       <p>18:00 - 19:00</p>
+     </div>
+     <div class="activity_info open_info" onclick="openInfo()">
+       <p>Closing Keynote</p>
+     </div>
+     <div class="activity_info right">
+       <p>20:00 - 21:00</p>
+     </div>
+     <div class="activity_info open_info" onclick="openInfo()">
+       <p>Jantar</p>
+     </div>
+     <div class="activity_info right">
+       <p>21:00 - 02:00</p>
+     </div>
+     <div class="activity_info open_info" onclick="openInfo()">
+       <p>Animação Noturna</p>
+     </div>
+     <div class="activity_info_hidden" onclick="openInfo()">
       <p>10:00 - 11:00</p>
       <p>Pequeno-Almoço</p>
     </div>
@@ -568,68 +553,60 @@
       <p>21:00 - 02:00</p>
       <p>Party Hard / Peddy-Tascas</p>
     </div>
+    </div>
   </div>
-  <div class="matrix_day4 item">
-    <div class="activity_info right">
-      <h2>4 Março</h2>
-    </div>
-    <div class="activity_info">
-      <h3>Segunda-feira</h3>
-    </div>
-    <div class="activity_info right">
-      <p>10:00 - 13:00</p>
-    </div>
-    <div class="activity_info open_info" onclick="openInfo()">
-      <p>Workshops</p>
-    </div>
-    <div class="activity_info right">
-      <p>13:00 - 14:00</p>
-    </div>
-    <div class="activity_info open_info" onclick="openInfo()">
-      <p>Almoço</p>
-    </div>
-    <div class="activity_info right">
-      <p>13:45 - 16:45</p>
-    </div>
-    <div class="activity_info open_info" onclick="openInfo()">
-      <p>Workshops</p>
-    </div>
-    <div class="activity_info right">
-      <p>16:45 - 17:00</p>
-    </div>
-    <div class="activity_info open_info" onclick="openInfo()">
-      <p>Coffee-break</p>
-    </div>
-    <div class="activity_info right">
-      <p>17:00 - 19:00</p>
-    </div>
-    <div class="activity_info open_info" onclick="openInfo()">
-      <p>Workshops</p>
-    </div>
-
-    <div class="activity_info_hidden oi">
-      <h2>4 Março</h2>
-      <h3>Segunda-feira</h3>
-    </div>
-    <div class="activity_info_hidden" onclick="openInfo()">
-      <p>10:00 - 13:00</p>
-      <p>Workshops</p>
-    </div>
-    <div class="activity_info_hidden" onclick="openInfo()">
-      <p>13:00 - 14:00</p>
-      <p>Almoço</p>
-    </div>
-    <div class="activity_info_hidden" onclick="openInfo()">
-      <p>13:45 - 16:45</p>
-      <p>Workshops</p>
-    </div>
-    <div class="activity_info_hidden" onclick="openInfo()">
-      <p>16:45 - 17:00</p>
-      <p>Coffee-break</p>
-    </div>
-    <div class="activity_info_hidden" onclick="openInfo()">
-      <p>17:00 - 19:00</p>
-      <p>Workshops</p>
+  <div id="forthday" class="tabcontent">
+    <div class="matrix_day4 item">
+      <div class="activity_info right">
+        <p>10:00 - 13:00</p>
+      </div>
+      <div class="activity_info open_info" onclick="openInfo()">
+        <p>Workshops</p>
+      </div>
+      <div class="activity_info right">
+        <p>13:00 - 14:00</p>
+      </div>
+      <div class="activity_info open_info" onclick="openInfo()">
+        <p>Almoço</p>
+      </div>
+      <div class="activity_info right">
+        <p>13:45 - 16:45</p>
+      </div>
+      <div class="activity_info open_info" onclick="openInfo()">
+        <p>Workshops</p>
+      </div>
+      <div class="activity_info right">
+        <p>16:45 - 17:00</p>
+      </div>
+      <div class="activity_info open_info" onclick="openInfo()">
+        <p>Coffee-break</p>
+      </div>
+      <div class="activity_info right">
+        <p>17:00 - 19:00</p>
+      </div>
+      <div class="activity_info open_info" onclick="openInfo()">
+        <p>Workshops</p>
+      </div>
+      <div class="activity_info_hidden" onclick="openInfo()">
+        <p>10:00 - 13:00</p>
+        <p>Workshops</p>
+      </div>
+      <div class="activity_info_hidden" onclick="openInfo()">
+        <p>13:00 - 14:00</p>
+        <p>Almoço</p>
+      </div>
+      <div class="activity_info_hidden" onclick="openInfo()">
+        <p>13:45 - 16:45</p>
+        <p>Workshops</p>
+      </div>
+      <div class="activity_info_hidden" onclick="openInfo()">
+        <p>16:45 - 17:00</p>
+        <p>Coffee-break</p>
+      </div>
+      <div class="activity_info_hidden" onclick="openInfo()">
+        <p>17:00 - 19:00</p>
+        <p>Workshops</p>
+      </div>
     </div>
   </div>
   <%#<div class="info_content">
@@ -651,6 +628,24 @@
     function openInfo(slug) {
       console.log("Computer says no.");
     }
+    function openDay(evt, dayName) {
+      var i, tabcontent, tablinks, tablinks_hidden;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      tablinks_hidden = document.getElementsByClassName("tablinks_hidden");
+      for (i = 0; i < tablinks_hidden.length; i++) {
+        tablinks_hidden[i].className = tablinks_hidden[i].className.replace(" active", "");
+      }
+      document.getElementById(dayName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    document.getElementById("defaultOpen").click();
   </script>
   <%#<script>
     function openInfo(slug) {
