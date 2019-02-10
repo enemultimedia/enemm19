@@ -16,7 +16,9 @@ class PagesController < ApplicationController
   end
 
   def schedule
+    @events = Event.active.ordered.group_by{|x| x.start.day}
   end
+
   def faqs
     @faqs = Faq.active.ordered
   end

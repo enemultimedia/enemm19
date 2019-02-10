@@ -16,6 +16,7 @@ ActiveAdmin.register Event do
     column :end
     column :title
     column :event_type
+    column :track
     column :tags do |e|
       e.tags.join(', ')
     end
@@ -23,7 +24,8 @@ ActiveAdmin.register Event do
   end
 
   filter :active
-  filter :event_type
+  filter :event_type, as: :select
+  filter :start, as: :date_time_picker
 
   show do
     attributes_table do

@@ -11,6 +11,7 @@
 #  position    :integer
 #  start       :datetime
 #  title       :string           default(""), not null
+#  track       :string           default("")
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
@@ -21,7 +22,10 @@ class Event < ApplicationRecord
 
   has_and_belongs_to_many :speakers, join_table: "events_speakers"
 
-  enum event_type: {Talk: 0, Panel: 1, Exhibit: 2, Meal: 3, Night: 4}
+  enum event_type: {Talk: 0, Panel: 1, Exhibit: 2, Meal: 3, Night: 4, Workshop: 5, Other: 6}
+
+  scope :active, -> { where(active: true) }
+  scope :ordered, -> { order(start: :asc) }
 
   def activate!
     self.update(active: true)
@@ -29,5 +33,17 @@ class Event < ApplicationRecord
 
   def deactivate!
     self.update(active: false)
+  end
+
+  def start_hour
+    self.start.strftime("%H:%M")
+  end
+
+  def end_hour
+    self.end.strftime("%H:%M")
+  end
+
+  def time_range
+    "#{self.start_hour} - #{self.end_hour}"
   end
 end

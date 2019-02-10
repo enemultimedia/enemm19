@@ -81,7 +81,7 @@ html {
 .matrix_day4 {
   grid-area: matrix_day4;
   display: grid;
-  grid-template-rows: repeat(5, 102px);
+  grid-template-rows: 1fr 102px 1fr 102px 1fr;
   grid-template-columns: 1fr 2fr;
   grid-gap: 2px;
   background-color: var(--color-black);
@@ -124,7 +124,16 @@ html {
   background-color: var(--color-black);
 }
 
-.talk_info {
+.workshops {
+  display: grid;
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2px;
+  padding: 0;
+  background-color: var(--color-black);
+}
+
+.talk_info, .workshop_info {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -139,11 +148,11 @@ html {
   text-decoration: underline;
 }*/
 
-.talk_info h4 {
+.talk_info h4, .workshop_info h4 {
   margin: 2rem 0 3rem;
 }
 
-.talk_info h5:last-child {
+.talk_info h5:last-child, .workshop_info h5:last-child {
   margin: 1rem 0 2rem;
 }
 
@@ -357,7 +366,7 @@ a {
   }
 
   .matrix_day4 {
-    grid-template-rows: repeat(5, 116px);
+    grid-template-rows: 1fr 116px 1fr 116px 1fr;
   }
 }
 @media (max-width: 760px) {
@@ -391,7 +400,7 @@ a {
   }
 
   .matrix_day2 {
-    grid-template-rows: 116px 1fr 116px 600px 116px 116px 160px repeat(2, 116px);
+    grid-template-rows: 116px 1fr 116px 1fr 116px 116px 160px repeat(2, 116px);
     grid-template-columns: 1fr;
   }
 
