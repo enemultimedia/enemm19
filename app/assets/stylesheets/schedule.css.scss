@@ -10,11 +10,11 @@ html {
   grid-template-rows: 80px 214px 80px 1fr 80px;
   grid-template-columns: repeat(6, 1fr);
   grid-template-areas:
-    'navbar navbar navbar navbar navbar navbar'
-    'title title hidden matrix_hidden matrix_hidden matrix_hidden'
-    'tab tab tab tab tab tab'
-    'tabcontent tabcontent tabcontent tabcontent tabcontent tabcontent'
-    'footer footer footer footer footer footer';
+  'navbar navbar navbar navbar navbar navbar'
+  'title title hidden matrix_hidden matrix_hidden matrix_hidden'
+  'tab tab tab tab tab tab'
+  'tabcontent tabcontent tabcontent tabcontent tabcontent tabcontent'
+  'footer footer footer footer footer footer';
   grid-gap: 2px;
   background-color: var(--color-black);
 }
@@ -52,10 +52,14 @@ html {
   min-width: 214px;
 }
 
+.tabcontent .item {
+  min-height: 100%;
+}
+
 .matrix_day1 {
   grid-area: matrix_day1;
   display: grid;
-  grid-template-rows: 250px repeat(2, 102px);
+  grid-template-rows: 1fr repeat(2, 102px);
   grid-template-columns: 1fr 2fr;
   grid-gap: 2px;
   background-color: var(--color-black);
@@ -95,16 +99,16 @@ html {
 }
 
 /*.open_info:hover, .activity_info_hidden:hover, .talks:hover > .talk_info{
-  margin: 1px solid var(--color-gold);
-  color: var(--color-gold);
-  background-color: var(--color-black);
-  transition: 0.5s ease;
-  cursor: pointer;
+margin: 1px solid var(--color-gold);
+color: var(--color-gold);
+background-color: var(--color-black);
+transition: 0.5s ease;
+cursor: pointer;
 }*/
 
- .talks:hover > .talk_info {
-   cursor: default;
- }
+.talks:hover > .talk_info {
+  cursor: default;
+}
 
 .activity_info h3, .activity_info_hidden h3 {
   font-weight: normal;
@@ -144,8 +148,8 @@ html {
 }
 
 /*.talk_info p:hover {
-  cursor: pointer;
-  text-decoration: underline;
+cursor: pointer;
+text-decoration: underline;
 }*/
 
 .talk_info h4, .workshop_info h4 {
@@ -194,157 +198,157 @@ a {
   background-color: var(--color-gold);
   color: var(--color-black)}
 
-.tab button.active {
-  background-color: var(--color-gold);
-  color: var(--color-black)}
-
-.tabcontent {
-  grid-area: tabcontent;
-  display: none;
-  border: none;
-  animation: fadeEffect 1s;
-}
-
-.tablinks {
-  display: block;
-}
-
-.tablinks_hidden {
-  display: none;
-}
-
-@keyframes fadeEffect {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-
-.info_content {
-  position: fixed;
-  overflow-y: scroll;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  width: 600px;
-  top: 0;
-  bottom: 0;
-  right: -600px;
-  background: var(--color-black);
-  color: var(--color-gold);
-  padding: 1rem 0 3rem 0;
-  z-index: 3;
-  transition: 0.3s ease;
-}
-
-.info_show {
-  right: 0;
-}
-
-.info_content-background{
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.8);
-  z-index: 2;
-}
-
-.info_content p, .info_content h1, .info_content h3 {
-  margin: 0rem 4rem 1rem 4rem;
-  line-height: 1.5;
-  color: var(--color-gold);
-}
-
-.info_content p, .info_content a {
-  font-size: 16px;
-}
-
-.info_content h3 {
-  margin-top: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.info_content hr {
-  color: transparent;
-  background-color: transparent;
-  border: none;
-  margin: 1rem 0;
-}
-
-.activity_date, .activity_hour, .activity_local {
-  display: flex;
-  align-items: center
-}
-
-.activity_date::before {
-  content: url(date.png);
-  margin-right: .5rem;
-}
-
-.activity_hour::before {
-  content: url(hours.png);
-  margin-right: .5rem;
-}
-
-.activity_local::before {
-  content: url(local.png);
-  margin-right: .5rem;
-}
-
-.menuInfo {
-    position: absolute;
-    top: 1.2rem;
-    right: 1rem;
-    cursor: pactivity_infonter;
-}
-
-.button {
-  width: fit-content;
-  font-family: Neue Montreal;
-  border-style: none;
-  border: 2px solid var(--color-gold);
-  font-size: 16px;
-  padding: 10px 20px;
-  transition: color 0.2s ease, background-color 0.2s ease;
-
-  &:hover{
-    text-decoration: none;
-    color: var(--color-black);
-    background: var(--color-gold);
-  }
-}
-
-.menuInfo .bar1, .menuInfo .bar2, .menuInfo .bar3 {
+  .tab button.active {
     background-color: var(--color-gold);
-}
+    color: var(--color-black)}
 
-.menuInfo .bar1 {
-    -webkit-transform: rotate(-45deg) translate(-1px, 6px);
-    transform: rotate(-45deg) translate(-1px, 6px);
-}
+    .tabcontent {
+      grid-area: tabcontent;
+      display: none;
+      border: none;
+      animation: fadeEffect 1s;
+    }
 
-.menuInfo .bar2 {
-    -webkit-transform: rotate(45deg) translate(-2px, -7px);
-    transform: rotate(45deg) translate(-2px, -7px);
-}
+    .tablinks {
+      display: block;
+    }
+
+    .tablinks_hidden {
+      display: none;
+    }
+
+    @keyframes fadeEffect {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    .info_content {
+      position: fixed;
+      overflow-y: scroll;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      width: 600px;
+      top: 0;
+      bottom: 0;
+      right: -600px;
+      background: var(--color-black);
+      color: var(--color-gold);
+      padding: 1rem 0 3rem 0;
+      z-index: 3;
+      transition: 0.3s ease;
+    }
+
+    .info_show {
+      right: 0;
+    }
+
+    .info_content-background{
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
+      z-index: 2;
+    }
+
+    .info_content p, .info_content h1, .info_content h3 {
+      margin: 0rem 4rem 1rem 4rem;
+      line-height: 1.5;
+      color: var(--color-gold);
+    }
+
+    .info_content p, .info_content a {
+      font-size: 16px;
+    }
+
+    .info_content h3 {
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .info_content hr {
+      color: transparent;
+      background-color: transparent;
+      border: none;
+      margin: 1rem 0;
+    }
+
+    .activity_date, .activity_hour, .activity_local {
+      display: flex;
+      align-items: center
+    }
+
+    .activity_date::before {
+      content: url(date.png);
+      margin-right: .5rem;
+    }
+
+    .activity_hour::before {
+      content: url(hours.png);
+      margin-right: .5rem;
+    }
+
+    .activity_local::before {
+      content: url(local.png);
+      margin-right: .5rem;
+    }
+
+    .menuInfo {
+      position: absolute;
+      top: 1.2rem;
+      right: 1rem;
+      cursor: pactivity_infonter;
+    }
+
+    .button {
+      width: fit-content;
+      font-family: Neue Montreal;
+      border-style: none;
+      border: 2px solid var(--color-gold);
+      font-size: 16px;
+      padding: 10px 20px;
+      transition: color 0.2s ease, background-color 0.2s ease;
+
+      &:hover{
+        text-decoration: none;
+        color: var(--color-black);
+        background: var(--color-gold);
+      }
+    }
+
+    .menuInfo .bar1, .menuInfo .bar2, .menuInfo .bar3 {
+      background-color: var(--color-gold);
+    }
+
+    .menuInfo .bar1 {
+      -webkit-transform: rotate(-45deg) translate(-1px, 6px);
+      transform: rotate(-45deg) translate(-1px, 6px);
+    }
+
+    .menuInfo .bar2 {
+      -webkit-transform: rotate(45deg) translate(-2px, -7px);
+      transform: rotate(45deg) translate(-2px, -7px);
+    }
 
 /* NAVBAR MENU ICON */
 .bar1, .bar2, .bar3 {
-    background-color: var(--color-black);
+  background-color: var(--color-black);
 }
 
 @media (max-width: 950px) {
   .container {
-      grid-template-rows: 80px 80px 80px 1fr 80px;
-      grid-template-columns: 1fr 1fr;
-      grid-template-areas:
-        'navbar navbar'
-        'title hidden'
-        'tab tab'
-        'tabcontent tabcontent'
-        'footer footer'
-}
+    grid-template-rows: 80px 80px 80px 1fr 80px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    'navbar navbar'
+    'title hidden'
+    'tab tab'
+    'tabcontent tabcontent'
+    'footer footer'
+  }
 
   .matrix_hidden {
     display: none;
