@@ -19,5 +19,5 @@ class Speaker < Person
 
   has_and_belongs_to_many :events, join_table: "events_speakers"
 
-  scope :with_events, -> { joins(:events) }
+  scope :with_events, -> { includes(:events) }
 end
