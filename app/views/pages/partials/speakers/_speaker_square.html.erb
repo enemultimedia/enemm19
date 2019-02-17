@@ -5,4 +5,9 @@
       <span class="speaker_company"><%= speaker.company %></span>
     <% end %>
   </div>
+  <% if speaker.events.select{ |e| e.event_type == 'Workshop' }.any? %>
+    <div class="activity_info">
+      <span class="speaker_name">Workshop</span>
+    </div>
+  <% end %>
 </div>

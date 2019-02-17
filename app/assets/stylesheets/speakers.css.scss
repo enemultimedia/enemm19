@@ -129,12 +129,29 @@ html {
   border-right: solid 2px var(--color-black);
 }
 
-.speaker:hover > .speaker_info{
+.speaker:hover > .speaker_info {
   display: inline-flex;
   background-color: var(--color-gold);
   color: var(--color-black);
   border-top: solid 2px var(--color-black);
   border-right: solid 2px var(--color-black);
+}
+
+.activity_info{
+  display: inline-flex;
+  flex-direction: row;
+  padding: .5em;
+  background-color: var(--color-gold);
+  color: var(--color-black);
+  font-weight: 500;
+  border-top: solid 2px var(--color-black);
+  border-right: solid 2px var(--color-black);
+}
+
+.speaker:hover > .activity_info {
+  display: inline-flex;
+  background-color: var(--color-black);
+  color: var(--color-gold);
 }
 
 .speaker_name {

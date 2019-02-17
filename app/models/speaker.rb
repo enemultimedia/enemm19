@@ -18,4 +18,6 @@ class Speaker < Person
   acts_as_list
 
   has_and_belongs_to_many :events, join_table: "events_speakers"
+
+  scope :with_events, -> { joins(:events) }
 end
