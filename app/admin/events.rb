@@ -24,8 +24,8 @@ ActiveAdmin.register Event do
   end
 
   filter :active
-  filter :event_type, as: :select
-  filter :start, as: :date_time_picker
+  filter :event_type, as: :select, collection: proc { Event.event_types }
+  filter :title_contains, label: 'Name'
 
   show do
     attributes_table do

@@ -98,6 +98,14 @@ html {
   padding: 2rem;
 }
 
+.open_info {
+  cursor: pointer;
+}
+
+.info_content a {
+  color: var(--color-gold);
+}
+
 /*.open_info:hover, .activity_info_hidden:hover, .talks:hover > .talk_info{
 margin: 1px solid var(--color-gold);
 color: var(--color-gold);
@@ -147,6 +155,10 @@ cursor: pointer;
   background-color: var(--color-gold);
 }
 
+.talk_info div, .workshop_info div {
+  cursor: pointer;
+}
+
 /*.talk_info p:hover {
 cursor: pointer;
 text-decoration: underline;
@@ -166,6 +178,7 @@ text-decoration: underline;
   align-items: flex-start;
   background-color: var(--color-gold);
   padding: 2rem;
+  cursor: pointer;
 }
 
 a {

@@ -38,10 +38,10 @@
         <div class="activity_info right">
           <p><%= event.time_range %></p>
         </div>
-        <div class="activity_info open_info" onclick="openInfo()">
+        <div class="activity_info open_info" onclick="openInfo('event-<%= event.id %>')">
           <p><%= event.title %></p>
         </div>
-        <div class="activity_info_hidden" onclick="openInfo()">
+        <div class="activity_info_hidden" onclick="openInfo('event-<%= event.id %>')">
           <p><%= event.time_range %></p>
           <p><%= event.title %></p>
         </div>
@@ -58,7 +58,7 @@
           <div class="activity_info right">
             <p><%= event.time_range %></p>
           </div>
-          <div class="activity_info open_info" onclick="openInfo()">
+          <div class="activity_info open_info" onclick="openInfo('event-<%= event.id %>')">
             <% if event.event_type == 'Panel' %>
               <div>
                 <p><%= event.title %></p>
@@ -68,7 +68,7 @@
               <p><%= event.title %></p>
             <% end %>
           </div>
-          <div class="activity_info_hidden" onclick="openInfo()">
+          <div class="activity_info_hidden" onclick="openInfo('event-<%= event.id %>')">
             <p><%= event.time_range %></p>
             <p><%= event.title %></p>
             <% if event.event_type == 'Panel' %>
@@ -86,7 +86,7 @@
                 <h4>Talks - <%= track[1][0].track %></h4>
                 <% track[1].sort_by(&:position).each do |event| %>
                   <div>
-                    <p onclick="openInfo()"><%= event.title %></p>
+                    <p onclick="openInfo('event-<%= event.id %>')"><%= event.title %></p>
                     <% if event.speakers.any? %>
                       <h5><%= event.speakers.map(&:name).join(', ') %></h5>
                     <% else %>
@@ -100,11 +100,11 @@
           <div class="activity_info_hidden talks">
             <p><%= slot[1].first.time_range %></p>
             <% slot_events.each do |track| %>
-              <div class="talk_info">
+              <div class="talk_info" >
                 <h4>Talks - <%= track[1][0].track %></h4>
                 <% track[1].sort_by(&:position).each do |event| %>
                   <div>
-                    <p onclick="openInfo()"><%= event.title %></p>
+                    <p onclick="openInfo('event-<%= event.id %>')"><%= event.title %></p>
                     <% if event.speakers.any? %>
                       <h5><%= event.speakers.map(&:name).join(', ') %></h5>
                     <% else %>
@@ -129,7 +129,7 @@
           <div class="activity_info right">
             <p><%= event.time_range %></p>
           </div>
-          <div class="activity_info open_info" onclick="openInfo()">
+          <div class="activity_info open_info" onclick="openInfo('event-<%= event.id %>')">
             <% if event.event_type == 'Panel' %>
               <div>
                 <p><%= event.title %></p>
@@ -137,9 +137,12 @@
               </div>
             <% else %>
               <p><%= event.title %></p>
+              <% if event.speakers.any? %>
+                <h5><%= event.speakers.map(&:name).join(', ') %></h5>
+              <% end %>
             <% end %>
           </div>
-          <div class="activity_info_hidden" onclick="openInfo()">
+          <div class="activity_info_hidden" onclick="openInfo('event-<%= event.id %>')">
             <p><%= event.time_range %></p>
             <p><%= event.title %></p>
             <% if event.event_type == 'Panel' %>
@@ -157,7 +160,7 @@
                 <h4>Talks - <%= track[1][0].track %></h4>
                 <% track[1].sort_by(&:position).each do |event| %>
                   <div>
-                    <p onclick="openInfo()"><%= event.title %></p>
+                    <p onclick="openInfo('event-<%= event.id %>')"><%= event.title %></p>
                     <% if event.speakers.any? %>
                       <h5><%= event.speakers.map(&:name).join(', ') %></h5>
                     <% else %>
@@ -175,7 +178,7 @@
                 <h4>Talks - <%= track[1][0].track %></h4>
                 <% track[1].sort_by(&:position).each do |event| %>
                   <div>
-                    <p onclick="openInfo()"><%= event.title %></p>
+                    <p onclick="openInfo('event-<%= event.id %>')"><%= event.title %></p>
                     <% if event.speakers.any? %>
                       <h5><%= event.speakers.map(&:name).join(', ') %></h5>
                     <% else %>
@@ -200,7 +203,7 @@
           <div class="activity_info right">
             <p><%= event.time_range %></p>
           </div>
-          <div class="activity_info open_info" onclick="openInfo()">
+          <div class="activity_info open_info" onclick="openInfo('event-<%= event.id %>')">
             <% if event.event_type == 'Panel' %>
               <div>
                 <p><%= event.title %></p>
@@ -210,7 +213,7 @@
               <p><%= event.title %></p>
             <% end %>
           </div>
-          <div class="activity_info_hidden" onclick="openInfo()">
+          <div class="activity_info_hidden" onclick="openInfo('event-<%= event.id %>')">
             <p><%= event.time_range %></p>
             <p><%= event.title %></p>
             <% if event.event_type == 'Panel' %>
@@ -227,7 +230,7 @@
               <div class="workshop_info">
                 <h4>Workshop</h4>
                 <div>
-                  <p onclick="openInfo()"><%= event.title %></p>
+                  <p onclick="openInfo('event-<%= event.id %>')"><%= event.title %></p>
                   <% if event.speakers.any? %>
                     <h5><%= event.speakers.map(&:name).join(', ') %></h5>
                   <% else %>
@@ -243,7 +246,7 @@
               <div class="talk_info">
                 <h4>Workshop</h4>
                 <div>
-                  <p onclick="openInfo()"><%= event.title %></p>
+                  <p onclick="openInfo('event-<%= event.id %>')"><%= event.title %></p>
                   <% if event.speakers.any? %>
                     <h5><%= event.speakers.map(&:name).join(', ') %></h5>
                   <% else %>
@@ -257,63 +260,19 @@
       <% end %>
     </div>
   </div>
-  <div id="forthday" class="tabcontent">
-    <div class="matrix_day4 item">
-      <div class="activity_info right">
-        <p>10:00 - 13:00</p>
-      </div>
-      <div class="activity_info open_info" onclick="openInfo()">
-        <p>Workshops</p>
-      </div>
-      <div class="activity_info right">
-        <p>13:00 - 14:00</p>
-      </div>
-      <div class="activity_info open_info" onclick="openInfo()">
-        <p>Almoço</p>
-      </div>
-      <div class="activity_info right">
-        <p>13:45 - 16:45</p>
-      </div>
-      <div class="activity_info open_info" onclick="openInfo()">
-        <p>Workshops</p>
-      </div>
-      <div class="activity_info right">
-        <p>16:45 - 17:00</p>
-      </div>
-      <div class="activity_info open_info" onclick="openInfo()">
-        <p>Coffee-break</p>
-      </div>
-      <div class="activity_info right">
-        <p>17:00 - 19:00</p>
-      </div>
-      <div class="activity_info open_info" onclick="openInfo()">
-        <p>Workshops</p>
-      </div>
-      <div class="activity_info_hidden" onclick="openInfo()">
-        <p>10:00 - 13:00</p>
-        <p>Workshops</p>
-      </div>
-      <div class="activity_info_hidden" onclick="openInfo()">
-        <p>13:00 - 14:00</p>
-        <p>Almoço</p>
-      </div>
-      <div class="activity_info_hidden" onclick="openInfo()">
-        <p>13:45 - 16:45</p>
-        <p>Workshops</p>
-      </div>
-      <div class="activity_info_hidden" onclick="openInfo()">
-        <p>16:45 - 17:00</p>
-        <p>Coffee-break</p>
-      </div>
-      <div class="activity_info_hidden" onclick="openInfo()">
-        <p>17:00 - 19:00</p>
-        <p>Workshops</p>
-      </div>
-    </div>
-  </div>
+  <%= render partial: 'pages/partials/schedule/activity_info', collection: @events.values.flatten, as: :event %>
   <script type="text/javascript">
     function openInfo(slug) {
-      console.log("Computer says no.");
+      if($(".info_content[data-slug="+slug+"]").hasClass('info_show')) {
+        $(".info_content[data-slug="+slug+"]").removeClass("info_show");
+        $(".info_content-background").hide();
+      } else if($(".info_show").length !== 0) {
+        $(".info_content").removeClass('info_show');
+        $(".info_content[data-slug="+slug+"]").addClass("info_show");
+      } else {
+        $(".info_content[data-slug="+slug+"]").addClass("info_show");
+        $(".info_content-background").show();
+      }
     }
     function openDay(evt, dayName) {
       var i, tabcontent, tablinks, tablinks_hidden;

@@ -1,20 +1,23 @@
-<div class="info_content" data-slug="<%= schedule.slug %>">
-  <div id="myMenuInfo" class="menuInfo" data-slug="<%= schedule.slug %>" onclick="openInfo('<%= schedule.slug %>')">
+<div class="info_content" data-slug="event-<%= event.id %>">
+  <div id="myMenuInfo" class="menuInfo" data-slug="event-<%= event.id %>" onclick="openInfo('event-<%= event.id %>')">
     <div class="bar1"></div>
     <div class="bar2"></div>
   </div>
-  <h1><%= schedule.name %></h1>
-  <% schedule.person_infos.each do |info| %>
-    <% case info.category %>
-    <% when 'title' %>
-      <h3><%= info.content %></h3>
-    <% when 'paragraph' %>
-      <p><%= info.content %></p>
-    <% when 'spacer' %>
-      <hr/>
-    <% when 'link' %>
-      <% content = info.content.scan( /\A\[(.+)\] \(([\w\.\-\:\/]+)\)\z/ix )[0] %>
-      <a target="_blank" href="<%= content[1] %>"><%= content[0] %></a>
-    <% end %>
+  <h1><%= event.title %></h1>
+  <% if event.speakers.any? %>
+    <h3>Speakers</h3>
+    <p><%= raw event.speakers.map{ |s| link_to(s.name, s.link, {target: '_blank'})}.join(', ') %></p>
+  <% end %>
+  <% if event.place.present? %>
+    <h3>Local</h3>
+    <p><%= event.place %></p>
+  <% end %>
+  <% if event.start.present? %>
+    <h3>Hora</h3>
+    <p><%= event.time_range %></p>
+  <% end %>
+  <% if event.description.present? %>
+    <h3>Detalhes</h3>
+    <p><%= event.description %></p>
   <% end %>
 </div>
