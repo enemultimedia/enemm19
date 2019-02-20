@@ -7,7 +7,7 @@ ActiveAdmin.register Event do
   end
   config.paginate = false
   reorderable
-  permit_params :id, :position, :active, :start, :end, :place, :title, :description, :event_type, :speaker_ids => [], :tag_ids => []
+  permit_params :id, :position, :active, :start, :end, :place, :title, :description, :location_id, :event_type, :speaker_ids => [], :tag_ids => []
 
   index as: :reorderable_table do
     selectable_column
@@ -17,6 +17,7 @@ ActiveAdmin.register Event do
     column :title
     column :event_type
     column :track
+    column :location
     column :tags do |e|
       e.tags.join(', ')
     end
@@ -35,6 +36,7 @@ ActiveAdmin.register Event do
       row :end
       row :place
       row :description
+      row :location
       row :active
       row :speakers do |e|
         e.speakers.map(&:name).join(', ')
@@ -55,6 +57,7 @@ ActiveAdmin.register Event do
       f.input :end, as: :date_time_picker
       f.input :place
       f.input :description
+      f.input :location
       f.input :active
       f.input :speaker_ids, as: :selected_list
       f.input :tags,

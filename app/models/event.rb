@@ -14,6 +14,7 @@
 #  track       :string           default("")
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  location_id :integer
 #
 
 class Event < ApplicationRecord
@@ -21,6 +22,7 @@ class Event < ApplicationRecord
   acts_as_taggable
 
   has_and_belongs_to_many :speakers, join_table: "events_speakers"
+  belongs_to :location
 
   enum event_type: {Talk: 0, Panel: 1, Exhibit: 2, Meal: 3, Night: 4, Workshop: 5, Other: 6}
 
