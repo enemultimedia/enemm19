@@ -5,6 +5,7 @@ class PagesController < ApplicationController
 
   def about
     @sponsors = Sponsor.active.ordered
+    @locations = Location.active
   end
 
   def speakers

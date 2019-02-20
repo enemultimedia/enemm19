@@ -59,12 +59,11 @@
       <p>Coimbra receberá a 4ª edição do ENEMM. Marcada pela irreverência estudantil, a cidade foi obtendo espaços únicos com capacidade de acolher e transmitir aos seus estudantes e visitantes conhecimentos sem fronteiras. Esta edição do encontro terá lugar no Conservatório de Música de Coimbra.</p>
     </div>
   </div>
-  <%#=
-  <div class="item hidden2"></div>
+  <div class="item hidden3"></div>
   <div class="item map">
     <div id="map"></div>
   </div>
-  %>
+  <div class="item hidden2"></div>
   <% if @sponsors.any? %>
     <div class="item hidden2"></div>
     <div class="item partners">
@@ -113,7 +112,6 @@
     <p>Made with ♥ by <a href="https://nei.dei.uc.pt" target="_blank">NEI/AAC</a></p>
   </div>
 </div>
-<%#=
 <script>
   function initMap() {
     var myLatLng = {lat: 40.1929618, lng: -8.4083511};
@@ -125,15 +123,16 @@
 
     map.setOptions({draggable: false, zoomControl: false, scrollwheel: false, disableDoubleClickZoom: true});
 
-    var marker = new google.maps.Marker({
-      position: myLatLng,
-      map: map,
-      title: 'Conservatório de Música de Coimbra'
-    });
+    <% @locations.each do |location| %>
+      new google.maps.Marker({
+        position: {lat: <%= location.latitude%>, lng: <%= location.longitude %>},
+        map: map,
+        title: '<%= location.name %>'
+      });
+    <% end %>
   }
 </script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.maps_key %->&callback=initMap">
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.maps_key %>&callback=initMap">
 </script>
-%>
 
 <%= javascript_include_tag 'pages', 'data-turbolinks-track': 'reload' %>
