@@ -7,7 +7,6 @@
 #  description :text             default(""), not null
 #  end         :datetime
 #  event_type  :integer          default("Talk")
-#  place       :string           default(""), not null
 #  position    :integer
 #  start       :datetime
 #  title       :string           default(""), not null

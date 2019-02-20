@@ -23,4 +23,8 @@ class Location < ApplicationRecord
   def deactivate!
     self.update(active: false)
   end
+
+  def google_link
+    "https://www.google.com/maps/place/#{self.latitude},#{self.longitude}"
+  end
 end

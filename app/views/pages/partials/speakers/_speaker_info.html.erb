@@ -4,17 +4,5 @@
     <div class="bar2"></div>
   </div>
   <h1><%= speaker.name %></h1>
-  <% speaker.person_infos.each do |info| %>
-    <% case info.category %>
-    <% when 'title' %>
-      <h3><%= info.content %></h3>
-    <% when 'paragraph' %>
-      <p><%= info.content %></p>
-    <% when 'spacer' %>
-      <hr/>
-    <% when 'link' %>
-      <% content = info.content.scan( /\A\[(.+)\] \(([a-zA-Z0-9\.\-\:\/]+)\)\z/ix )[0].to_a %>
-      <a target="_blank" href="<%= content[1] %>"><%= content[0] %></a>
-    <% end %>
-  <% end %>
+  <%= render partial: 'pages/partials/speakers/speaker_description', locals: {infos: speaker.person_infos} %>
 </div>

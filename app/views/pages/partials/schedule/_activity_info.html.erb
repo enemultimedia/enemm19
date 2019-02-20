@@ -4,13 +4,9 @@
     <div class="bar2"></div>
   </div>
   <h1><%= event.title %></h1>
-  <% if event.speakers.any? %>
-    <h3>Speakers</h3>
-    <p><%= raw event.speakers.map{ |s| link_to(s.name, s.link, {target: '_blank'})}.join(', ') %></p>
-  <% end %>
-  <% if event.place.present? %>
+  <% if event.location.present? %>
     <h3>Local</h3>
-    <p><%= event.place %></p>
+    <p><%= link_to(event.location.name, event.location.google_link, {target: '_blank'}) %></p>
   <% end %>
   <% if event.start.present? %>
     <h3>Hora</h3>
@@ -19,5 +15,9 @@
   <% if event.description.present? %>
     <h3>Detalhes</h3>
     <p><%= event.description %></p>
+  <% end %>
+  <% event.speakers.each do |speaker| %>
+    <h3><%= link_to(speaker.name, speaker.link, {target: '_blank'}) %></h3>
+    <%= render partial: 'pages/partials/speakers/speaker_description', locals: {infos: speaker.person_infos} %>
   <% end %>
 </div>
