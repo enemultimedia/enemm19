@@ -147,6 +147,8 @@
             <p><%= event.title %></p>
             <% if event.event_type == 'Panel' %>
               <h5>Conversa aberta — <%= event.speakers.map{ |s| s.company.present? ? "#{s.name} - #{s.company}" : s.name}.join(', ') %></h5>
+            <% elsif event.speakers.any? %>
+              <h5><%= event.speakers.map{ |s| s.company.present? ? "#{s.name} - #{s.company}" : s.name}.join(', ') %></h5>
             <% end %>
           </div>
         <% else %>
