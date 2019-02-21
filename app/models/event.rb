@@ -21,7 +21,7 @@ class Event < ApplicationRecord
   acts_as_taggable
 
   has_and_belongs_to_many :speakers, join_table: "events_speakers"
-  belongs_to :location
+  belongs_to :location, optional: true
 
   enum event_type: {Talk: 0, Panel: 1, Exhibit: 2, Meal: 3, Night: 4, Workshop: 5, Other: 6}
 
