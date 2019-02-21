@@ -4,6 +4,7 @@
 #
 #  id         :bigint(8)        not null, primary key
 #  active     :boolean          default(FALSE)
+#  label      :string           default("")
 #  latitude   :decimal(, )      default(40.1929618)
 #  longitude  :decimal(, )      default(-8.4083511)
 #  name       :string           default("")

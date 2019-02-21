@@ -1,11 +1,12 @@
 ActiveAdmin.register Location do
   config.paginate = false
-  permit_params :id, :active, :name, :latitude, :longitude
+  permit_params :id, :active, :name, :label, :latitude, :longitude
 
   index  do
     selectable_column
     column :active
     column :name
+    column :label
     column :latitude
     column :longitude
     actions
@@ -16,6 +17,7 @@ ActiveAdmin.register Location do
   show do
     attributes_table do
       row :name
+      row :label
       row :latitude
       row :longitude
       row :active
@@ -27,6 +29,7 @@ ActiveAdmin.register Location do
     f.semantic_errors *f.object.errors.keys
     f.inputs do
       f.input :name
+      f.input :label
       f.input :latitude
       f.input :longitude
       f.input :active

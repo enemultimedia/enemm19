@@ -117,19 +117,31 @@
     var myLatLng = {lat: 40.1929618, lng: -8.4083511};
 
     var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 18,
+      zoom: 14,
       center: myLatLng
     });
 
-    map.setOptions({draggable: false, zoomControl: false, scrollwheel: false, disableDoubleClickZoom: true});
+    map.setOptions({draggable: true, zoomControl: true, scrollwheel: true, disableDoubleClickZoom: true});
+
+    var markers = [];
 
     <% @locations.each do |location| %>
-      new google.maps.Marker({
-        position: {lat: <%= location.latitude%>, lng: <%= location.longitude %>},
-        map: map,
-        title: '<%= location.name %>'
-      });
+      markers.push(
+        new google.maps.Marker({
+          position: {lat: <%= location.latitude%>, lng: <%= location.longitude %>},
+          map: map,
+          title: '<%= location.name %>',
+          label: '<%= location.label %>'
+        })
+      );
     <% end %>
+
+    var bounds = new google.maps.LatLngBounds();
+    for (var i = 0; i < markers.length; i++) {
+      bounds.extend(markers[i].getPosition());
+    }
+
+    map.fitBounds(bounds);
   }
 </script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.maps_key %>&callback=initMap">

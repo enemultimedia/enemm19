@@ -62,7 +62,7 @@
             <% if event.event_type == 'Panel' %>
               <div>
                 <p><%= event.title %></p>
-                <h5>Conversa aberta — <%= event.speakers.map(&:name).join(', ') %></h5>
+                <h5>Conversa aberta — <%= event.speakers.map{ |s| s.company.present? ? "#{s.name} - #{s.company}" : s.name}.join(', ') %></h5>
               </div>
             <% else %>
               <p><%= event.title %></p>
@@ -72,7 +72,7 @@
             <p><%= event.time_range %></p>
             <p><%= event.title %></p>
             <% if event.event_type == 'Panel' %>
-              <h5>Conversa aberta — <%= event.speakers.map(&:name).join(', ') %></h5>
+              <h5>Conversa aberta — <%= event.speakers.map{ |s| s.company.present? ? "#{s.name} - #{s.company}" : s.name}.join(', ') %></h5>
             <% end %>
           </div>
         <% else %>
@@ -88,7 +88,7 @@
                   <div>
                     <p onclick="openInfo('event-<%= event.id %>')"><%= event.title %></p>
                     <% if event.speakers.any? %>
-                      <h5><%= event.speakers.map(&:name).join(', ') %></h5>
+                      <h5><%= event.speakers.map{ |s| s.company.present? ? "#{s.name} - #{s.company}" : s.name}.join(', ') %></h5>
                     <% else %>
                       <h5>Por Anunciar</h5>
                     <% end %>
@@ -106,7 +106,7 @@
                   <div>
                     <p onclick="openInfo('event-<%= event.id %>')"><%= event.title %></p>
                     <% if event.speakers.any? %>
-                      <h5><%= event.speakers.map(&:name).join(', ') %></h5>
+                      <h5><%= event.speakers.map{ |s| s.company.present? ? "#{s.name} - #{s.company}" : s.name}.join(', ') %></h5>
                     <% else %>
                       <h5>Por Anunciar</h5>
                     <% end %>
@@ -133,12 +133,12 @@
             <% if event.event_type == 'Panel' %>
               <div>
                 <p><%= event.title %></p>
-                <h5>Conversa aberta — <%= event.speakers.map(&:name).join(', ') %></h5>
+                <h5>Conversa aberta — <%= event.speakers.map{ |s| s.company.present? ? "#{s.name} - #{s.company}" : s.name}.join(', ') %></h5>
               </div>
             <% else %>
               <p><%= event.title %></p>
               <% if event.speakers.any? %>
-                <h5><%= event.speakers.map(&:name).join(', ') %></h5>
+                <h5><%= event.speakers.map{ |s| s.company.present? ? "#{s.name} - #{s.company}" : s.name}.join(', ') %></h5>
               <% end %>
             <% end %>
           </div>
@@ -146,7 +146,7 @@
             <p><%= event.time_range %></p>
             <p><%= event.title %></p>
             <% if event.event_type == 'Panel' %>
-              <h5>Conversa aberta — <%= event.speakers.map(&:name).join(', ') %></h5>
+              <h5>Conversa aberta — <%= event.speakers.map{ |s| s.company.present? ? "#{s.name} - #{s.company}" : s.name}.join(', ') %></h5>
             <% end %>
           </div>
         <% else %>
@@ -162,7 +162,7 @@
                   <div>
                     <p onclick="openInfo('event-<%= event.id %>')"><%= event.title %></p>
                     <% if event.speakers.any? %>
-                      <h5><%= event.speakers.map(&:name).join(', ') %></h5>
+                      <h5><%= event.speakers.map{ |s| s.company.present? ? "#{s.name} - #{s.company}" : s.name}.join(', ') %></h5>
                     <% else %>
                       <h5>Por Anunciar</h5>
                     <% end %>
@@ -180,7 +180,7 @@
                   <div>
                     <p onclick="openInfo('event-<%= event.id %>')"><%= event.title %></p>
                     <% if event.speakers.any? %>
-                      <h5><%= event.speakers.map(&:name).join(', ') %></h5>
+                      <h5><%= event.speakers.map{ |s| s.company.present? ? "#{s.name} - #{s.company}" : s.name}.join(', ') %></h5>
                     <% else %>
                       <h5>Por Anunciar</h5>
                     <% end %>
@@ -207,7 +207,7 @@
             <% if event.event_type == 'Panel' %>
               <div>
                 <p><%= event.title %></p>
-                <h5>Conversa aberta — <%= event.speakers.map(&:name).join(', ') %></h5>
+                <h5>Conversa aberta — <%= event.speakers.map{ |s| s.company.present? ? "#{s.name} - #{s.company}" : s.name}.join(', ') %></h5>
               </div>
             <% else %>
               <p><%= event.title %></p>
@@ -217,7 +217,7 @@
             <p><%= event.time_range %></p>
             <p><%= event.title %></p>
             <% if event.event_type == 'Panel' %>
-              <h5>Conversa aberta — <%= event.speakers.map(&:name).join(', ') %></h5>
+              <h5>Conversa aberta — <%= event.speakers.map{ |s| s.company.present? ? "#{s.name} - #{s.company}" : s.name}.join(', ') %></h5>
             <% end %>
           </div>
         <% else %>
@@ -232,7 +232,7 @@
                 <div>
                   <p onclick="openInfo('event-<%= event.id %>')"><%= event.title %></p>
                   <% if event.speakers.any? %>
-                    <h5><%= event.speakers.map(&:name).join(', ') %></h5>
+                    <h5><%= event.speakers.map{ |s| s.company.present? ? "#{s.name} - #{s.company}" : s.name}.join(', ') %></h5>
                   <% else %>
                     <h5>Por Anunciar</h5>
                   <% end %>
@@ -248,7 +248,7 @@
                 <div>
                   <p onclick="openInfo('event-<%= event.id %>')"><%= event.title %></p>
                   <% if event.speakers.any? %>
-                    <h5><%= event.speakers.map(&:name).join(', ') %></h5>
+                    <h5><%= event.speakers.map{ |s| s.company.present? ? "#{s.name} - #{s.company}" : s.name}.join(', ') %></h5>
                   <% else %>
                     <h5>Por Anunciar</h5>
                   <% end %>
