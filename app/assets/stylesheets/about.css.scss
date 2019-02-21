@@ -8,14 +8,22 @@ html {
   display: grid;
   grid-template-areas:
     'navbar navbar navbar navbar navbar navbar'
-    'title title about about about about'
-    'matrix matrix about about about about'
-    'hidden1 hidden1 about about about about'
+    'title title history history history history'
+    'where where matrix matrix matrix matrix'
+    'about about about about about about'
     'img img local local local local'
-    'hidden2 hidden2 partners partners partners partners'
+    'hidden hidden partners partners partners partners'
     'footer footer footer footer footer footer';
   grid-gap: 2px;
   background-color: var(--color-purple);
+}
+
+.item {
+  background-color: var(--color-light-grey);
+}
+
+.header{
+  border-right: solid 2px var(--color-purple);
 }
 
 .header a:hover {
@@ -27,16 +35,12 @@ html {
   font-weight: 600;
 }
 
-.header{
-  border-right: solid 2px var(--color-purple);
-}
-
-.item {
-  background-color: var(--color-light-grey);
-}
-
-.about, .local, .partners {
+.about, .local, .partners, .history {
   padding: 5em;
+}
+
+.map {
+  grid-area: map;
 }
 
 .title {
@@ -46,20 +50,27 @@ html {
   grid-area: title;
   min-width: 350px;
   min-height: 200px;
-  padding: 2em 2em 0 0;
+  padding: 2rem 2rem 0 0;
 }
 
 .about {
   grid-area: about;
 }
 
-.about_section {
-  margin-bottom: 2rem;
-  max-width: 650px;
+.where {
+  grid-area: where;
+  min-width: 500px;
+  height: auto;
+  background-image: image-url('where.png');
+  background-size: cover;
+}
+
+.history {
+  grid-area: history;
 }
 
 .about p {
-  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .matrix {
@@ -73,7 +84,7 @@ html {
 
 .square {
   background-color: var(--color-light-grey);
-  min-height: 50px;
+  min-height: 150px;
 }
 
 .line {
@@ -88,16 +99,9 @@ html {
            var(--color-light-grey) 100%);
 }
 
-.hidden1, .hidden2 {
+.hidden {
+  grid-area: hidden;
   min-height: 200px;
-}
-
-.hidden1 {
-  grid-area: hidden1;
-}
-
-.hidden2 {
-  grid-area: hidden2;
 }
 
 .img {
@@ -111,23 +115,6 @@ html {
   display: flex;
   flex-direction: column;
   grid-area: local;
-
-}
-
-.local p {
-  margin-top: 2em;
-}
-
-.hidden2 {
-  grid-area: hidden2;
-}
-
-.map {
-  grid-area: map;
-}
-
-#map {
-  height: 300px;
 }
 
 .partners {
@@ -139,7 +126,7 @@ html {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: flex-start;
-  margin-top: 2em;
+  margin-top: 2rem;
   flex-wrap: wrap;
 }
 
@@ -180,33 +167,33 @@ html {
   width: 50px;
 }
 
-
 a {
   color: var(--color-purple);
+}
+
+h2 {
+  display: block;
+  padding-bottom: 2rem;
 }
 
 @media (max-width: 950px) {
   .container {
     grid-template-areas:
       'navbar navbar navbar navbar navbar navbar'
-      'title title about about about about'
-      'hidden1 hidden1 about about about about'
-      'hidden1 hidden1 about about about about'
+      'title title history history history history'
+      'matrix matrix where where where where'
+      'about about about about about about'
       'img img local local local local'
-      'hidden2 hidden2 partners partners partners partners'
+      'hidden hidden partners partners partners partners'
       'footer footer footer footer footer footer';
   }
 
-  .about, .local, .partners {
-    padding: 4em;
+  .about, .local, .partners, .history {
+    padding: 4rem;
   }
 
   .title {
     min-width: 275px;
-  }
-
-  .matrix {
-    display: none;
   }
 
   .img_big .partner_link {
@@ -227,18 +214,20 @@ a {
 }
 
 @media (max-width: 850px) {
-  .about, .local, .partners {
-    padding: 3em;
+  .about, .local, .partners, .history {
+    padding: 3rem;
   }
 }
 
 
 @media (max-width: 760px) {
   .container {
-      grid-template-rows: 80px 80px 1fr 1fr 1fr 1fr 1fr 80px;
+      grid-template-rows: 80px 80px 1fr 400px 1fr 1fr 1fr 1fr 80px;
       grid-template-areas:
         'navbar navbar'
         'title title'
+        'history history'
+        'where where'
         'about about'
         'img img'
         'local local'
@@ -246,15 +235,12 @@ a {
         'footer footer'
   }
 
-  .about, .local, .partners {
-    padding: 2em;
-  }
-  .hidden1, .hidden2 {
-    display: none;
+  .about, .local, .partners, .history, .title {
+    padding: 2rem;
   }
 
-  .about_section {
-    margin-bottom: 5rem;
+  .hidden, .matrix {
+    display: none;
   }
 
   .title {
@@ -262,7 +248,6 @@ a {
     align-items: center;
     min-width: 0;
     min-height: 0;
-    padding: 2em;
   }
 
   .bs {
