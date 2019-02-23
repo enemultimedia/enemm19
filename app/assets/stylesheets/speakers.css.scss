@@ -6,8 +6,7 @@ html {
 .container {
   height: 100%;
   display: grid;
-  grid-template-rows: 80px 16.6vw 1fr 80px;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 80px 214px 1fr 80px;
   grid-template-areas:
     'navbar navbar navbar navbar navbar navbar'
     'title title hidden matrix_hidden matrix_hidden matrix_hidden'
@@ -135,6 +134,23 @@ html {
   color: var(--color-black);
   border-top: solid 2px var(--color-black);
   border-right: solid 2px var(--color-black);
+}
+
+.activity_info{
+  display: inline-flex;
+  flex-direction: row;
+  padding: .5em;
+  background-color: var(--color-gold);
+  color: var(--color-black);
+  font-weight: 500;
+  border-top: solid 2px var(--color-black);
+  border-right: solid 2px var(--color-black);
+}
+
+.speaker:hover > .activity_info {
+  display: inline-flex;
+  background-color: var(--color-black);
+  color: var(--color-gold);
 }
 
 .activity_info{
