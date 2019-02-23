@@ -43,22 +43,20 @@
   <div class="item map">
     <div id="map"></div>
   </div>
-  <div class="item hidden"></div>
-  <% if @sponsors.any? %>
-  <div class="item hidden2"></div>
   <div class="item partners">
-      <h2>Parceiros</h2>
-    <% if @sponsors.giga.any? %>
-    <%= render partial: 'pages/partials/about/sponsor_list', locals: {sponsors: @sponsors.giga, class_name: 'img_big'} %>
-    <% end %>
-    <% if @sponsors.mega.any? %>
-    <%= render partial: 'pages/partials/about/sponsor_list', locals: {sponsors: @sponsors.mega, class_name: 'img_medium'} %>
-    <% end %>
-    <% if @sponsors.kapa.any? %>
-    <%= render partial: 'pages/partials/about/sponsor_list', locals: {sponsors: @sponsors.kapa, class_name: 'img_small'} %>
+    <% if @sponsors.any? %>
+        <h2>Parceiros</h2>
+      <% if @sponsors.giga.any? %>
+      <%= render partial: 'pages/partials/about/sponsor_list', locals: {sponsors: @sponsors.giga, class_name: 'img_big'} %>
+      <% end %>
+      <% if @sponsors.mega.any? %>
+      <%= render partial: 'pages/partials/about/sponsor_list', locals: {sponsors: @sponsors.mega, class_name: 'img_medium'} %>
+      <% end %>
+      <% if @sponsors.kapa.any? %>
+      <%= render partial: 'pages/partials/about/sponsor_list', locals: {sponsors: @sponsors.kapa, class_name: 'img_small'} %>
+      <% end %>
     <% end %>
   </div>
-  <% end %>
   <div class="item footer right">
     <p>Made with ♥ by <a href="https://nei.dei.uc.pt" target="_blank">NEI/AAC</a></p>
   </div>
