@@ -5,12 +5,16 @@
   </div>
   <h1><%= event.title %></h1>
   <% if event.location.present? %>
-    <h3>Local</h3>
-    <p><%= link_to(event.location.name, event.location.google_link, {target: '_blank'}) %></p>
+    <div class="specs_info">
+      <img class="specs" src="<%= image_path('local.svg') %>">
+      <p><%= link_to(event.location.name, event.location.google_link, {target: '_blank'}) %></p>
+    </div>
   <% end %>
   <% if event.start.present? %>
-    <h3>Hora</h3>
-    <p><%= event.time_range %></p>
+    <div class="specs_info">
+      <img class="specs" src="<%= image_path('time.svg') %>">
+      <p><%= event.time_range %></p>
+    </div>
   <% end %>
   <% if event.description.present? %>
     <h3>Detalhes</h3>
