@@ -12,7 +12,8 @@ html {
     'where where matrix matrix matrix matrix'
     'about about about about about about'
     'img img local local local local'
-    'hidden hidden partners partners partners partners'
+    'map map hidden hidden hidden hidden'
+    'hidden2 hidden2 partners partners partners partners'
     'footer footer footer footer footer footer';
   grid-gap: 2px;
   background-color: var(--color-purple);
@@ -104,8 +105,17 @@ html {
   min-height: 200px;
 }
 
-.hidden3 {
-  grid-area: hidden3;
+.hidden2 {
+  grid-area: hidden2;
+  min-height: 200px;
+}
+
+.map {
+  grid-area: map;
+}
+
+#map {
+  height: 300px;
 }
 
 .img {
@@ -188,7 +198,8 @@ h2 {
       'matrix matrix where where where where'
       'about about about about about about'
       'img img local local local local'
-      'hidden hidden partners partners partners partners'
+      'map map hidden hidden hidden hidden'
+      'hidden2 hidden2 partners partners partners partners'
       'footer footer footer footer footer footer';
   }
 
@@ -227,7 +238,6 @@ h2 {
 @media (max-width: 760px) {
   .container {
       grid-template-rows: 80px 80px 1fr 400px 1fr 1fr 1fr 1fr 80px;
-      grid-template-columns: auto;
       grid-template-areas:
         'navbar navbar'
         'title title'
@@ -236,6 +246,7 @@ h2 {
         'about about'
         'img img'
         'local local'
+        'map map'
         'partners partners'
         'footer footer'
   }
@@ -262,68 +273,4 @@ h2 {
   .ss {
     display: block;
   }
-}
-
-/* The popup bubble styling. */
-.popup-bubble {
-  /* Position the bubble centred-above its parent. */
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translate(-50%, -100%);
-  /* Style the bubble. */
-  background-color: white;
-  padding: 5px;
-  //border-radius: 5px;
-  color: var(--color-light-grey);
-  font-size: 0.8rem;
-  overflow-y: hidden;
-  max-height: 60px;
-  box-shadow: 0px 2px 10px 1px rgba(0,0,0,0.5);
-  background-color: var(--color-purple);
-}
-/* The parent of the bubble. A zero-height div at the top of the tip. */
-.popup-bubble-anchor {
-  /* Position the div a fixed distance above the tip. */
-  position: absolute;
-  width: 100%;
-  bottom: /* TIP_HEIGHT= */ 8px;
-  left: 0;
-}
-/* This element draws the tip. */
-.popup-bubble-anchor::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  /* Center the tip horizontally. */
-  transform: translate(-50%, 0);
-  /* The tip is a https://css-tricks.com/snippets/css/css-triangle/ */
-  width: 0;
-  height: 0;
-  /* The tip is 8px high, and 12px wide. */
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-top: /* TIP_HEIGHT= */ 8px solid var(--color-purple);
-}
-/* JavaScript will position this div at the bottom of the popup tip. */
-.popup-container {
-  cursor: auto;
-  height: 0;
-  position: absolute;
-  /* The max width of the info window. */
-  width: 200px;
-}
-
-.popup-bubble h5, .popup-bubble p {
-  font-size: 0.8rem;
-}
-
-.popup-bubble h5 {
-  margin: 0;
-}
-
-.popup-bubble p {
-  line-height: 0.8rem;
-  margin-top: 0.4rem;
 }
