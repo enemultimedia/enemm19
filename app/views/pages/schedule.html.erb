@@ -54,7 +54,7 @@
           </div>
           <div class="activity_info talks">
             <% slot[1].each do |event| %>
-              <div class="talk_info">
+              <div class="event_info">
                 <div>
                   <p onclick="openInfo('event-<%= event.id %>')"><%= event.title %></p>
                   <% if event.speakers.any? %>
@@ -67,7 +67,7 @@
           <div class="activity_info_hidden talks">
             <p><%= slot[1].first.time_range %></p>
             <% slot[1].each do |event| %>
-              <div>
+              <div class="event_info">
                 <p onclick="openInfo('event-<%= event.id %>')"><%= event.title %></p>
                 <% if event.speakers.any? %>
                   <h5><%= event.speakers.map{ |s| s.company.present? ? "#{s.name} - #{s.company}" : s.name}.join(', ') %></h5>
@@ -135,7 +135,7 @@
               <% end %>
             <% else %>
               <% slot[1].each do |event| %>
-                <div class="talk_info">
+                <div class="event_info">
                   <div>
                     <p onclick="openInfo('event-<%= event.id %>')"><%= event.title %></p>
                     <% if event.speakers.any? %>
@@ -150,7 +150,7 @@
             <p><%= slot[1].first.time_range %></p>
             <% if slot_events.nil? %>
               <% slot[1].each do |event| %>
-                <div>
+                <div class="event_info">
                   <p onclick="openInfo('event-<%= event.id %>')"><%= event.title %></p>
                   <% if event.speakers.any? %>
                     <h5><%= event.speakers.map{ |s| s.company.present? ? "#{s.name} - #{s.company}" : s.name}.join(', ') %></h5>
@@ -235,7 +235,7 @@
               <% end %>
             <% else %>
               <% slot[1].each do |event| %>
-                <div class="talk_info">
+                <div class="event_info">
                   <div>
                     <p onclick="openInfo('event-<%= event.id %>')"><%= event.title %></p>
                     <% if event.speakers.any? %>
@@ -250,7 +250,7 @@
             <p><%= slot[1].first.time_range %></p>
             <% if slot_events.nil? %>
               <% slot[1].each do |event| %>
-                <div>
+                <div class="event_info">
                   <p onclick="openInfo('event-<%= event.id %>')"><%= event.title %></p>
                   <% if event.speakers.any? %>
                     <h5><%= event.speakers.map{ |s| s.company.present? ? "#{s.name} - #{s.company}" : s.name}.join(', ') %></h5>
