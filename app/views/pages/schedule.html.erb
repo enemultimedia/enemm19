@@ -34,17 +34,48 @@
   <div id="firstday" class="tabcontent">
     <div class="matrix_day1 item">
       <% events_day1 = @events[1] %>
-      <% events_day1.each do |event| %>
-        <div class="activity_info right">
-          <p><%= event.time_range %></p>
-        </div>
-        <div class="activity_info open_info" onclick="openInfo('event-<%= event.id %>')">
-          <p><%= event.title %></p>
-        </div>
-        <div class="activity_info_hidden" onclick="openInfo('event-<%= event.id %>')">
-          <p><%= event.time_range %></p>
-          <p><%= event.title %></p>
-        </div>
+      <% events_day1_by_hour = events_day1.group_by(&:start) %>
+      <% events_day1_by_hour.each do |slot| %>
+        <% if slot[1].count == 1 %>
+          <% event = slot[1][0] %>
+          <div class="activity_info right">
+            <p><%= event.time_range %></p>
+          </div>
+          <div class="activity_info open_info" onclick="openInfo('event-<%= event.id %>')">
+            <p><%= event.title %></p>
+          </div>
+          <div class="activity_info_hidden" onclick="openInfo('event-<%= event.id %>')">
+            <p><%= event.time_range %></p>
+            <p><%= event.title %></p>
+          </div>
+        <% else %>
+          <div class="activity_info right">
+            <p><%= slot[1].first.time_range %></p>
+          </div>
+          <div class="activity_info talks">
+            <% slot[1].each do |event| %>
+              <div class="talk_info">
+                <div>
+                  <p onclick="openInfo('event-<%= event.id %>')"><%= event.title %></p>
+                  <% if event.speakers.any? %>
+                    <h5><%= event.speakers.map{ |s| s.company.present? ? "#{s.name} - #{s.company}" : s.name}.join(', ') %></h5>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+          <div class="activity_info_hidden talks">
+            <p><%= slot[1].first.time_range %></p>
+            <% slot[1].each do |event| %>
+              <div>
+                <p onclick="openInfo('event-<%= event.id %>')"><%= event.title %></p>
+                <% if event.speakers.any? %>
+                  <h5><%= event.speakers.map{ |s| s.company.present? ? "#{s.name} - #{s.company}" : s.name}.join(', ') %></h5>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </div>
@@ -66,6 +97,9 @@
               </div>
             <% else %>
               <p><%= event.title %></p>
+              <% if event.speakers.any? %>
+                <h5><%= event.speakers.map{ |s| s.company.present? ? "#{s.name} - #{s.company}" : s.name}.join(', ') %></h5>
+              <% end %>
             <% end %>
           </div>
           <div class="activity_info_hidden" onclick="openInfo('event-<%= event.id %>')">
@@ -73,6 +107,8 @@
             <p><%= event.title %></p>
             <% if event.event_type == 'Panel' %>
               <h5>Conversa aberta — <%= event.speakers.map{ |s| s.company.present? ? "#{s.name} - #{s.company}" : s.name}.join(', ') %></h5>
+            <% elsif event.speakers.any? %>
+              <h5><%= event.speakers.map{ |s| s.company.present? ? "#{s.name} - #{s.company}" : s.name}.join(', ') %></h5>
             <% end %>
           </div>
         <% else %>
@@ -80,39 +116,63 @@
             <p><%= slot[1].first.time_range %></p>
           </div>
           <div class="activity_info talks">
-            <% slot_events = slot[1].group_by(&:track) %>
-            <% slot_events.each do |track| %>
-              <div class="talk_info">
-                <h4>Talks - <%= track[1][0].track %></h4>
-                <% track[1].sort_by(&:position).each do |event| %>
+            <% if slot[1].first.event_type == 'Talk' %>
+              <% slot_events = slot[1].group_by(&:track) %>
+              <% slot_events.each do |track| %>
+                <div class="talk_info">
+                  <h4>Talks - <%= track[1][0].track %></h4>
+                  <% track[1].sort_by(&:position).each do |event| %>
+                    <div>
+                      <p onclick="openInfo('event-<%= event.id %>')"><%= event.title %></p>
+                      <% if event.speakers.any? %>
+                        <h5><%= event.speakers.map{ |s| s.company.present? ? "#{s.name} - #{s.company}" : s.name}.join(', ') %></h5>
+                      <% else %>
+                        <h5>Por Anunciar</h5>
+                      <% end %>
+                    </div>
+                  <% end %>
+                </div>
+              <% end %>
+            <% else %>
+              <% slot[1].each do |event| %>
+                <div class="talk_info">
                   <div>
                     <p onclick="openInfo('event-<%= event.id %>')"><%= event.title %></p>
                     <% if event.speakers.any? %>
                       <h5><%= event.speakers.map{ |s| s.company.present? ? "#{s.name} - #{s.company}" : s.name}.join(', ') %></h5>
-                    <% else %>
-                      <h5>Por Anunciar</h5>
                     <% end %>
                   </div>
-                <% end %>
-              </div>
+                </div>
+              <% end %>
             <% end %>
           </div>
           <div class="activity_info_hidden talks">
             <p><%= slot[1].first.time_range %></p>
-            <% slot_events.each do |track| %>
-              <div class="talk_info" >
-                <h4>Talks - <%= track[1][0].track %></h4>
-                <% track[1].sort_by(&:position).each do |event| %>
-                  <div>
-                    <p onclick="openInfo('event-<%= event.id %>')"><%= event.title %></p>
-                    <% if event.speakers.any? %>
-                      <h5><%= event.speakers.map{ |s| s.company.present? ? "#{s.name} - #{s.company}" : s.name}.join(', ') %></h5>
-                    <% else %>
-                      <h5>Por Anunciar</h5>
-                    <% end %>
-                  </div>
-                <% end %>
-              </div>
+            <% if slot_events.nil? %>
+              <% slot[1].each do |event| %>
+                <div>
+                  <p onclick="openInfo('event-<%= event.id %>')"><%= event.title %></p>
+                  <% if event.speakers.any? %>
+                    <h5><%= event.speakers.map{ |s| s.company.present? ? "#{s.name} - #{s.company}" : s.name}.join(', ') %></h5>
+                  <% end %>
+                </div>
+              <% end %>
+            <% else %>
+              <% slot_events.each do |track| %>
+                <div class="talk_info" >
+                  <h4>Talks - <%= track[1][0].track %></h4>
+                  <% track[1].sort_by(&:position).each do |event| %>
+                    <div>
+                      <p onclick="openInfo('event-<%= event.id %>')"><%= event.title %></p>
+                      <% if event.speakers.any? %>
+                        <h5><%= event.speakers.map{ |s| s.company.present? ? "#{s.name} - #{s.company}" : s.name}.join(', ') %></h5>
+                      <% else %>
+                        <h5>Por Anunciar</h5>
+                      <% end %>
+                    </div>
+                  <% end %>
+                </div>
+              <% end %>
             <% end %>
           </div>
         <% end %>
@@ -156,39 +216,63 @@
             <p><%= slot[1].first.time_range %></p>
           </div>
           <div class="activity_info talks">
-            <% slot_events = slot[1].group_by(&:track) %>
-            <% slot_events.each do |track| %>
-              <div class="talk_info">
-                <h4>Talks - <%= track[1][0].track %></h4>
-                <% track[1].sort_by(&:position).each do |event| %>
+            <% if slot[1].first.event_type == 'Talk' %>
+              <% slot_events = slot[1].group_by(&:track) %>
+              <% slot_events.each do |track| %>
+                <div class="talk_info">
+                  <h4>Talks - <%= track[1][0].track %></h4>
+                  <% track[1].sort_by(&:position).each do |event| %>
+                    <div>
+                      <p onclick="openInfo('event-<%= event.id %>')"><%= event.title %></p>
+                      <% if event.speakers.any? %>
+                        <h5><%= event.speakers.map{ |s| s.company.present? ? "#{s.name} - #{s.company}" : s.name}.join(', ') %></h5>
+                      <% else %>
+                        <h5>Por Anunciar</h5>
+                      <% end %>
+                    </div>
+                  <% end %>
+                </div>
+              <% end %>
+            <% else %>
+              <% slot[1].each do |event| %>
+                <div class="talk_info">
                   <div>
                     <p onclick="openInfo('event-<%= event.id %>')"><%= event.title %></p>
                     <% if event.speakers.any? %>
                       <h5><%= event.speakers.map{ |s| s.company.present? ? "#{s.name} - #{s.company}" : s.name}.join(', ') %></h5>
-                    <% else %>
-                      <h5>Por Anunciar</h5>
                     <% end %>
                   </div>
-                <% end %>
-              </div>
+                </div>
+              <% end %>
             <% end %>
           </div>
           <div class="activity_info_hidden talks">
             <p><%= slot[1].first.time_range %></p>
-            <% slot_events.each do |track| %>
-              <div class="talk_info">
-                <h4>Talks - <%= track[1][0].track %></h4>
-                <% track[1].sort_by(&:position).each do |event| %>
-                  <div>
-                    <p onclick="openInfo('event-<%= event.id %>')"><%= event.title %></p>
-                    <% if event.speakers.any? %>
-                      <h5><%= event.speakers.map{ |s| s.company.present? ? "#{s.name} - #{s.company}" : s.name}.join(', ') %></h5>
-                    <% else %>
-                      <h5>Por Anunciar</h5>
-                    <% end %>
-                  </div>
-                <% end %>
-              </div>
+            <% if slot_events.nil? %>
+              <% slot[1].each do |event| %>
+                <div>
+                  <p onclick="openInfo('event-<%= event.id %>')"><%= event.title %></p>
+                  <% if event.speakers.any? %>
+                    <h5><%= event.speakers.map{ |s| s.company.present? ? "#{s.name} - #{s.company}" : s.name}.join(', ') %></h5>
+                  <% end %>
+                </div>
+              <% end %>
+            <% else %>
+              <% slot_events.each do |track| %>
+                <div class="talk_info" >
+                  <h4>Talks - <%= track[1][0].track %></h4>
+                  <% track[1].sort_by(&:position).each do |event| %>
+                    <div>
+                      <p onclick="openInfo('event-<%= event.id %>')"><%= event.title %></p>
+                      <% if event.speakers.any? %>
+                        <h5><%= event.speakers.map{ |s| s.company.present? ? "#{s.name} - #{s.company}" : s.name}.join(', ') %></h5>
+                      <% else %>
+                        <h5>Por Anunciar</h5>
+                      <% end %>
+                    </div>
+                  <% end %>
+                </div>
+              <% end %>
             <% end %>
           </div>
         <% end %>
