@@ -279,6 +279,7 @@ a {
 
     .info_content p, .info_content a {
       font-size: 16px;
+      margin: 0;
     }
 
     .info_content h3 {
@@ -364,7 +365,7 @@ a {
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      margin: 4rem;
+      margin: 4rem 0 0 4rem;
     }
 
     .info_hours img {
