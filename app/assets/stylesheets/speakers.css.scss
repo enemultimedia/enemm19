@@ -142,8 +142,8 @@ html {
   background-color: var(--color-gold);
   color: var(--color-black);
   font-weight: 500;
-  border-top: solid 2px var(--color-black);
-  border-right: solid 2px var(--color-black);
+  border: solid 2px var(--color-black);
+  border-bottom: none;
 }
 
 .speaker:hover > .activity_info {
