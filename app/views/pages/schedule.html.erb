@@ -31,6 +31,7 @@
     <button class="tablinks_hidden" onclick="openDay(event, 'thirdday')">3</button>
     <button class="tablinks_hidden" onclick="openDay(event, 'forthday')">4</button>
   </div>
+  <% track_orders = ['Business','Light and Sound','Web Interface','Hardware','Applied Multimedia','Graphics and Interaction','Web Development','Miscellaneous'] %>
   <div id="firstday" class="tabcontent">
     <div class="matrix_day1 item">
       <% events_day1 = @events[1] %>
@@ -118,6 +119,7 @@
           <div class="activity_info talks">
             <% if slot[1].first.event_type == 'Talk' %>
               <% slot_events = slot[1].group_by(&:track) %>
+              <% slot_events.sort_by{{|x| track_orders.index(x[1][0].track)||0}} %>
               <% slot_events.each do |track| %>
                 <div class="talk_info">
                   <h4>Talks - <%= track[1][0].track %></h4>
@@ -218,6 +220,7 @@
           <div class="activity_info talks">
             <% if slot[1].first.event_type == 'Talk' %>
               <% slot_events = slot[1].group_by(&:track) %>
+              <% slot_events.sort_by{{|x| track_orders.index(x[1][0].track)||0}} %>
               <% slot_events.each do |track| %>
                 <div class="talk_info">
                   <h4>Talks - <%= track[1][0].track %></h4>
