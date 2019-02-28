@@ -118,8 +118,7 @@
           </div>
           <div class="activity_info talks">
             <% if slot[1].first.event_type == 'Talk' %>
-              <% slot_events = slot[1].group_by(&:track) %>
-              <% slot_events.sort_by{ |x| track_orders.index(x[1][0].track)||0 } %>
+              <% slot_events = slot[1].sort_by{ |x| track_orders.index(x.track)||0 }.group_by(&:track) %>
               <% slot_events.each do |track| %>
                 <div class="talk_info">
                   <h4>Talks - <%= track[1][0].track %></h4>
@@ -219,8 +218,7 @@
           </div>
           <div class="activity_info talks">
             <% if slot[1].first.event_type == 'Talk' %>
-              <% slot_events = slot[1].group_by(&:track) %>
-              <% slot_events.sort_by{ |x| track_orders.index(x[1][0].track)||0 } %>
+              <% slot_events = slot[1].sort_by{ |x| track_orders.index(x.track)||0 }.group_by(&:track) %>
               <% slot_events.each do |track| %>
                 <div class="talk_info">
                   <h4>Talks - <%= track[1][0].track %></h4>
