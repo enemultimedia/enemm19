@@ -159,7 +159,17 @@ cursor: pointer;
   background-color: var(--color-gold);
 }
 
-.talk_info div, .workshop_info div {
+.event_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  padding: 0 2rem;
+  background-color: var(--color-gold);
+}
+
+.talk_info div, .workshop_info div, .event_info div {
   cursor: pointer;
 }
 
@@ -271,7 +281,7 @@ a {
       z-index: 2;
     }
 
-    .info_content h1, .info_content h3, .info_content>a {
+    .info_content h1, .info_content h3, .info_content>a, .info_content p {
       margin: 0rem 4rem 1rem 4rem;
       line-height: 1.5;
       color: var(--color-gold);
@@ -364,7 +374,11 @@ a {
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      margin: 4rem;
+      margin: 3rem 0 3rem 4rem;
+    }
+
+    .specs_info p {
+      margin: 0;
     }
 
     .info_hours img {
@@ -438,21 +452,22 @@ a {
   }
 
   .matrix_day1 {
+    grid-template-rows: 320px 102px 160px;
     grid-template-columns: 1fr;
   }
 
   .matrix_day2 {
-    grid-template-rows: 116px 1fr 116px 1fr 116px 116px 160px repeat(2, 116px);
+    grid-template-rows: 116px 1fr 116px 1fr 116px 116px 160px 116px 160px;
     grid-template-columns: 1fr;
   }
 
   .matrix_day3 {
-    grid-template-rows: 116px 1fr 116px 1fr 160px repeat(4, 116px);
+    grid-template-rows: 116px 1fr 116px 1fr 160px repeat(3, 116px) 160px;
     grid-template-columns: 1fr;
   }
 
   .matrix_day4 {
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: 1fr 116px 1fr 116px 1fr;
     grid-template-columns: 1fr;
   }
 
@@ -471,6 +486,12 @@ a {
   .talk_info {
     padding: 0;
     height: auto;
+  }
+
+  .event_info {
+    padding: 0;
+    height: auto;
+    flex-grow: 1;
   }
 
   .tablinks {
