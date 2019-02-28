@@ -113,6 +113,8 @@ html {
   color: var(--color-gold);
   font-weight: 500;
   transition: color 0.2s ease, background-color 0.2s ease;
+  border-top: solid 2px var(--color-black);
+  border-right: solid 2px var(--color-black);
 }
 
 .speaker_info p:last-child{
