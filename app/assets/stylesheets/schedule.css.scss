@@ -457,12 +457,12 @@ a {
   }
 
   .matrix_day2 {
-    grid-template-rows: 116px 11fr 116px 7fr 116px 116px 160px 116px 160px;
+    grid-template-rows: 116px 11fr 116px 7fr 160px 116px 160px 116px 160px;
     grid-template-columns: 1fr;
   }
 
   .matrix_day3 {
-    grid-template-rows: 116px 116px 1fr 116px 1fr 160px repeat(3, 116px) 160px;
+    grid-template-rows: 116px 160px 1fr 116px 1fr 160px 160px repeat(2, 116px) 160px repeat(2, 116px);
     grid-template-columns: 1fr;
   }
 
