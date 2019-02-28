@@ -10,4 +10,9 @@
       <span class="speaker_name">Workshop</span>
     </div>
   <% end %>
+  <% if speaker.events.select{ |e| e.event_type == 'Panel' }.any? %>
+    <div class="activity_info">
+      <span class="speaker_name">Painel</span>
+    </div>
+  <% end %>
 </div>
