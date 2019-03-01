@@ -67,7 +67,7 @@ html {
 .matrix_day2 {
   grid-area: matrix_day2;
   display: grid;
-  grid-template-rows: 102px 5fr 102px 3fr 102px 130px repeat(2, 102px);
+  grid-template-rows: 102px 5fr 102px 3fr 130px 102px repeat(2,130px) repeat(2, 102px);
   grid-template-columns: 1fr 2fr;
   grid-gap: 2px;
   background-color: var(--color-black);
@@ -76,7 +76,7 @@ html {
 .matrix_day3 {
   grid-area: matrix_day3;
   display: grid;
-  grid-template-rows: 102px 130px 4fr 102px 4fr 130px repeat(4, 102px);
+  grid-template-rows: 102px 130px 4fr 102px 4fr 130px repeat(2, 102px) 130px repeat(2, 102px);
   grid-template-columns: 1fr 2fr;
   grid-gap: 2px;
   background-color: var(--color-black);
