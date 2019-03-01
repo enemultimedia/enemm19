@@ -452,7 +452,7 @@ a {
   }
 
   .matrix_day1 {
-    grid-template-rows: 320px 102px 160px;
+    grid-template-rows: 320px repeat(2,112px) 160px;
     grid-template-columns: 1fr;
   }
 
